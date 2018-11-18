@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'GravurCondensed-Light';
+  src: url('GravurCondensed-Light.eot?#iefix') format('embedded-opentype'),  url('GravurCondensed-Light.otf')  format('opentype'),
+	     url('GravurCondensed-Light.woff') format('woff'), url('GravurCondensed-Light.ttf')  format('truetype'), url('GravurCondensed-Light.svg#GravurCondensed-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,55 @@
+@import url('typography.css');
+@import url('sidePanel.css');
+
+body{
+    background: #15212C;
+
+}
+
+
+h1, h2, h3 {
+    color: #ffff00;
+}
+
+
+header{
+    color: #ffff00;
+    margin-bottom: 100px;
+}
+
+#bgVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+a{
+    text-decoration: none;
+}
+hr{
+    border: 2px solid #ffff00;
+    width: 20%;
+    margin-left: 0;
+}
+nav{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.5s;
+}
+
+nav.open{
+    right: 300px;
+}
+
+.vertical-text {
+	transform: rotate(270deg);
+	transform-origin: right bottom 0;
+}
+p{
+    padding: 20px;
+    margin: 0;
+}
