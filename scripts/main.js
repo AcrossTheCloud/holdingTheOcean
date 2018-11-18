@@ -1,7 +1,7 @@
 var countDownDate = new Date("May 7, 2019 00:00:00").getTime();
 
 // Update the count down every 1 second
-var x = setInterval(function() {
+var countDown = setInterval(function() {
 
     // Get todays date and time
     var now = new Date().getTime();
@@ -21,7 +21,20 @@ var x = setInterval(function() {
 
     // If the count down is over, write some text
     if (distance < 0) {
-        clearInterval(x);
+        clearInterval(countDown);
         document.getElementById("timer").innerHTML = "LIVE";
     }
 }, 1000);
+
+$(document).ready(function(){
+    var videoList = [
+        "https://s3.eu-west-2.amazonaws.com/oceanholding/footages/Deepstar3.mp4",
+        "https://s3.eu-west-2.amazonaws.com/oceanholding/footages/Deepstar4.mp4"]
+
+    var videoFile = videoList[Math.floor(Math.random() * videoList.length)];
+
+    var $video = $('video#bgVideo'),
+    videoSrc = $('source', $video).attr('src', videoFile);
+    $video[0].load();
+    $video[0].play();
+});
