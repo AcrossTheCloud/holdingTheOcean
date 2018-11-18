@@ -1,0 +1,57 @@
+/* mobile */
+@media (min-width: 320px) and (max-width: 768px){
+  .mobile{
+    display: block;
+  }
+  .desktop{
+    display: none;
+  }
+  header{
+      font-size: 5.8em;
+  }
+  nav{
+      bottom: 0;
+      font-size: 14px;
+  }
+  body{
+      overflow: hidden;
+  }
+  #bgVideo{
+      height: 100%;
+      right: -55%;
+  }
+}
+ /* larger than mobile */
+@media (min-width: 768px) {
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: block;
+    }
+    nav{
+        right: 0;
+        top: 0;
+        transform: rotate(270deg);
+    	transform-origin: right bottom 0;
+    }
+    .vertical-text {
+
+    }
+    #bgVideo{
+        right: 0; 
+    }
+}
+
+
+  /* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1025px) {
+
+
+}

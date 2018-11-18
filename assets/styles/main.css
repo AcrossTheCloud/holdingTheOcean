@@ -1,5 +1,6 @@
 @import url('typography.css');
 @import url('sidePanel.css');
+@import url('grid.css');
 
 body{
     background: #15212C;
@@ -19,7 +20,6 @@ header{
 
 #bgVideo{
     position: fixed;
-    right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
@@ -36,8 +36,6 @@ hr{
 }
 nav{
     position: absolute;
-    right: 0;
-    top: 0;
     transition: 0.5s;
 }
 
@@ -45,10 +43,7 @@ nav.open{
     right: 300px;
 }
 
-.vertical-text {
-	transform: rotate(270deg);
-	transform-origin: right bottom 0;
-}
+
 p{
     padding: 20px;
     margin: 0;
