@@ -14,7 +14,6 @@
 
 /* The sidepanel links */
 .sidepanel a {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
     color: #818181;
     display: block;
@@ -30,8 +29,8 @@
 .sidepanel .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    margin-left: 50px;
+    /* right: 25px;
+    margin-left: 50px; */
 }
 
 /* Style the button that is used to open the sidepanel */
@@ -44,18 +43,58 @@
 }
 
 .option-item:hover {
-    border-right: 1px solid #ffff00;
-    border-left: 1px solid #ffff00;
+    /* border-right: 1px solid #ffff00;
+    border-left: 1px solid #ffff00; */
+    font-weight: bold;
+    text-shadow: -5 2 14 #FFFF00;
 }
 
-#aboutPanel.open{
-    width: 280px;
+@media (min-width: 768px){
+
+    #aboutPanel.open{
+        width: 280px;
+    }
+
+    #launchPanel.open{
+        width: 270px;
+    }
+
+    #subscribePanel.open{
+        width: 260px;
+    }
 }
 
-#launchPanel.open{
-    width: 270px;
-}
 
-#subscribePanel.open{
-    width: 260px;
+@media (max-width: 769px) {
+    .sidepanel {
+        width: 100vw;
+        height: 0;
+        top: 100vh;
+    }
+    .sidepanel.open{
+        height: 90vh;
+        top: 10vh;
+    }
+    nav.open{
+        top: 6vh;
+    }
+
+    #aboutPanel.open{
+        height: 90vh;
+        top: 10vh;
+    }
+
+    #launchPanel.open{
+        height: 88vh;
+        top: 12vh;
+    }
+
+    #subscribePanel.open{
+        height: 86vh;
+        top: 14vh;
+    }
+    .closebtn{
+        margin: 0 auto;
+        top: -20px;
+    }
 }

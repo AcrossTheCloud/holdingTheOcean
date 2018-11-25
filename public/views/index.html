@@ -11,12 +11,14 @@
         <meta name="og:image", content=""/>
         <meta name="og:description", content=""/>
 
-        <link rel="shortcut icon", href="./images/favicon.png", type="image/x-icon"></link>
+        <link rel="shortcut icon", href="/icons/V4.png", type="image/x-icon"></link>
         <title></title>
-        <link rel="stylesheet" href="assets/styles/main.css"></link>
+        <link rel="stylesheet" href="/styles/main.css"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="scripts/main.js"></script>
-        <script src="scripts/sidePanel.js"></script>
+        <script src="/main.js"></script>
+        <script src="/sidePanel.js"></script>
+        <script src="/subscribe.js"></script>
+
     </head>
     <body>
 
@@ -40,6 +42,7 @@
     </video>
 
     <div id="aboutPanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
         <p class="content"> The OceanArchive will be a digital platform, archive and repository for collaborative research. Bring together Academy expeditions, artistic outputs and production data with a multiplicity of archives and records produced by scientists, communities, and policy-makers collaborating with the Academy and beyond, the OceanArchive will enable users to search across a variety of catalogues enabling increased search ability and discoverability. Users will be exposed to the diversity of vantage points, perspectives and knowledge systems on the ocean and its form as it is being shaped by historical and currest ways of living and administering the seas. The OceanArchive will be a pedagogical-, research-, and storytelling tool for a wide audience, translating current knowledge about the ocean into a  common ground aimed at enabling us to take better decisions for urgently needed policies.</p>
         <hr>
         <p class="notes">
@@ -52,7 +55,24 @@
     </div>
 
     <div id="subscribePanel" class="sidepanel">
-        <h1> subscribe </h1>
+        <form action="/subscribe" id="subscribeForm">
+            <label>name</label>
+            <span class="marker">
+            <input type="text" name="name">
+            <span class="marker">
+            <label>email</label>
+            <input type="email" name="email">
+            <input type="submit" id="send" value="subscribe">
+        </form>
+        <span class="error-message">
+            check the fields again, something is not right
+        </span>
+        <span class="success-message">
+            subscribe, all good to go
+        </span>
+        <span class="error-network">
+            ops. something went wrong, check back again
+        </span>
     </div>
 
 

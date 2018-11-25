@@ -1,6 +1,7 @@
 @import url('typography.css');
 @import url('sidePanel.css');
 @import url('grid.css');
+@import url('subscribe.css');
 
 body{
     background: #15212C;
@@ -38,13 +39,25 @@ nav{
     position: absolute;
     transition: 0.5s;
 }
-
-nav.open{
-    right: 300px;
+@media (min-width: 768px){
+    nav.open{
+        right: 300px;
+    }
 }
-
 
 p{
     padding: 20px;
     margin: 0;
+}
+@media (min-width: 768px){
+    .closebtn{
+        display: none !important;
+    }
+}
+
+.closebtn{
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-image: url('../icons/close.png');
 }

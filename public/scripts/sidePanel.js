@@ -25,15 +25,15 @@ function closeNav() {
 
 $(document).ready(function(){
     var topZ = 0;
-
     $('.option-item').click(function(){
         var key = $(this).data('value');
-
-        console.log('option item clicked ---- ', key);
-
         $(`#${key}Panel`).addClass('open');
         $(`#${key}Panel`).css('z-index', topZ );
         $('nav').addClass('open');
         topZ++;
-    })
+
+        if(window.innerWidth <= 768){
+            $('header').hide();
+        }
+    });
 })

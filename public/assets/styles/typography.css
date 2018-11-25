@@ -41,5 +41,14 @@ p.content{
 
 p.notes{
     font-family: 'NHaasGroteskDSPro-55Rg', sans-serif;
-    font-size: 11px; 
+    font-size: 11px;
+}
+
+label{
+    font-family: 'NHaasGroteskDSPro-55Rg', sans-serif;
+    font-size: 18px;
+}
+span{
+    font-family: 'NHaasGroteskDSPro-55Rg', sans-serif;
+    font-size: 16px;
 }
