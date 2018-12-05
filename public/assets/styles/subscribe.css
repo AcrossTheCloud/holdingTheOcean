@@ -1,49 +1,99 @@
 form{
-    margin: 2em;
+    display: inline-block;
+}
+#contactForm{
+    width: 48%;
 }
 label{
   text-transform: lowercase;
   margin: 0;
 }
+form span{
+    padding-left: 16px;
+}
 input{
-  border: none;
-  border-bottom: #707070 1px solid;
-  width: -webkit-fill-available; 
-  height: 30px;
-  padding-left: 2em;
-  margin-bottom: 25px;
-  background: transparent;
+    border: solid 0.5px #000000;
+    height: 30px;
+    background: transparent;
+    padding-left: 8px;
+    display: block;
+    margin: 10px;
+}
+
+textarea{
+    width: 80%;
+    height: 140px;
+    margin-left: 10px;
+    padding-top: 8px;
+    padding-left: 8px;
+    background: transparent;
+    border: 1px solid #000;
+}
+
+input[type='text'],
+input[type='email']{
+    width: 300px;
+    max-width: 80%;
+}
+::-webkit-input-placeholder{
+    color: #000;
+    top: -3px;
+    position: relative;
+}
+::-moz-placeholder{
+    color: #000;
+    top: -3px;
+    position: relative;
+}
+:-ms-input-placeholder{
+    color: #000;
+    top: -3px;
+    position: relative;
+}
+:-moz-placeholder {
+    color: #000;
+    top: -3px;
+    position: relative;
 }
 
 input[type='submit']{
   border: none;
   bottom: 0;
-  text-transform: uppercase;
-  width: inherit;
   cursor: pointer;
+  margin-top: 0;
 }
-input#send{
-    background: url('/icons/paperplane.svg') no-repeat top left;
-    width: 4em;
-    height: 3em;
-    background-size: cover;
+div#jelly{
+    margin-left: 23px;
+    top: 8px;
+    position: relative;
+    background: url('/icons/jelly.svg') no-repeat top left;
+    width: 2em;
+    height: 2.5em;
+    background-size: contain;
     margin-bottom: 0;
+    display: inline-block;
 }
 
-input#send:hover,
+div#jelly:hover{
+    background: url('/icons/jelly_yellow.svg') no-repeat top left;
+    width: 2em;
+    height: 2.5em;
+    background-size: contain;
+    cursor: pointer;
+}
+div#jelly.success{
+
+}
+
+div#jelly.error{
+    background: url('/icons/jelly_yellow.svg') no-repeat top left;
+}
+
 input#send.success{
-    background: url('/icons/Paper_planes-green.svg') no-repeat top left;
-    width: 4em;
-    height: 3em;
-    background-size: cover;
-    margin-bottom: 0;
+
 }
 input#send.error{
-    background: url('/icons/Paper_planes-red.svg') no-repeat top left;
-    width: 4em;
-    height: 3em;
-    background-size: cover;
-    margin-bottom: 0;
+
 }
 .marker-error{
     background: #ff2700;

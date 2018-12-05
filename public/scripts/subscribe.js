@@ -1,13 +1,14 @@
 $(document).ready(function(){
-  $('#subscribeForm').submit(function(e){
+  $('panel-content.active form').submit(function(e){
     e.preventDefault();
-
     var $form = $(this),
         name = $form.find('input[name="name"]').val(),
         email = $form.find('input[name="email"]').val(),
-        url = $form.attr('action')
+        url = $form.attr('action'),
+        type = $('.option-item.active').data('value');
+    var body = { name, email, type}
+    console.log('helloooooo ------ ', body);
 
-    var body = { name, email}
     var fields = [name, email]
     for(var i = 0; i< fields.length; i++){
       var value = fields[i]

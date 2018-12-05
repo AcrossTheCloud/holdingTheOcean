@@ -19,6 +19,7 @@ app.get('/', function(req, res){
 });
 
 var router = express.Router();
+
 app.use('/subscribe', router);
 router.post('/', mailer.saveEmail);
 

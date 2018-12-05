@@ -1,5 +1,5 @@
 @import url('typography.css');
-@import url('sidePanel.css');
+@import url('panel.css');
 @import url('grid.css');
 @import url('subscribe.css');
 
@@ -13,7 +13,9 @@ h1, h2, h3 {
     color: #ffff00;
 }
 
-
+nav{
+    margin: 20px;
+}
 header{
     color: #ffff00;
     margin-bottom: 100px;
@@ -35,19 +37,18 @@ hr{
     width: 20%;
     margin-left: 0;
 }
-nav{
-    position: absolute;
-    transition: 0.5s;
-}
-@media (min-width: 768px){
-    nav.open{
-        right: 300px;
-    }
-}
 
 p{
-    padding: 20px;
+    padding:  20px 40px;
     margin: 0;
+    vertical-align: top;
+    display: inline-block;
+}
+.callToAction{
+    width: 60%;
+}
+p.contribute{
+    width: 40%;
 }
 @media (min-width: 768px){
     .closebtn{
@@ -60,4 +61,17 @@ p{
     height: 30px;
     background-repeat: no-repeat;
     background-image: url('../icons/close.png');
+}
+
+.one-column{
+    max-width: 800px;
+}
+
+.two-column{
+    column-count: 2;
+    /* column-width: 400px; */
+}
+
+.right{
+    float: right;
 }

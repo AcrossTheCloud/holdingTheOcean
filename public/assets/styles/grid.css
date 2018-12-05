@@ -9,9 +9,6 @@
   header{
       font-size: 5.8em;
   }
-  nav{
-      bottom: 0;
-  }
   body{
       overflow: hidden;
   }
@@ -27,15 +24,6 @@
     }
     .desktop{
         display: block;
-    }
-    nav{
-        right: 0;
-        top: 0;
-        transform: rotate(270deg);
-    	transform-origin: right bottom 0;
-    }
-    .vertical-text {
-
     }
     #bgVideo{
         right: 0;
