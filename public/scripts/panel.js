@@ -1,8 +1,3 @@
-function closeNav() {
-
-}
-
-
 $(document).ready(function(){
     $('.option-item').click(function(){
         $('.panel-content').removeClass('active');
@@ -21,4 +16,8 @@ $(document).ready(function(){
     $('div#jelly').click(function(){
         $(this).siblings('#send').click();
     });
-})
+});
+
+function closeNav() {
+
+}

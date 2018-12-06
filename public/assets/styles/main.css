@@ -44,12 +44,7 @@ p{
     vertical-align: top;
     display: inline-block;
 }
-.callToAction{
-    width: 60%;
-}
-p.contribute{
-    width: 40%;
-}
+
 @media (min-width: 768px){
     .closebtn{
         display: none !important;
@@ -65,11 +60,6 @@ p.contribute{
 
 .one-column{
     max-width: 800px;
-}
-
-.two-column{
-    column-count: 2;
-    width: 65%;
 }
 
 .right{

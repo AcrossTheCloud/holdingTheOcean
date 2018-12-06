@@ -1,7 +1,7 @@
 .info-panel {
     width: 100vw;
-    height: 100vh;
-    top: 92vh;
+    height: 100%;
+    top: 92%;
     position: fixed;
     left: 0;
     z-index: 1;
@@ -36,7 +36,7 @@
   cursor: pointer;
   border: none;
   background: transparent;
-  margin: 15px;
+  margin: .7em;
 }
 
 .option-item.active,
@@ -53,8 +53,8 @@
 
 @media (max-width: 769px) {
     .info-panel.open{
-        height: 90vh;
-        top: 10vh;
+        height: 70vh;
+        top: 30vh;
     }
     .closebtn{
         margin: 0 auto;

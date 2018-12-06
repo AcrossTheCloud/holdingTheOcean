@@ -16,6 +16,14 @@
       height: 100%;
       right: -55%;
   }
+
+  .option-item{
+      margin-left: 0;
+  }
+
+  form{
+      margin: 0 10%;
+  }
 }
  /* larger than mobile */
 @media (min-width: 768px) {
@@ -28,6 +36,18 @@
     #bgVideo{
         right: 0;
     }
+    .callToAction{
+        width: 60%;
+    }
+    p.contribute{
+        width: 40%;
+    }
+
+    .two-column{
+        column-count: 2;
+        width: 65%;
+    }
+
 }
 
 
