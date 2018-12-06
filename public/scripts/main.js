@@ -44,9 +44,6 @@ $(document).ready(function(){
     $(sources[0]).attr('src', videoFile+'.mp4');
     $(sources[1]).attr('src', videoFile+'.webm');
 
-    // sources[0].src = (videoFile+'.mp4');
-    // sources[1].src = (videoFile+'.webm');
-
     $video[0].load();
-    $video[1].play();
+    $video[0].play();
 });
