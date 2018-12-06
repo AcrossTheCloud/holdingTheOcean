@@ -41,8 +41,12 @@ $(document).ready(function(){
     var $video = $('video#bgVideo');
     // videoSrc = $('source', $video).attr('src', videoFile);
     var sources = $video.find('source');
-    sources[0].src = (videoFile+'.mp4');
-    sources[1].src = (videoFile+'.webm');
-    $video.load();
-    $video.play();
+    $(sources[0]).attr('src', videoFile+'.mp4');
+    $(sources[1]).attr('src', videoFile+'.webm');
+
+    // sources[0].src = (videoFile+'.mp4');
+    // sources[1].src = (videoFile+'.webm');
+
+    $video[0].load();
+    $video[1].play();
 });
