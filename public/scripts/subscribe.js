@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('panel-content.active form').submit(function(e){
+
+  $('#followForm').submit(function(e){
     e.preventDefault();
     var $form = $(this),
         name = $form.find('input[name="name"]').val(),
@@ -7,9 +8,30 @@ $(document).ready(function(){
         url = $form.attr('action'),
         type = $('.option-item.active').data('value');
     var body = { name, email, type}
-    console.log('helloooooo ------ ', body);
+    postToMailer(body, url);
+    });
 
-    var fields = [name, email]
+
+    $('#contributeForm').submit(function(e){
+      e.preventDefault();
+      var $form = $(this),
+          name = $form.find('input[name="name"]').val(),
+          email = $form.find('input[name="email"]').val(),
+          url = $form.attr('action'),
+          type = $('.option-item.active').data('value');
+      var body = { name, email, type}
+      postToMailer(body, url);
+      });
+
+});
+
+
+
+
+function postToMailer(payload, url){
+    console.log('[helloooooo] ------ ', payload);
+
+    var fields = [payload.name, payload.email, payload.type]
     for(var i = 0; i< fields.length; i++){
       var value = fields[i]
       if(isBlank(value)){
@@ -19,13 +41,13 @@ $(document).ready(function(){
       }
     }
     var fieldEmpty = $('input#send').hasClass('error');
-    var validatedEmail = isEmail(email);
+    var validatedEmail = isEmail(payload.email);
 
     if( validatedEmail && !fieldEmpty){
         $.ajax({
           type:'POST',
           url: url,
-          data: JSON.stringify(body),
+          data: JSON.stringify(payload),
           contentType: 'application/json'
         }).done(function(data){
             console.log('POST to subscribe done: ', data)
@@ -45,8 +67,8 @@ $(document).ready(function(){
            $('.error-network').show();
        })
     }
-    });
-});
+}
+
 
 
 function isBlank(str) {

@@ -69,7 +69,7 @@ p.contribute{
 
 .two-column{
     column-count: 2;
-    /* column-width: 400px; */
+    width: 65%;
 }
 
 .right{

@@ -3,6 +3,7 @@
     height: 100vh;
     top: 92vh;
     position: fixed;
+    left: 0;
     z-index: 1;
     background-color: #e6e6e6;
     box-shadow: 0 0 7px 0 #00000080;

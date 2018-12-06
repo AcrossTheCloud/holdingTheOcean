@@ -21,6 +21,6 @@ app.get('/', function(req, res){
 var router = express.Router();
 
 app.use('/subscribe', router);
-router.post('/', mailer.saveEmail);
+router.post('/', mailer.confirm);
 
 app.listen(3434, () => console.log('listening on 3434 '))
