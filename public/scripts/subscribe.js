@@ -10,6 +10,7 @@ $(document).ready(function(){
 
   $('#followForm').submit(function(e){
     e.preventDefault();
+    $('.message span').hide();
     var $form = $(this),
         name = $form.find('input[name="name"]').val(),
         email = $form.find('input[name="email"]').val(),
@@ -28,6 +29,7 @@ $(document).ready(function(){
 
     $('#contributeForm').submit(function(e){
       e.preventDefault();
+      $('.message span').hide(); 
       var $form = $(this),
           name = $form.find('input[name="name"]').val(),
           email = $form.find('input[name="email"]').val(),
