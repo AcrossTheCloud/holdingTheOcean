@@ -70,3 +70,10 @@ p{
 .right{
     float: right;
 }
+
+
+#tbaLogo{
+    width: 100px;
+    margin-left: 40px;
+    margin-top: 20px;
+}

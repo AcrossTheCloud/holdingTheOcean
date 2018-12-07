@@ -24,6 +24,12 @@
   form{
       margin: 0 10%;
   }
+
+  #tbaLogo{
+      width: 100px;
+      margin-left: 40px;
+      margin-top: 20px;
+  }
 }
  /* larger than mobile */
 @media (min-width: 768px) {
@@ -47,7 +53,14 @@
         column-count: 2;
         width: 65%;
     }
-
+    #tbaLogo{
+        width: 100px;
+        margin: 20px;
+        float: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 
