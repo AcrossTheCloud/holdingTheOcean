@@ -27,7 +27,7 @@
         <div class="mobile">ocean<br/>archive</div>
         <div id="timer"></div>
     </header>
-    
+
     <div class="info-panel">
         <nav id="options">
             <span class="option-item" data-value="about">About</span>
@@ -49,6 +49,11 @@
             <form action="/subscribe" id="followForm">
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
+                <div class="message">
+                    <span class="error-message"> Oh no! Something went wrong. </span>
+                    <span class="success-message"> All set, you are subscribed! </span>
+                    <span class="error-network"> ops. network error, check back again </span>
+                </div>
                 <div id="jelly"></div>
                 <input type="submit" id="send" value="Submit">
             </form>
@@ -59,21 +64,18 @@
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
                 <input type="text" name="subject" placeholder="Subject">
-                <textarea type="text" name="Message" placeholder="Message"></textarea>
+                <textarea type="text" name="message" placeholder="Message"></textarea>
+                <div class="message">
+                    <span class="error-message"> Oh no! Something went wrong. </span>
+                    <span class="success-message"> Your message has been sent! </span>
+                    <span class="error-network"> ops. network error, email us please. </span>
+                </div>
                 <div class="right">
                     <div id="jelly"></div>
                     <input type="submit" id="send" value="Submit">
                 </div>
             </form>
-            <span class="error-message">
-                check the fields again, something is not right
-            </span>
-            <span class="success-message">
-                subscribe, all good to go
-            </span>
-            <span class="error-network">
-                ops. something went wrong, check back again
-            </span>
+
         </div>
     </div>
 

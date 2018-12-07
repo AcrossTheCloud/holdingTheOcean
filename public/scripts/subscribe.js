@@ -1,3 +1,11 @@
+
+var errorMessage = {
+    email: 'please enter corrent email',
+    general: 'Oh no! Something went wrong.',
+    network: 'ops. network error, email us please.'
+}
+
+
 $(document).ready(function(){
 
   $('#followForm').submit(function(e){
@@ -7,8 +15,14 @@ $(document).ready(function(){
         email = $form.find('input[name="email"]').val(),
         url = $form.attr('action'),
         type = $('.option-item.active').data('value');
-    var body = { name, email, type}
-    postToMailer(body, url);
+    var body = {name, email, type};
+
+    if(isEmail(email)){
+        postToMailer(body, url);
+    }else{
+        $('.error-message').text('please enter corrent email').show();
+    }
+
     });
 
 
@@ -17,37 +31,42 @@ $(document).ready(function(){
       var $form = $(this),
           name = $form.find('input[name="name"]').val(),
           email = $form.find('input[name="email"]').val(),
+          subject = $form.find('input[name="subject"]').val(),
+          message = $form.find('input[name="message"]').val(),
           url = $form.attr('action'),
           type = $('.option-item.active').data('value');
-      var body = { name, email, type}
-      postToMailer(body, url);
-      });
+
+      var body = {name, email, subject, message, type}
+      if(isEmail(email)){
+          postToMailer(body, url);
+      }else{
+          $('.error-message').text(errorMessage.email).show();
+      }
+  });
 
 });
 
 
 
+function postToMailer(body, url){
 
-function postToMailer(payload, url){
-    console.log('[helloooooo] ------ ', payload);
+    var fieldEmpty = false;
+    $.each(body, function(key, value) {
+        console.log(key, value);
+        if(isBlank(value)){
+          $(`[name=${key}]`).addClass('error');
+          $('input#send').addClass('error');
+          $('.error-message').text(errorMessage.general).show();
+          fieldEmpty = true;
+        }
+    });
 
-    var fields = [payload.name, payload.email, payload.type]
-    for(var i = 0; i< fields.length; i++){
-      var value = fields[i]
-      if(isBlank(value)){
-        $('input').eq(i).siblings('.marker').eq(i).addClass('marker-error')
-        $('input#send').addClass('error');
-        $('.error-message').show();
-      }
-    }
-    var fieldEmpty = $('input#send').hasClass('error');
-    var validatedEmail = isEmail(payload.email);
 
-    if( validatedEmail && !fieldEmpty){
+    if( !fieldEmpty ){
         $.ajax({
           type:'POST',
           url: url,
-          data: JSON.stringify(payload),
+          data: JSON.stringify(body),
           contentType: 'application/json'
         }).done(function(data){
             console.log('POST to subscribe done: ', data)
@@ -66,7 +85,7 @@ function postToMailer(payload, url){
            $('input#send').addClass('error');
            $('.error-network').show();
        })
-    }
+   }
 }
 
 

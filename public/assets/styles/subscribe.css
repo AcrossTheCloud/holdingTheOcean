@@ -101,15 +101,19 @@ input#send.error{
 
 .error-network,
 .error-message{
-  color: #FF2700;
+  color: #FF0000;
   display: none;
-  font-size: 12px;
 }
 
 .success-message{
-    color: #00FF23;
+    color: #4D8A7C;
     display: none;
-    font-size: 12px;
+}
+
+input.error,
+textarea.error{
+    border: 1px red solid;
+    background: rgba(255, 0, 0, 0.05);
 }
 
 input:focus,
