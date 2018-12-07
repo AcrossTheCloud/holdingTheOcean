@@ -14,7 +14,7 @@ h1, h2, h3 {
 }
 
 nav{
-    margin: 20px;
+    margin: 20px 40px;
 }
 header{
     color: #ffff00;
@@ -46,16 +46,22 @@ p{
 }
 
 @media (min-width: 768px){
-    .closebtn{
-        display: none !important;
-    }
+
+}
+
+.info-panel.open .closebtn{
+    display: block;
 }
 
 .closebtn{
-    width: 30px;
-    height: 30px;
+    right: 0;
+    margin: 20px;
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('../icons/close.png');
+    background-image: url('../icons/Xclose.png');
 }
 
 .one-column{

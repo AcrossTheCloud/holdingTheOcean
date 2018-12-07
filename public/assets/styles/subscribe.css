@@ -67,8 +67,8 @@ div#jelly{
     top: 8px;
     position: relative;
     background: url('/icons/jelly.svg') no-repeat top left;
-    width: 2em;
-    height: 2.5em;
+    width: 18px;
+    height: 23px;
     background-size: contain;
     margin-bottom: 0;
     display: inline-block;
@@ -76,25 +76,16 @@ div#jelly{
 
 div#jelly:hover{
     background: url('/icons/jelly_yellow.svg') no-repeat top left;
-    width: 2em;
-    height: 2.5em;
+    width: 18px;
+    height: 23px;
     background-size: contain;
     cursor: pointer;
-}
-div#jelly.success{
-
 }
 
 div#jelly.error{
     background: url('/icons/jelly_yellow.svg') no-repeat top left;
 }
 
-input#send.success{
-
-}
-input#send.error{
-
-}
 .marker-error{
     background: #ff2700;
 }

@@ -19,7 +19,6 @@
 .info-panel a {
     text-decoration: none;
     color: #000;
-    display: block;
     transition: 0.3s;
 }
 
@@ -53,8 +52,8 @@
 
 @media (max-width: 769px) {
     .info-panel.open{
-        height: 70vh;
-        top: 30vh;
+        height: 72%;
+        top: 28%;
     }
     .closebtn{
         margin: 0 auto;

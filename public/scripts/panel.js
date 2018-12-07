@@ -8,9 +8,9 @@ $(document).ready(function(){
         $(`#${key}Panel`).addClass('active');
         $('.info-panel').addClass('open');
 
-        if(window.innerWidth <= 768){
-            $('header').hide();
-        }
+        // if(window.innerWidth <= 768){
+        //     $('header').hide();
+        // }
     });
 
     $('div#jelly').click(function(){
@@ -19,5 +19,8 @@ $(document).ready(function(){
 });
 
 function closeNav() {
-
+    $('.info-panel').removeClass('open');
+    // if(window.innerWidth <= 768){
+    //     $('header').hide();
+    // }
 }

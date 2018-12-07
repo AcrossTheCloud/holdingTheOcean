@@ -1,6 +1,6 @@
 
 var errorMessage = {
-    email: 'please enter corrent email',
+    email: 'please enter correct email',
     general: 'Oh no! Something went wrong.',
     network: 'ops. network error, email us please.'
 }
