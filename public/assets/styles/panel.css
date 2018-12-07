@@ -52,8 +52,8 @@
 
 @media (max-width: 769px) {
     .info-panel.open{
-        height: 72%;
-        top: 28%;
+        height: 100%;
+        top: 0%;
     }
     .closebtn{
         margin: 0 auto;
