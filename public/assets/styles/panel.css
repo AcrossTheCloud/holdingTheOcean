@@ -35,7 +35,7 @@
   cursor: pointer;
   border: none;
   background: transparent;
-  margin: .7em;
+  margin-right: 1.4em;
 }
 
 .option-item.active,
