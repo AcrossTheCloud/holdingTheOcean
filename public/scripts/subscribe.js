@@ -32,7 +32,7 @@ $(document).ready(function(){
           name = $form.find('input[name="name"]').val(),
           email = $form.find('input[name="email"]').val(),
           subject = $form.find('input[name="subject"]').val(),
-          message = $form.find('input[name="message"]').val(),
+          message = $form.find('textarea[name="message"]').val(),
           url = $form.attr('action'),
           type = $('.option-item.active').data('value');
 
