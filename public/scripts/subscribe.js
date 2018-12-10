@@ -29,7 +29,7 @@ $(document).ready(function(){
 
     $('#contributeForm').submit(function(e){
       e.preventDefault();
-      $('.message span').hide(); 
+      $('.message span').hide();
       var $form = $(this),
           name = $form.find('input[name="name"]').val(),
           email = $form.find('input[name="email"]').val(),
@@ -77,7 +77,8 @@ function postToMailer(body, url){
             }else{
                 $('input#send').addClass('success');
                 $('.success-message').show();
-                $('input').val('');
+                $('input[type="text"]').val('');
+                $('input[type="email"]').val('');
                  $('textarea').val('');
             }
 

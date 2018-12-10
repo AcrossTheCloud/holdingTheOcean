@@ -8,11 +8,18 @@ $(document).ready(function(){
         $(`#${key}Panel`).addClass('active');
         $('.info-panel').addClass('open');
 
-        $('.message span').hide(); 
+        $('.message span').hide();
     });
 
     $('div#jelly').click(function(){
         $(this).siblings('#send').click();
+    });
+
+
+    $('header').click(function(){
+        if($('.info-panel').hasClass('open')){
+            $('.info-panel').removeClass('open');
+        }
     });
 });
 

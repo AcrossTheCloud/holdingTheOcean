@@ -26,7 +26,7 @@
   }
 
   #tbaLogo{
-      width: 100px;
+      width: 150px;
       margin-left: 40px;
       margin-top: 20px;
   }
@@ -45,16 +45,13 @@
     .callToAction{
         width: 60%;
     }
-    p.contribute{
-        width: 40%;
-    }
-
     .two-column{
-        column-count: 2;
-        width: 65%;
+        column-count: 3;
+        width: 95%;
+        column-gap: 25px;
     }
     #tbaLogo{
-        width: 100px;
+        width: 150px;
         margin: 20px;
         float: right;
         position: absolute;

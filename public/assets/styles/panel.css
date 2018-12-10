@@ -45,8 +45,12 @@
 
 @media (min-width: 768px){
     .info-panel.open{
-        height: 50%;
-        top: 50%;
+        height: 60%;
+        top: 40%;
+    }
+
+    .info-panel.open #tbaLogo{
+        position: fixed;
     }
 }
 
