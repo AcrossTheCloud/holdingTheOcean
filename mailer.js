@@ -90,17 +90,12 @@ async function sendConfirmation(body, isContribute){
 
     var mailOption = {
       from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
-      to: req.body.email,
+      to: body.email,
       subject: subject,
       text: message
     }
 
-    try {
-        let sendmail = await transport.sendMail(mailOption);
-        console.log(sendmail);
-    } catch (err) {
-        console.log(err);
-    }
+    let sendmail = await transport.sendMail(mailOption);
     
 }
 
