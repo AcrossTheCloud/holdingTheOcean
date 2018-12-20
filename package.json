@@ -17,11 +17,8 @@
   },
   "homepage": "https://github.com/qclin/holdingTheOcean#readme",
   "dependencies": {
-    "aws-sdk": "^2.361.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "fs": "0.0.1-security",
     "nodemailer": "^4.7.0",
     "path": "^0.12.7",
     "q": "^1.5.1"
