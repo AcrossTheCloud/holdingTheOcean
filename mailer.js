@@ -67,7 +67,7 @@ async function subscribeToMaillist(body) {
     } else {
         // save email in DB
         const putItemParams = {
-            TableName: 'ocean-mailing',
+            TableName: process.env.TABLE_NAME,
             Item: {
                 userId: body.email,
                 userName: body.name,
