@@ -28,12 +28,12 @@ var countDown = setInterval(function() {
 
 $(document).ready(function(){
     var videoList = [
-        "https://s3.eu-west-2.amazonaws.com/ocean-holding/Divers_01",
-        "https://s3.eu-west-2.amazonaws.com/ocean-holding/Turtle_Glowing+Fishies",
-        "https://s3.eu-west-2.amazonaws.com/ocean-holding/%5B1%5DDeepstar",
-        "https://s3.eu-west-2.amazonaws.com/ocean-holding/%5B2%5DDeepstar",
-        "https://s3.eu-west-2.amazonaws.com/ocean-holding/%5B3%5DDeepstar",
-        "https://s3.eu-west-2.amazonaws.com/ocean-holding/%5B4%5DDeepstar"
+        "https://oceanarchive.io/media/Divers_01",
+        "https://oceanarchive.io/media/Turtle_Glowing+Fishies",
+        "https://oceanarchive.io/media/%5B1%5DDeepstar",
+        "https://oceanarchive.io/media/%5B2%5DDeepstar",
+        "https://oceanarchive.io/media/%5B3%5DDeepstar",
+        "https://oceanarchive.io/media/%5B4%5DDeepstar"
     ]
 
     var videoFile = videoList[Math.floor(Math.random() * videoList.length)];
