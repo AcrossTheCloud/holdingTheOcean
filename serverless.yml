@@ -50,6 +50,9 @@ resources:
           -
             AttributeName: email
             KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 2
+          WriteCapacityUnits: 2
         TableName: holdingTheOcean-email-${opt:stage, self:provider.stage}
 
 functions:
