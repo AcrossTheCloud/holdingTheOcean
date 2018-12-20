@@ -44,11 +44,11 @@ resources:
       Properties:
         AttributeDefinitions:
           -
-            AttributeName: email
+            AttributeName: userId
             AttributeType: S
         KeySchema:
           -
-            AttributeName: email
+            AttributeName: userId
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 2
