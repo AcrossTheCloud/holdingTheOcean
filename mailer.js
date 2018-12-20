@@ -61,7 +61,7 @@ async function subscribeToMaillist(body) {
         }
     };
 
-    let data = await docClient.getItem(getItemParams).promise();
+    let data = await docClient.get(getItemParams).promise();
     if (data.Item) {
         throw 'email already exists ' + body.email
     } else {
@@ -74,7 +74,7 @@ async function subscribeToMaillist(body) {
                 signUpDate: new Date().toISOString(),
             }
         };
-        await docClient.putItem(putItemParams).promise();
+        await docClient.put(putItemParams).promise();
         sendConfirmation(body);
     }
 }
