@@ -21,7 +21,7 @@ $(document).ready(function(){
     if(isEmail(email)){
         postToMailer(body, url);
     }else{
-        $('.error-message').text('please enter corrent email').show();
+        $('.error-message').text('please enter correct email').show();
     }
 
     });
