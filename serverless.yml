@@ -49,6 +49,7 @@ resources:
         KeySchema:
           -
             AttributeName: email
+            KeyType: HASH
         TableName: holdingTheOcean-email-${opt:stage, self:provider.stage}
 
 functions:
