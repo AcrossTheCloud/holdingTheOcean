@@ -15,9 +15,9 @@
         <title></title>
         <link rel="stylesheet" href="/styles/main.css"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="/main.js"></script>
-        <script src="/panel.js"></script>
-        <script src="/subscribe.js"></script>
+        <script src="/scripts/main.js"></script>
+        <script src="/scripts/panel.js"></script>
+        <script src="/scripts/subscribe.js"></script>
 
     </head>
     <body>
@@ -47,7 +47,7 @@
         </div>
         <div id="followPanel" class="panel-content">
             <p class="callToAction">Join the Ocean Archive Mailing List to receive updates on our public programs, exhibitions, events, and initiatives.</p>
-            <form action="/subscribe" id="followForm">
+            <form action="https://api.oceanarchive.io/subscribe" id="followForm">
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
                 <div class="message">
@@ -61,7 +61,7 @@
         </div>
         <div id="contributePanel" class="panel-content">
             <p class="callToAction">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us directly at <a href="mailto:archive@tba21.org?subject=Landing%20"> archive@tba21.org </a> </p>
-            <form action="/subscribe" id="contributeForm">
+            <form action="https://api.oceanarchive.io/subscribe" id="contributeForm">
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
                 <input type="text" name="subject" placeholder="Subject">

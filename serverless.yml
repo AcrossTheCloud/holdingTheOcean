@@ -57,7 +57,7 @@ resources:
 
 functions:
   confirm:
-    handler: lib/mailer.confirm
+    handler: mailer.confirm
     events:
       - http:
           path: subscribe
