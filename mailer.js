@@ -35,7 +35,7 @@ module.exports.confirm  = async (event, context, callback) => {
         const response = {
             statusCode: 200,
             headers: CORSHeaders,
-            body: 'OK'
+            body: JSON.stringify({"message": "OK"})
         }
         callback(null,response);
     } catch (error) {
