@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+  post_build:
+    commands:
+      - aws s3 cp --recursive public/ s3://holding-the-ocean/
+      - npm install -g serverless
+      - serverless deploy
