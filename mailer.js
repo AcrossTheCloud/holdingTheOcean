@@ -21,7 +21,7 @@ const CORSHeaders = {
 
 
 // DYNAMO DB
-const docClient = new AWS.DynamoDB({apiVersion: '2012-10-08'}).DocumentClient;
+const docClient = new AWS.DynamoDB({apiVersion: '2012-10-08'}).DocumentClient();
 
 module.exports.confirm  = async (event, context, callback) => {
     let body = JSON.parse(event.body);
