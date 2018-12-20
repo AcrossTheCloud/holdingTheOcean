@@ -55,7 +55,7 @@ async function subscribeToMaillist(body) {
 
     // params to look for existing email in DB
     const getItemParams = {
-        TableName: process.env.TABLE_NAME,
+        TableName: process.env.EMAIL_TABLE,
         Key: {
             "userId": body.email
         }
@@ -67,7 +67,7 @@ async function subscribeToMaillist(body) {
     } else {
         // save email in DB
         const putItemParams = {
-            TableName: process.env.TABLE_NAME,
+            TableName: process.env.EMAIL_TABLE,
             Item: {
                 userId: body.email,
                 userName: body.name,
