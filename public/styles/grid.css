@@ -18,7 +18,7 @@
   }
 
   .option-item{
-      margin-right: .7em;
+      padding: 5px;
   }
 
   form{
@@ -43,20 +43,18 @@
         right: 0;
     }
     .callToAction{
-        width: 60%;
+        width: 50%;
     }
     .two-column{
-        column-count: 3;
+        column-count: 2;
         width: 95%;
         column-gap: 25px;
     }
     #tbaLogo{
         width: 150px;
         margin: 20px;
-        float: right;
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: 20px;
     }
 }
 

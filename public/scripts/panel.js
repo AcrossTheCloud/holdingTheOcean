@@ -25,4 +25,5 @@ $(document).ready(function(){
 
 function closeNav() {
     $('.info-panel').removeClass('open');
+    $('.option-item').removeClass('active');
 }

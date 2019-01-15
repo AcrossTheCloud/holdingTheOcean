@@ -47,15 +47,17 @@ span.note,
 input::placeholder,
 textarea::placeholder,
 input[type='submit']{
-    font-family: 'NHaasGroteskDSPro-65Md', sans-serif;
+    font-family: 'GravurCondensed-Light', sans-serif;
     font-size: 13px;
 }
-
+nav span{
+    text-transform: uppercase;
+}
 p.callToAction,
 p.contribute{
-    font-family: 'NHaasGroteskDSPro-55Rg', sans-serif;
-    font-size: 24px;
-    line-height: 30px;
+    font-family: 'GravurCondensed-Light', sans-serif;
+    font-size: 22px;
+    line-height: 27px;
     letter-spacing: .05px;
 }
 
