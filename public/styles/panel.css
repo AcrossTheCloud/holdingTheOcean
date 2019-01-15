@@ -35,22 +35,18 @@
   cursor: pointer;
   border: none;
   background: transparent;
-  margin-right: 1.4em;
+  padding: 10px;
 }
 
 .option-item.active,
 .option-item:hover {
-    border-bottom: 3px solid #000;
+    border: .5px solid #1F1F1F;
 }
 
 @media (min-width: 768px){
     .info-panel.open{
-        height: 60%;
-        top: 40%;
-    }
-
-    .info-panel.open #tbaLogo{
-        position: fixed;
+        height: 50%;
+        top: 50%;
     }
 }
 

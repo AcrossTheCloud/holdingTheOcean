@@ -60,11 +60,13 @@ p{
     height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('../icons/Xclose.png');
+    background-image: url('../icons/close_thin.png');
 }
-
+.text-hyperlink{
+    text-decoration: underline !important;
+}
 .one-column{
-    max-width: 800px;
+    max-width: 720px;
 }
 
 .right{
