@@ -12,7 +12,7 @@ form span{
     padding-left: 16px;
 }
 input{
-    border: solid 0.5px #000000;
+    border: solid 0.5px #fff;
     height: 30px;
     background: transparent;
     padding-left: 8px;
@@ -27,7 +27,7 @@ textarea{
     padding-top: 8px;
     padding-left: 8px;
     background: transparent;
-    border: 1px solid #000;
+    border: 1px solid #fff;
 }
 
 input[type='text'],
@@ -36,22 +36,22 @@ input[type='email']{
     max-width: 80%;
 }
 ::-webkit-input-placeholder{
-    color: #000;
+    color: #fff;
     top: -3px;
     position: relative;
 }
 ::-moz-placeholder{
-    color: #000;
+    color: #fff;
     top: -3px;
     position: relative;
 }
 :-ms-input-placeholder{
-    color: #000;
+    color: #fff;
     top: -3px;
     position: relative;
 }
 :-moz-placeholder {
-    color: #000;
+    color: #fff;
     top: -3px;
     position: relative;
 }
@@ -61,6 +61,7 @@ input[type='submit']{
   bottom: 0;
   cursor: pointer;
   margin-top: 0;
+  color: #fff; 
 }
 div#jelly{
     margin-left: 23px;
