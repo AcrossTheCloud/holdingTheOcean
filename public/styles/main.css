@@ -12,12 +12,10 @@ h1, h2, h3 {
     color: #ffff00;
 }
 
-nav{
-    margin: 20px 40px;
-}
 header{
     color: #ffff00;
     margin-bottom: 100px;
+    margin: 40px 20px;
 }
 
 #bgVideo{
@@ -38,19 +36,18 @@ hr{
 }
 
 p{
-    padding:  20px 40px;
     margin: 0;
     vertical-align: top;
     display: inline-block;
 }
 
-@media (min-width: 768px){
-
+@media (min-width: 375px){
+    .info-panel.open .closebtn{
+        display: block;
+    }
 }
 
-.info-panel.open .closebtn{
-    display: block;
-}
+
 
 .closebtn{
     right: 0;
@@ -60,22 +57,15 @@ p{
     height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('../icons/close_thin.png');
+    background-image: url('../icons/close_inverse.png');
 }
 .text-hyperlink{
     text-decoration: underline !important;
 }
 .one-column{
-    max-width: 720px;
+    max-width: 610px;
 }
 
 .right{
     float: right;
-}
-
-
-#tbaLogo{
-    width: 150px;
-    margin-left: 40px;
-    margin-top: 20px;
 }

@@ -9,6 +9,9 @@
   header{
       font-size: 5.8em;
   }
+  header.open{
+      display: none;
+  }
   body{
       overflow: hidden;
   }
@@ -18,21 +21,30 @@
   }
 
   .option-item{
-      padding: 5px;
+      padding: 3px;
   }
 
   form{
-      margin: 0 10%;
+      margin: 0 20px;
   }
 
   #tbaLogo{
       width: 150px;
-      margin-left: 40px;
-      margin-top: 20px;
+      margin: 40px 20px;
+  }
+  nav{
+      margin: 20px;
+  }
+  p{
+     padding: 20px 20px 40px;
   }
 }
  /* larger than mobile */
 @media (min-width: 768px) {
+
+    nav{
+        margin: 20px 40px;
+    }
     .mobile{
         display: none;
     }
@@ -48,13 +60,17 @@
     .two-column{
         column-count: 2;
         width: 95%;
-        column-gap: 25px;
+        column-gap: 40px;
+        max-width: 1260px;
     }
     #tbaLogo{
         width: 150px;
         margin: 20px;
         position: absolute;
         bottom: 20px;
+    }
+    p{
+        padding:  20px 40px;
     }
 }
 
