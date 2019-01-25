@@ -1,5 +1,3 @@
-var countDownDate = new Date("May 7, 2019 00:00:00").getTime();
-
 $(document).ready(function(){
     var videoList = [
         "https://oceanarchive.io/media/Divers_01",
