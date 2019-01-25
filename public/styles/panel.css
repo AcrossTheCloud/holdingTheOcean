@@ -6,7 +6,6 @@
     left: 0;
     z-index: 1;
     background: rgba(230, 230, 230, .3);
-    box-shadow: 0 0 7px 0 #00000080;
     overflow-x: hidden;
     transition: 0.5s;
     color: #fff;
