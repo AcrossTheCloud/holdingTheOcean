@@ -39,22 +39,18 @@ input[type='email']{
 }
 ::-webkit-input-placeholder{
     color: #fff;
-    top: -3px;
     position: relative;
 }
 ::-moz-placeholder{
     color: #fff;
-    top: -3px;
     position: relative;
 }
 :-ms-input-placeholder{
     color: #fff;
-    top: -3px;
     position: relative;
 }
 :-moz-placeholder {
     color: #fff;
-    top: -3px;
     position: relative;
 }
 
