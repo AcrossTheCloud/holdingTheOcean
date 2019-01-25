@@ -60,6 +60,11 @@ nav span{
     font-size: 13px;
     text-transform: uppercase;
 }
+p.creditText {
+    font-family: 'GravurCondensed-Regular', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+}
 p.callToAction,
 p.contribute{
     font-family: 'GravurCondensed-Light', sans-serif;
