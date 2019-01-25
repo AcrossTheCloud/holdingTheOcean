@@ -49,6 +49,12 @@ input[type='submit']{
     font-family: 'GravurCondensed-Light', sans-serif;
     font-size: 13px;
 }
+input::placeholder {
+    text-transform: uppercase;
+}
+textarea::placeholder {
+    text-transform: uppercase;
+}
 nav span{
     font-family: 'GravurCondensed-Regular', sans-serif;
     font-size: 13px;
