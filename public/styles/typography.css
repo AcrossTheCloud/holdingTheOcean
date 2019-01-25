@@ -42,7 +42,6 @@ header{
     letter-spacing: -4px;
 }
 
-nav span,
 span.note,
 input::placeholder,
 textarea::placeholder,
@@ -51,6 +50,8 @@ input[type='submit']{
     font-size: 13px;
 }
 nav span{
+    font-family: 'GravurCondensed-Regular', sans-serif;
+    font-size: 13px;
     text-transform: uppercase;
 }
 p.callToAction,
