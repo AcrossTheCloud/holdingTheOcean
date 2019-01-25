@@ -23,7 +23,7 @@
     <body>
 
     <header>
-        <div class="desktop">oceanarchive
+        <div class="desktop">ocean archive
             <br/>under construction
             <br/>oceanarchive.io
         </div>
@@ -34,14 +34,21 @@
     <div class="info-panel">
         <nav id="options">
             <span class="option-item" data-value="about">About</span>
+            <span style="padding-left: 20px;"></span>
             <span class="option-item" data-value="openAPI"> Open Ocean API</span>
+            <span style="padding-left: 20px;"></span>
             <span class="option-item" data-value="follow">Follow</span>
+            <span style="padding-left: 20px;"></span>
             <span class="option-item" data-value="contribute">Contribute</span>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
         </nav>
         <div id="aboutPanel" class="panel-content">
-            <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into an curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
-            <img id="tbaLogo" src="./icons/tba21-academy-logo.png"/>
+            <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into a curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
+            <div class="credit">
+                <p class="callToAction">IMAGES COURTESY OF DAVID GRUBER</p>
+                <br />
+                <img style="width:150px; padding: 20px 40px;" src="./icons/tba21-academy-logo.png"/>
+            </div>
         </div>
         <div id="openAPIPanel" class="panel-content">
                 <p class="callToAction two-column">
@@ -63,7 +70,7 @@
             </form>
         </div>
         <div id="contributePanel" class="panel-content">
-            <p class="callToAction">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us directly at <a href="mailto:archive@tba21.org?subject=Landing%20"> archive@tba21.org </a> </p>
+            <p class="callToAction">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us.</p>
             <form action="https://api.oceanarchive.io/subscribe" id="contributeForm">
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">

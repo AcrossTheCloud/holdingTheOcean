@@ -57,7 +57,7 @@ p{
     height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('../icons/close_inverse.png');
+    background-image: url('../icons/close_inverse_2.png');
 }
 .text-hyperlink{
     text-decoration: underline !important;
