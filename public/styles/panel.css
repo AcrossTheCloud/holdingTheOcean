@@ -41,6 +41,8 @@
 
 .option-item.active,
 .option-item:hover {
+    padding-left: 4.75px;
+    padding-right: 4.75px;
     border: .5px solid #fff;
 }
 
