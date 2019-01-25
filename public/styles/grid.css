@@ -7,7 +7,7 @@
     display: none;
   }
   header{
-      font-size: 5.8em;
+      font-size: 3em;
   }
   header.open{
       display: none;
@@ -39,7 +39,6 @@
      padding: 20px 20px 40px;
   }
     .credit{
-        position: absolute;
         bottom: 20px;
     }
 }

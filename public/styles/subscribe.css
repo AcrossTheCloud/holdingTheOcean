@@ -39,22 +39,18 @@ input[type='email']{
 }
 ::-webkit-input-placeholder{
     color: #fff;
-    top: -3px;
     position: relative;
 }
 ::-moz-placeholder{
     color: #fff;
-    top: -3px;
     position: relative;
 }
 :-ms-input-placeholder{
     color: #fff;
-    top: -3px;
     position: relative;
 }
 :-moz-placeholder {
     color: #fff;
-    top: -3px;
     position: relative;
 }
 
@@ -69,7 +65,7 @@ div#jelly{
     margin-left: 23px;
     top: 8px;
     position: relative;
-    background: url('/icons/jelly_white.svg') no-repeat top left;
+    background: url('/icons/jelly.svg') no-repeat top left;
     width: 18px;
     height: 23px;
     background-size: contain;
