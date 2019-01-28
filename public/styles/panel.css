@@ -32,17 +32,16 @@
 }
 
 .option-item {
+  border: .5px solid rgba(230, 230, 230, .0);
   cursor: pointer;
-  border: none;
+  margin:.5px;
   background: transparent;
-  padding: 5px;
+  padding: 4.75px;
   padding-bottom: 3px;
 }
 
 .option-item.active,
 .option-item:hover {
-    padding-left: 4.75px;
-    padding-right: 4.75px;
     border: .5px solid #fff;
 }
 
