@@ -61,7 +61,7 @@ input[type='submit']{
   margin-top: 0;
   color: #fff; 
 }
-div#jelly{
+div.jelly{
     margin-left: 23px;
     top: 8px;
     position: relative;
@@ -73,7 +73,7 @@ div#jelly{
     display: inline-block;
 }
 
-div#jelly:hover{
+div.jelly:hover{
     background: url('/icons/jelly_yellow.svg') no-repeat top left;
     width: 18px;
     height: 23px;
@@ -81,7 +81,7 @@ div#jelly:hover{
     cursor: pointer;
 }
 
-div#jelly.error{
+div.jelly.error{
     background: url('/icons/jelly_yellow.svg') no-repeat top left;
 }
 

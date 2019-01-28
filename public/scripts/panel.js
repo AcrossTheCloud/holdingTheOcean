@@ -12,14 +12,15 @@ $(document).ready(function(){
         $('.message span').hide();
     });
 
-    $('div#jelly').click(function(){
-        $(this).siblings('#send').click();
+    $('div.jelly').click(function(){
+        $(this).siblings('.send').click();
     });
 
 
     $('header').click(function(){
-        if($('.info-panel').hasClass('open')){
-            $('.info-panel').removeClass('open');
+        var $infoPanel = $('.info-panel');
+        if($infoPanel.hasClass('open')){
+            $infoPanel.removeClass('open');
         }
     });
 });
