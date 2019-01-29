@@ -32,12 +32,15 @@
 }
 
 .option-item {
-  border: .5px solid rgba(230, 230, 230, .0);
-  cursor: pointer;
-  margin:.5px;
-  background: transparent;
-  padding: 4.75px;
-  padding-bottom: 3px;
+    border: .5px solid rgba(230, 230, 230, .0);
+    cursor: pointer;
+    background: transparent;
+    padding: 4.75px 4.75px 3px 4.75px;
+    margin: .5px 20px .5px .5px;
+}
+
+.option-item:last-child {
+    margin-right: 0;
 }
 
 .option-item.active,
@@ -55,7 +58,7 @@
 @media (max-width: 769px) {
     .info-panel.open{
         height: 100%;
-        top: 0%;
+        top: 0;
     }
     .closebtn{
         margin: 0 auto;

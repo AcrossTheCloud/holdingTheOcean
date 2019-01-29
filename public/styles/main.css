@@ -14,8 +14,18 @@ h1, h2, h3 {
 
 header{
     color: #ffff00;
-    margin-bottom: 100px;
     margin: 40px 20px;
+    opacity: 1;
+
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+header.open {
+    opacity: 0.2;
 }
 
 #bgVideo{
@@ -48,16 +58,20 @@ p{
 }
 
 
-
-.closebtn{
+.closebtn {
     right: 0;
     margin: 20px;
     display: none;
     width: 20px;
     height: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('../icons/close_inverse_2.png');
+    cursor: pointer;
+
+}
+.closebtn .lines{
+    stroke:#fff;
+    stroke-linecap:square;
+    stroke-miterlimit:10;
+    stroke-width:0.5px;
 }
 .text-hyperlink{
     text-decoration: underline !important;

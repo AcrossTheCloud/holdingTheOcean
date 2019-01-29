@@ -7,6 +7,7 @@ $(document).ready(function(){
         $(this).addClass('active');
         $(`#${key}Panel`).addClass('active');
         $('.info-panel').addClass('open');
+
         $('header').addClass('open');
 
         $('.message span').hide();
@@ -28,4 +29,6 @@ $(document).ready(function(){
 function closeNav() {
     $('.info-panel').removeClass('open');
     $('.option-item').removeClass('active');
+
+    $('header').removeClass('open');
 }
