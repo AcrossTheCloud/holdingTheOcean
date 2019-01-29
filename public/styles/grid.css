@@ -33,7 +33,7 @@
       transition: opacity .5s;
   }
   header.open{
-      opacity: 0;
+      opacity: 0 !important;
   }
   body{
       overflow: hidden;
