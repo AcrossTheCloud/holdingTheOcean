@@ -6,7 +6,7 @@ $(document).ready(function(){
         "https://oceanarchive.io/media/%5B2%5DDeepstar",
         "https://oceanarchive.io/media/%5B3%5DDeepstar",
         "https://oceanarchive.io/media/%5B4%5DDeepstar"
-    ]
+    ];
 
     var videoFile = videoList[Math.floor(Math.random() * videoList.length)];
 

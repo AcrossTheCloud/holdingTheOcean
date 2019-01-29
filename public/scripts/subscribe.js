@@ -3,7 +3,7 @@ var errorMessage = {
     email: 'please enter correct email',
     general: 'Oh no! Something went wrong.',
     network: 'ops. network error, email us please.'
-}
+};
 
 
 $(document).ready(function(){
@@ -38,7 +38,7 @@ $(document).ready(function(){
           url = $form.attr('action'),
           type = $('.option-item.active').data('value');
 
-      var body = {name, email, subject, message, type}
+      var body = {name, email, subject, message, type};
       if(isEmail(email)){
           postToMailer(body, url);
       }else{
@@ -57,7 +57,7 @@ function postToMailer(body, url){
         console.log(key, value);
         if(isBlank(value)){
           $(`[name=${key}]`).addClass('error');
-          $('input#send').addClass('error');
+          $('input.send').addClass('error');
           $('.error-message').text(errorMessage.general).show();
           fieldEmpty = true;
         }
@@ -71,11 +71,11 @@ function postToMailer(body, url){
           data: JSON.stringify(body),
           contentType: 'application/json'
         }).done(function(data){
-            console.log('POST to subscribe done: ', data)
+            console.log('POST to subscribe done: ', data);
             if(data.error){
                 $('.error-message').text(data.error).show();
             }else{
-                $('input#send').addClass('success');
+                $('input.send').addClass('success');
                 $('.success-message').show();
                 $('input[type="text"]').val('');
                 $('input[type="email"]').val('');
@@ -83,9 +83,9 @@ function postToMailer(body, url){
             }
 
        }).fail(function(data){
-           console.log('POST to subscribe FAILED: ', data)
+           console.log('POST to subscribe FAILED: ', data);
 
-           $('input#send').addClass('error');
+           $('input.send').addClass('error');
            $('.error-network').show();
        })
    }

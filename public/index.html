@@ -2,18 +2,18 @@
 <html lang="en" dir="ltr">
     <head>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta http-equiv="Content-Type", content="text/html; charset=UTF-8"/>
-        <meta name="viewport", content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-        <meta name="keywords", content=""/>
-        <meta name="og:url", content=""/>
-        <meta name="og:type", content=""/>
-        <meta name="og:title", content=typeof(title) !== "ocean archive" ? title : "ocean archive"/>
-        <meta name="og:image", content=""/>
-        <meta name="og:description", content=""/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+        <meta name="keywords" content=""/>
+        <meta name="og:url" content=""/>
+        <meta name="og:type" content=""/>
+        <meta name="og:title" content="ocean archive"/>
+        <meta name="og:image" content=""/>
+        <meta name="og:description" content=""/>
 
-        <link rel="shortcut icon", href="", type="image/x-icon"></link>
-        <title></title>
-        <link rel="stylesheet" href="./styles/main.css"></link>
+        <link rel="shortcut icon" href="" type="image/x-icon"/>
+        <title>ocean archive</title>
+        <link rel="stylesheet" href="./styles/main.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="./scripts/main.js"></script>
         <script src="./scripts/panel.js"></script>
@@ -28,21 +28,23 @@
             <br/>oceanarchive.io
         </div>
         <div class="mobile">ocean archive
-        <br />under construction
-        <br />oceanarchive.io</div>
+            <br />under construction
+            <br />oceanarchive.io
+        </div>
 
     </header>
 
     <div class="info-panel">
         <nav id="options">
             <span class="option-item" data-value="about">About</span>
-            <span style="padding-left: 20px;"></span>
             <span class="option-item" data-value="openAPI"> Open Ocean API</span>
-            <span style="padding-left: 20px;"></span>
             <span class="option-item" data-value="follow">Follow</span>
-            <span style="padding-left: 20px;"></span>
             <span class="option-item" data-value="contribute">Contribute</span>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+
+            <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
+                <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
+            </svg>
+
         </nav>
         <div id="aboutPanel" class="panel-content">
             <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into a curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
@@ -53,9 +55,9 @@
             </div>
         </div>
         <div id="openAPIPanel" class="panel-content">
-                <p class="callToAction two-column">
-                    Using an application program interface (API), developers can set up the protocols which determine how different pieces of software interact with one another. Today, as many ocean scientists and marine-environment scholars work across both disciplines and databases to conduct their research, the possibility for enhanced collaboration and co-discovery is more present than ever. To achieve this end, and to make the databases that drive contemporary research more open, accessible, and inter-operable for the next generation of ocean explorers, the TBA21–Academy is stewarding the Open Ocean API, a data protocol initiative that calls upon key institutions, archives, and collections to formulate, confirm, and implement an open API policy to improve ocean data search-ability and discover-ability. As part of the wider development process of TBA21– Academy’s Ocean Archive, this initiative focuses on partnerships related to data policy and access protocols as a means to foster a more open, accessible, and collaborative environment for ocean research, scholarship, and advocacy.
-                </p>
+            <p class="callToAction two-column">
+                Using an application program interface (API), developers can set up the protocols which determine how different pieces of software interact with one another. Today, as many ocean scientists and marine-environment scholars work across both disciplines and databases to conduct their research, the possibility for enhanced collaboration and co-discovery is more present than ever. To achieve this end, and to make the databases that drive contemporary research more open, accessible, and inter-operable for the next generation of ocean explorers, the TBA21–Academy is stewarding the Open Ocean API, a data protocol initiative that calls upon key institutions, archives, and collections to formulate, confirm, and implement an open API policy to improve ocean data search-ability and discover-ability. As part of the wider development process of TBA21– Academy’s Ocean Archive, this initiative focuses on partnerships related to data policy and access protocols as a means to foster a more open, accessible, and collaborative environment for ocean research, scholarship, and advocacy.
+            </p>
         </div>
         <div id="followPanel" class="panel-content">
             <p class="callToAction">Join the Ocean Archive Mailing List to receive updates on our public programs, exhibitions, events, and initiatives.</p>
@@ -67,8 +69,8 @@
                     <span class="success-message"> All set, you are subscribed! </span>
                     <span class="error-network"> ops. network error, check back again </span>
                 </div>
-                <div id="jelly"></div>
-                <input type="submit" id="send" value="Submit">
+                <div class="jelly"></div>
+                <input type="submit" class="send" value="Submit">
             </form>
         </div>
         <div id="contributePanel" class="panel-content">
@@ -77,14 +79,14 @@
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
                 <input type="text" name="subject" placeholder="Subject">
-                <textarea type="text" name="message" placeholder="Message"></textarea>
+                <textarea name="message" placeholder="Message"></textarea>
                 <div class="message">
                     <span class="error-message"> Oh no! Something went wrong. </span>
                     <span class="success-message"> Your message has been sent! </span>
                     <span class="error-network"> ops. network error, email us please. </span>
                 </div>
-                <div id="jelly"></div>
-                <input type="submit" id="send" label="Submit">
+                <div class="jelly"></div>
+                <input type="submit" class="send">
             </form>
 
         </div>

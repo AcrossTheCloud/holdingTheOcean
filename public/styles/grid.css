@@ -1,3 +1,18 @@
+@media (min-width: 320px) and (max-width: 460px) {
+    header {
+        font-size: 3em !important;
+        margin: 27px 10px !important;
+    }
+
+    nav#options {
+        margin: 20px 10px !important;
+    }
+    .info-panel.open .option-item {
+        margin: 0 19px 5px !important;
+        display: inline-block;
+    }
+}
+
 /* mobile */
 @media (min-width: 320px) and (max-width: 768px){
   .mobile{
@@ -6,11 +21,19 @@
   .desktop{
     display: none;
   }
-  header{
-      font-size: 3em;
+  header {
+      font-size: 3.5em;
+      letter-spacing: 0.1em;
+      opacity: 1;
+
+      -webkit-transition: opacity .5s;
+      -moz-transition: opacity .5s;
+      -ms-transition: opacity .5s;
+      -o-transition: opacity .5s;
+      transition: opacity .5s;
   }
   header.open{
-      display: none;
+      opacity: 0 !important;
   }
   body{
       overflow: hidden;
@@ -19,9 +42,12 @@
       height: 100%;
       right: -55%;
   }
-
+  nav {
+      margin: 20px ;
+  }
   .option-item{
       padding: 3px;
+      margin-right: 10px
   }
 
   form{
@@ -32,12 +58,13 @@
       width: 150px;
       margin: 40px 20px;
   }
-  nav{
-      margin: 20px;
-  }
   p{
-     padding: 20px 20px 40px;
+     margin: 0 20px;
+     padding: 20px 10px 40px;
   }
+    p.creditText {
+        padding: 10px 20px;
+    }
     .credit{
         bottom: 20px;
     }

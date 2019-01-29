@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve public/"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/qclin/holdingTheOcean#readme",
   "dependencies": {
     "nodemailer": "^4.7.0"
+  },
+  "devDependencies": {
+    "serve": "^10.1.1"
   }
 }
