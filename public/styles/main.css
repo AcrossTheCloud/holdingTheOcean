@@ -22,6 +22,8 @@ header{
     -ms-transition: opacity .5s;
     -o-transition: opacity .5s;
     transition: opacity .5s;
+
+    cursor: default;
 }
 
 header.open {
@@ -49,14 +51,8 @@ p{
   
     vertical-align: top;
     display: inline-block;
+    cursor: default;
 }
-
-@media (min-width: 375px){
-    .info-panel.open .closebtn{
-        display: block;
-    }
-}
-
 
 .closebtn {
     right: 0;
@@ -82,4 +78,8 @@ p{
 
 .right{
     float: right;
+}
+
+.info-panel.open .closebtn {
+    display: block;
 }

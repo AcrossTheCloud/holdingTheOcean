@@ -19,16 +19,13 @@ $(document).ready(function(){
 
 
     $('header').click(function(){
-        var $infoPanel = $('.info-panel');
-        if($infoPanel.hasClass('open')){
-            $infoPanel.removeClass('open');
-        }
+        closeNav();
     });
 });
 
 function closeNav() {
     $('.info-panel').removeClass('open');
-    $('.option-item').removeClass('active');
+    $('.option-item.active').removeClass('active');
 
     $('header').removeClass('open');
 }

@@ -23,7 +23,7 @@
   }
   header {
       font-size: 3.5em;
-      letter-spacing: 0.1em;
+      letter-spacing: -4px;
       opacity: 1;
 
       -webkit-transition: opacity .5s;
@@ -43,11 +43,19 @@
       right: -55%;
   }
   nav {
-      margin: 20px ;
+      margin: 20px;
   }
+
+  .info-panel.open nav {
+      display: flex;
+      flex-wrap: wrap;
+      flex-flow: column;
+      align-items: flex-start;
+  }
+
   .option-item{
       padding: 3px;
-      margin-right: 10px
+      margin: 10px 0 0;
   }
 
   form{
@@ -100,6 +108,11 @@
     }
     p{
         padding:  20px 40px;
+    }
+
+    /* Extra padding aligns the forms with the body content */
+    form#contributeForm, #followForm {
+        padding-top: 10px;
     }
 }
 
