@@ -83,3 +83,96 @@ p{
 .info-panel.open .closebtn {
     display: block;
 }
+
+
+/*
+    Video and Lightbox styling
+ */
+
+a.lightboxVideo {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+a.lightboxVideo .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+a.lightboxVideo .overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: 25%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+/* Owl Carousel */
+.carouselWrapper .owl-carousel{
+    position: relative;
+    max-width: calc(100% - 80px)
+}
+
+.carouselWrapper {
+    display: flex;
+}
+
+.carouselWrapper .control {
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+}
+
+.carouselWrapper .control.prev span, .carouselWrapper .control.next span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .carouselWrapper .control.prev span, .carouselWrapper .control.next span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 768px) {
+    .carouselWrapper .control.prev span {
+        left: -100px;
+
+        -webkit-transition: left 1s;
+        -moz-transition: left 1s;
+        -ms-transition: left 1s;
+        -o-transition: left 1s;
+        transition: left 1s;
+    }
+    .carouselWrapper .control.prev:hover span {
+        left: 20px;
+    }
+
+
+    .carouselWrapper .control.next span {
+        right: -100px;
+
+        -webkit-transition: right 1s;
+        -moz-transition: right 1s;
+        -ms-transition: right 1s;
+        -o-transition: right 1s;
+        transition: right 1s;
+    }
+    .carouselWrapper .control.next:hover span {
+        right: 20px;
+    }
+}

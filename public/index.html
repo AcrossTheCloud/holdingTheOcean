@@ -13,8 +13,17 @@
 
         <link rel="shortcut icon" href="" type="image/x-icon"/>
         <title>ocean archive</title>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./vendor/owl_carousel/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="./vendor/owl_carousel/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./vendor/lity/lity.min.css">
         <link rel="stylesheet" href="./styles/main.css"/>
+
+        <!-- JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="./vendor/owl_carousel/owl.carousel.min.js"></script>
+        <script src="./vendor/lity/lity.min.js"></script>
         <script src="./scripts/main.js"></script>
         <script src="./scripts/panel.js"></script>
         <script src="./scripts/subscribe.js"></script>
@@ -40,6 +49,7 @@
             <span class="option-item" data-value="openAPI"> Open Ocean API</span>
             <span class="option-item" data-value="follow">Follow</span>
             <span class="option-item" data-value="contribute">Contribute</span>
+            <span class="option-item" data-value="videos">Videos</span>
 
             <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
                 <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
@@ -88,7 +98,41 @@
                 <div class="jelly"></div>
                 <input type="submit" class="send">
             </form>
+        </div>
 
+        <div id="videosPanel" class="panel-content">
+            <div class="carouselWrapper">
+                <div class="control prev"><span> < </span></div>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close">
+                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
+                            <img src="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close.jpg"/>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close%202">
+                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
+                            <img src="media/carousel/videos/2%20Rays%20swimming%20close%202.jpg"/>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/Fish%20swarm">
+                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
+                            <img src="https://streaming.oceanarchive.io/carousel_test/Fish%20swarm.jpg"/>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/Shark%20and%20Ray%20near%20each%20other">
+                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
+                            <img src="https://streaming.oceanarchive.io/carousel_test/Shark%20and%20Ray%20near%20each%20other.jpg"/>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="control next"><span> > </span></div>
+            </div>
         </div>
     </div>
 
