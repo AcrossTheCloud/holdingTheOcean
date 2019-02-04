@@ -12,6 +12,13 @@ h1, h2, h3 {
     color: #ffff00;
 }
 
+/* Smooth scrolling for Mobile */
+* {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
 header{
     color: #ffff00;
     margin: 40px 20px;
