@@ -6,6 +6,6 @@ phases:
       - npm install
   post_build:
     commands:
-      - aws s3 cp --recursive public/ s3://holding-the-ocean/
+      - aws s3 cp --recursive public/ s3://dev.oceanarchive.io/
       - npm install -g serverless
       - serverless deploy
