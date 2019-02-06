@@ -40,7 +40,6 @@
   }
   #bgVideo{
       height: 100%;
-      right: -55%;
   }
   nav {
       margin: 20px;
@@ -88,9 +87,6 @@
     }
     .desktop{
         display: block;
-    }
-    #bgVideo{
-        right: 0;
     }
     .callToAction{
         width: 50%;
