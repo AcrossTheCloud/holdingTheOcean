@@ -48,6 +48,12 @@
     border: .5px solid #fff;
 }
 
+/* Full height panel */
+.info-panel.open.fullscreen{
+    height: 100%;
+    top: 0;
+}
+
 @media (min-width: 768px){
     .info-panel.open{
         height: 50%;
