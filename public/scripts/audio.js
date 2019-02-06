@@ -5,13 +5,40 @@ var
     $playerContainer = $('#audioPanel .player'),
     audioURL = 'https://streaming.oceanarchive.io/audio_test/',
     currentlyPlaying = 0,
-    totalVideos = 0;
+    totalVideos = 0,
+    resizeTimeout;
 
 
-jQuery(document).ready(function () {
+$(document).ready(function () {
     // Audio Player
     audioPlayerEvents();
+
+    // This is to fix the playlist not being full height on different resolutions
+    $(window).on('resize', function () {
+        setHeight();
+    });
+
 });
+
+// This is to fix the playlist not being full height on different resolutions
+function setHeight() {
+    resizeTimeout = setTimeout(function () {
+        var
+            windowHeight = $(window).height(),
+            playerHeight = $('#audioPanel .player').outerHeight(true),
+            controlsHeight = $('#audioPanel .playlist .controls').outerHeight(true),
+            navHeight = $('#options').outerHeight(true);
+        $('#audioPanel').css('height', function () {
+            return windowHeight - navHeight;
+        });
+        $('#audioPanel .playlist').css('height', function () {
+            return windowHeight - navHeight - controlsHeight;
+        });
+        $('#audioPanel .playlist ul').css('height', function () {
+            return windowHeight - navHeight - playerHeight - controlsHeight;
+        });
+    }, 500);
+}
 
 function getPlayList () {
     var

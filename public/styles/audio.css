@@ -1,4 +1,10 @@
 #audioPanel {
+    height: 100%;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
 }
 #audioPanel .wrapper {
     background: rgba(255,255,255, 0.4);
@@ -16,6 +22,7 @@
 }
 
 #audioPanel .playlist {
+    height: 100%;
     background: rgba(0, 0, 0, 0.75);
     padding: 0 30px;
 }
@@ -90,7 +97,6 @@
     display: inline-block;
     margin-left: 5px;
 }
-
 
 @media (min-width: 768px) {
     #audioPanel {

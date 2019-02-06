@@ -18,6 +18,7 @@ $(document).ready(function(){
         /* Audio Panel */
         if(key === "audio" && !$infoPanel.data('audioloaded')) {
             if(!hasPlaylist) getPlayList();
+            setHeight();
         } else {
             stopAudio();
         }
