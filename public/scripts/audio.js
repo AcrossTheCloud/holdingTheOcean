@@ -13,31 +13,32 @@ $(document).ready(function () {
     // Audio Player
     audioPlayerEvents();
 
-    // This is to fix the playlist not being full height on different resolutions
+    // This is to fix the playlist not being full height on different resolutions for Mobiles
     $(window).on('resize', function () {
         setHeight();
     });
-
 });
 
-// This is to fix the playlist not being full height on different resolutions
+// This is to fix the playlist not being full height on different resolutions for Mobiles
 function setHeight() {
-    resizeTimeout = setTimeout(function () {
-        var
-            windowHeight = $(window).height(),
-            playerHeight = $('#audioPanel .player').outerHeight(true),
-            controlsHeight = $('#audioPanel .playlist .controls').outerHeight(true),
-            navHeight = $('#options').outerHeight(true);
-        $('#audioPanel').css('height', function () {
-            return windowHeight - navHeight;
-        });
-        $('#audioPanel .playlist').css('height', function () {
-            return windowHeight - navHeight - controlsHeight;
-        });
-        $('#audioPanel .playlist ul').css('height', function () {
-            return windowHeight - navHeight - playerHeight - controlsHeight;
-        });
-    }, 500);
+    if($(window).width() < 768) {
+        resizeTimeout = setTimeout(function () {
+            var
+                windowHeight = $(window).height(),
+                playerHeight = $('#audioPanel .player').outerHeight(true),
+                controlsHeight = $('#audioPanel .playlist .controls').outerHeight(true),
+                navHeight = $('#options').outerHeight(true);
+            $('#audioPanel').css('height', function () {
+                return windowHeight - navHeight;
+            });
+            $('#audioPanel .playlist').css('height', function () {
+                return windowHeight - navHeight - controlsHeight;
+            });
+            $('#audioPanel .playlist ul').css('height', function () {
+                return windowHeight - navHeight - playerHeight - controlsHeight;
+            });
+        }, 500);
+    }
 }
 
 function getPlayList () {
@@ -137,7 +138,6 @@ function playAudio(element, loop) {
     // If we're already playing this one, don't do anything.
     if(currentlyPlaying === index) return false;
 
-    $playerContainer.LoadingOverlay('show');
     currentlyPlaying = index;
 
     // Remove and add active class
@@ -158,7 +158,6 @@ function audioPlayerEvents() {
 
     // Once the audio has loaded enough, remove the overlay
     player.oncanplay = function() {
-        $playerContainer.LoadingOverlay('hide');
         player.play();
     };
 }

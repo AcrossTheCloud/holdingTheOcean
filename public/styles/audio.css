@@ -100,7 +100,7 @@
 
 @media (min-width: 768px) {
     #audioPanel {
-        height: calc(100% - 58px); /* minus header */
+        height: calc(100% - 58px) !important; /* minus header */
     }
     #audioPanel .wrapper {
         display: flex;
@@ -130,13 +130,14 @@
         display: flex;
         flex-direction: column;
 
-        height: calc(100% - 20px); /* minus padding */
+        height: calc(100% - 20px) !important; /* minus padding */
         padding: 10px 40px;
 
         flex: 1 0 400px;
     }
     #audioPanel .playlist ul {
         flex: 1 1 auto;
+        height: auto !important;
     }
     #audioPanel .playlist .controls {
         padding-top: 0;
