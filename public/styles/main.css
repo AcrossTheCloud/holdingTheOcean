@@ -6,7 +6,11 @@
 body{
     background: #15212C;
 }
-
+/* Prevent scrolling the background when the menu is open */
+body.noscroll{
+    position:fixed;
+    overflow:hidden;
+}
 
 h1, h2, h3 {
     color: #ffff00;

@@ -1,15 +1,29 @@
 var
+    hasPlaylist = false,
     $audio = $('#audioPanel .player audio'),
+    player = $audio.get(0),
+    $playerContainer = $('#audioPanel .player'),
     audioURL = 'https://streaming.oceanarchive.io/audio_test/',
-    currentlyPlaying = 0;
+    currentlyPlaying = 0,
+    totalVideos = 0;
+
+
+jQuery(document).ready(function () {
+    // Audio Player
+    audioPlayerEvents();
+});
 
 function getPlayList () {
     var
         $playListContainer = $('#audioPanel .playlist ul');
 
+    $('#audioPanel .wrapper').show();
+    $('#audioPanel .noVideos').hide();
+
     $.getJSON( audioURL + 'playlist.json' , function( data ) {
+        var files = {};
+
         $.each( data, function( index, key ) {
-            var files = {};
 
             // If we have multiple files
             if(key.files && Object.keys(key.files).length > 0) {
@@ -21,22 +35,74 @@ function getPlayList () {
                 files["m4a"] = audioURL + key.file;
             }
 
-            $playListContainer.append('<li data-index="'+ index +'" data-files=\''+ JSON.stringify(files) +'\' onclick="playAudio(this, true)">' + key.name + '</li>')
+            var
+                playButton = '<span class="play button"><img src="icons/font-awesome/play-circle-regular-yellow.svg"/></span>';
+
+            $playListContainer.append('<li class="audio'+ index +'" data-index="'+ index +'" data-files=\''+ JSON.stringify(files) +'\' onclick="playAudio(this, true)">' + key.name + playButton +'</li>')
+            totalVideos++;
         });
 
-        // Add active to the first LI and load it in the player.
-        var $firstAudioFile = $('#audioPanel .playlist ul li:first-child');
-        $firstAudioFile.addClass('active');
-        playerLoadFile($firstAudioFile.data('files'));
+        if(Object.keys(files).length > 0) {
+            // Add active to the first LI and load it in the player.
+            var $firstAudioFile = $('#audioPanel .playlist ul li:first-child');
+            $firstAudioFile.addClass('active');
+            playerLoadFile($firstAudioFile.data('files'));
 
-        $playListContainer.fadeIn();
-        $('#audioPanel .player audio').fadeIn();
+            $playListContainer.fadeIn();
+            $('#audioPanel .player audio').fadeIn();
+            $('#audioPanel .playlist .controls').fadeIn();
+
+            hasPlaylist = true;
+        } else {
+            $('#audioPanel .noVideos').show();
+            $('#audioPanel .wrapper').hide();
+        }
     });
+}
+
+var audioLoop = {
+    start : function() {
+        player.loop = false; // make sure we don't look the same audio file
+
+        if(player.paused) player.play(); // if we've paused, play it.
+
+
+        player.onended = function () {
+            var nextCount = currentlyPlaying;
+            nextCount++;
+
+            if(nextCount >= totalVideos) nextCount = 0;
+
+            playAudio($('.audio' + nextCount), false);
+        };
+
+        $('#audioPanel .playlist .controls .startLoop').fadeOut(function () {
+            $('#audioPanel .playlist .controls .stopLoop').fadeIn();
+        });
+    },
+
+    stop : function() {
+        player.onended = null;
+
+        $('#audioPanel .playlist .controls .stopLoop').fadeOut(function () {
+            $('#audioPanel .playlist .controls .startLoop').fadeIn();
+        });
+
+        player.loop = true;
+
+        stopAudio();
+    }
+};
+
+/**
+ * There's no stop, just pause
+ */
+function stopAudio() {
+    player.pause();
 }
 
 function playAudio(element, loop) {
     var
-        player = $audio.get(0),
         $element = $(element),
         files = $element.data('files'),
         index = $element.data('index');
@@ -44,16 +110,30 @@ function playAudio(element, loop) {
     // If we're already playing this one, don't do anything.
     if(currentlyPlaying === index) return false;
 
+    $playerContainer.LoadingOverlay('show');
     currentlyPlaying = index;
 
     // Remove and add active class
-    $('#audioPanel .player audio li.active').removeClass('active');
+    $('#audioPanel .playlist ul li.active').removeClass('active');
     $element.addClass('active');
 
     playerLoadFile(files);
 
     player.loop = loop;
-    player.play();
+}
+
+/**
+ *
+ * Sets up any HTML5 Audio events
+ *
+ */
+function audioPlayerEvents() {
+
+    // Once the audio has loaded enough, remove the overlay
+    player.oncanplay = function() {
+        $playerContainer.LoadingOverlay('hide');
+        player.play();
+    };
 }
 
 /**
@@ -61,14 +141,13 @@ function playAudio(element, loop) {
  * Loads the given audio files into the player
  *
  * @param files JSON Object
- * @param play Boolean
  */
 function playerLoadFile(files) {
     $.each(files, function(type, url) {
         $audio.find('.' + type).attr('src', url);
     });
 
-    $audio.get(0).load();
+    player.load();
 }
 
 /**

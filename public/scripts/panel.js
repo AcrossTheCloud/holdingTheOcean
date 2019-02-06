@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
+        $('body').addClass('noscroll');
         $('.panel-content').removeClass('active');
         $('.option-item').removeClass('active');
 
@@ -15,7 +16,11 @@ $(document).ready(function(){
         }
 
         /* Audio Panel */
-        if(key === "audio" && !$infoPanel.data('audioloaded')) getPlayList();
+        if(key === "audio" && !$infoPanel.data('audioloaded')) {
+            if(!hasPlaylist) getPlayList();
+        } else {
+            stopAudio();
+        }
 
         $infoPanel.addClass('open');
         $('header').addClass('open');
@@ -34,8 +39,11 @@ $(document).ready(function(){
 });
 
 function closeNav() {
+    $('body').removeClass('noscroll');
+
     $('.info-panel').removeClass('open fullscreen');
     $('.option-item.active').removeClass('active');
 
     $('header').removeClass('open');
+    stopAudio();
 }
