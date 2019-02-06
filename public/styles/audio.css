@@ -5,6 +5,7 @@
     -ms-transition: height 0.3s;
     -o-transition: height 0.3s;
     transition: height 0.3s;
+    min-height: 320px;
 }
 #audioPanel .wrapper {
     background: rgba(255,255,255, 0.4);
@@ -13,8 +14,11 @@
 }
 
 #audioPanel .player {
-    padding: 10px 30px;
     text-align: center;
+}
+#audioPanel .player .padding {
+    padding: 10px 30px;
+    height: calc(100% - 20px);
 }
 
 #audioPanel .player audio {
@@ -35,6 +39,8 @@
 #audioPanel .playlist ul {
     overflow-x: hidden;
     overflow-y: scroll;
+
+    min-height: 200px;
 }
 #audioPanel .playlist ul {
     list-style: none;
@@ -115,6 +121,7 @@
         order: 2;
         text-align: center;
         height: 100%;
+        padding: 0;
     }
     #audioPanel .player .flex {
         height: 100%;
@@ -129,15 +136,17 @@
     #audioPanel .playlist {
         display: flex;
         flex-direction: column;
-
-        height: calc(100% - 20px) !important; /* minus padding */
+        flex: 1 0 50%;
+        padding: 0;
+    }
+    #audioPanel .playlist .padding {
         padding: 10px 40px;
-
-        flex: 1 0 400px;
+        height: calc(100% - 20px) !important; /* minus padding */
+        min-height: 200px;
     }
     #audioPanel .playlist ul {
         flex: 1 1 auto;
-        height: auto !important;
+        height: 100% !important;
     }
     #audioPanel .playlist .controls {
         padding-top: 0;

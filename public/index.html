@@ -134,27 +134,31 @@
             <p class="noVideos callToAction" style="display: none;">Sorry, there's not videos avaliable at the moment</p>
             <div class="wrapper">
                 <div class="player">
-                    <div class="flex">
-                        <div class="middle">
-                            <audio controls preload="auto" style="display:none;">
-                                <source class="ogg" src=""/>
-                                <source class="mp3" src="" />
-                                <source class="m4a" src="" />
-                            </audio>
+                    <div class="padding">
+                        <div class="flex">
+                            <div class="middle">
+                                <audio controls preload="auto" style="display:none;">
+                                    <source class="ogg" src=""/>
+                                    <source class="mp3" src="" />
+                                    <source class="m4a" src="" />
+                                </audio>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="playlist">
-                    <div class="controls" style="display: none;">
+                    <div class="padding">
+                        <div class="controls" style="display: none;">
                         <span class="startLoop" onclick="audioLoop.start()">
                             Play All
                             <span><img src="icons/font-awesome/play-circle-regular-yellow.svg" width="20px"/></span></span>
-                        <span class="stopLoop" onclick="audioLoop.stop()" style="display: none">
+                            <span class="stopLoop" onclick="audioLoop.stop()" style="display: none">
                             Stop Playing All
                             <span><img src="icons/font-awesome/stop-circle-regular-yellow.svg" width="20px"/></span>
                         </span>
+                        </div>
+                        <ul style="display: none;"></ul>
                     </div>
-                    <ul style="display: none;"></ul>
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@ function setHeight() {
             $('#audioPanel').css('height', function () {
                 return windowHeight - navHeight;
             });
-            $('#audioPanel .playlist').css('height', function () {
+            $('#audioPanel .playlist .padding').css('height', function () {
                 return windowHeight - navHeight - controlsHeight;
             });
             $('#audioPanel .playlist ul').css('height', function () {
