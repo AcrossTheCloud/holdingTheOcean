@@ -1,6 +1,6 @@
 var
     $audio = $('#audioPanel .player audio'),
-    audioURL = 'http://streaming.oceanarchive.io/audio_test/',
+    audioURL = 'https://streaming.oceanarchive.io/audio_test/',
     currentlyPlaying = 0;
 
 function getPlayList () {
