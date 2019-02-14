@@ -163,7 +163,8 @@ a.lightboxVideo .overlay img {
 
 @media (min-width: 768px) {
     .carouselWrapper .control.prev span {
-        left: -100px;
+        /*left: -100px;*/
+        left: 20px;
 
         -webkit-transition: left 1s;
         -moz-transition: left 1s;
@@ -173,11 +174,13 @@ a.lightboxVideo .overlay img {
     }
     .carouselWrapper .control.prev:hover span {
         left: 20px;
+        color: #ffff00;
     }
 
 
     .carouselWrapper .control.next span {
-        right: -100px;
+        /*right: -100px;*/
+        right: 20px;
 
         -webkit-transition: right 1s;
         -moz-transition: right 1s;
@@ -187,5 +190,6 @@ a.lightboxVideo .overlay img {
     }
     .carouselWrapper .control.next:hover span {
         right: 20px;
+        color: #ffff00;
     }
 }

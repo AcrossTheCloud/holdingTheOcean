@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="./vendor/owl_carousel/assets/owl.theme.default.min.css">
         <link rel="stylesheet" href="./vendor/lity/lity.min.css">
         <link rel="stylesheet" href="./styles/main.css"/>
-        <link rel="stylesheet" href="./styles/audio.css"/>
 
         <!-- JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -28,14 +27,8 @@
     <body>
 
     <header>
-        <div class="desktop">ocean archive
-            <br/>under construction
-            <br/>oceanarchive.io
-        </div>
-        <div class="mobile">ocean archive
-            <br />under construction
-            <br />oceanarchive.io
-        </div>
+        <div class="desktop">ocean archive</div>
+        <div class="mobile">ocean archive</div>
 
     </header>
 
@@ -46,7 +39,6 @@
             <span class="option-item" data-value="follow">Follow</span>
             <span class="option-item" data-value="contribute">Contribute</span>
             <span class="option-item" data-value="videos">Videos</span>
-            <span class="option-item" data-value="audio" data-fullscreen="true">Audio</span>
 
             <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
                 <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
@@ -130,38 +122,6 @@
                 <div class="control next"><span> > </span></div>
             </div>
         </div>
-        <div id="audioPanel" class="panel-content" data-audioloaded="false">
-            <p class="noVideos callToAction" style="display: none;">Sorry, there's not videos avaliable at the moment</p>
-            <div class="wrapper">
-                <div class="player">
-                    <div class="padding">
-                        <div class="flex">
-                            <div class="middle">
-                                <audio controls preload="auto" style="display:none;">
-                                    <source class="ogg" src=""/>
-                                    <source class="mp3" src="" />
-                                    <source class="m4a" src="" />
-                                </audio>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="playlist">
-                    <div class="padding">
-                        <div class="controls" style="display: none;">
-                        <span class="startLoop" onclick="audioLoop.start()">
-                            Play All
-                            <span><img src="icons/font-awesome/play-circle-regular-yellow.svg" width="20px"/></span></span>
-                            <span class="stopLoop" onclick="audioLoop.stop()" style="display: none">
-                            Stop Playing All
-                            <span><img src="icons/font-awesome/stop-circle-regular-yellow.svg" width="20px"/></span>
-                        </span>
-                        </div>
-                        <ul style="display: none;"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <video id="bgVideo" autoplay muted loop playsinline>
@@ -173,8 +133,6 @@
 
     <script src="./vendor/owl_carousel/owl.carousel.min.js"></script>
     <script src="./vendor/lity/lity.min.js"></script>
-
-    <script src="./scripts/audio.js"></script>
 
     <script src="./scripts/main.js"></script>
     <script src="./scripts/panel.js"></script>

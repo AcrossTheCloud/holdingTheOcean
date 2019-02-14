@@ -15,14 +15,6 @@ $(document).ready(function(){
             $infoPanel.addClass('fullscreen');
         }
 
-        /* Audio Panel */
-        if(key === "audio" && !$infoPanel.data('audioloaded')) {
-            if(!hasPlaylist) getPlayList();
-            setHeight();
-        } else {
-            stopAudio();
-        }
-
         $infoPanel.addClass('open');
         $('header').addClass('open');
 
@@ -46,5 +38,4 @@ function closeNav() {
     $('.option-item.active').removeClass('active');
 
     $('header').removeClass('open');
-    stopAudio();
 }
