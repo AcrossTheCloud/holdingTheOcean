@@ -21,6 +21,6 @@
     "nodemailer": "^4.7.0"
   },
   "devDependencies": {
-    "serve": "^10.1.1"
+    "serve": "^10.1.2"
   }
 }

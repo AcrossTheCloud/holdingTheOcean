@@ -3,6 +3,12 @@
 @import url('grid.css');
 @import url('subscribe.css');
 
+html, body {
+    font-family: 'GravurCondensed-Regular', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
 body{
     background: #15212C;
 }
@@ -26,6 +32,7 @@ h1, h2, h3 {
 header{
     color: #ffff00;
     margin: 40px 20px;
+    height: calc(100% - 138px);
     opacity: 1;
 
     -webkit-transition: opacity .5s;
@@ -35,6 +42,9 @@ header{
     transition: opacity .5s;
 
     cursor: default;
+
+    display: flex;
+    flex-direction: column;
 }
 
 header.open {
@@ -74,6 +84,13 @@ p{
     width: 20px;
     height: 20px;
     cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 }
 .closebtn .lines{

@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="./vendor/lity/lity.min.css">
         <link rel="stylesheet" href="./styles/main.css"/>
 
+        <link rel="stylesheet" href="./styles/videos.css"/>
+
         <!-- JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
@@ -27,8 +29,16 @@
     <body>
 
     <header>
-        <div class="desktop">ocean archive</div>
-        <div class="mobile">ocean archive</div>
+        <div class="title">
+            ocean archive
+        </div>
+
+        <div class="joanjonasContainer">
+            <div class="joanjonas">
+                <div class="title">joan jonas</div>
+                <div class="view">View video collection</div>
+            </div>
+        </div>
 
     </header>
 
@@ -38,7 +48,6 @@
             <span class="option-item" data-value="openAPI"> Open Ocean API</span>
             <span class="option-item" data-value="follow">Follow</span>
             <span class="option-item" data-value="contribute">Contribute</span>
-            <span class="option-item" data-value="videos">Videos</span>
 
             <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
                 <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
@@ -88,40 +97,6 @@
                 <input type="submit" class="send">
             </form>
         </div>
-        <div id="videosPanel" class="panel-content">
-            <div class="carouselWrapper">
-                <div class="control prev"><span> < </span></div>
-
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close">
-                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
-                            <img src="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close.jpg"/>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close%202">
-                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
-                            <img src="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close%202.jpg"/>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/Fish%20swarm">
-                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
-                            <img src="https://streaming.oceanarchive.io/carousel_test/Fish%20swarm.jpg"/>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="lightboxVideo" data-videourl="https://streaming.oceanarchive.io/carousel_test/Shark%20and%20Ray%20near%20each%20other">
-                            <div class="overlay"><img src="icons/font-awesome/play-circle-regular.svg"/></div>
-                            <img src="https://streaming.oceanarchive.io/carousel_test/Shark%20and%20Ray%20near%20each%20other.jpg"/>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="control next"><span> > </span></div>
-            </div>
-        </div>
     </div>
 
     <video id="bgVideo" autoplay muted loop playsinline>
@@ -129,12 +104,67 @@
       <source src="https://oceanarchive.io/media/Divers_01.webm" type="video/webm">
     </video>
 
-    <!-- JavaScript -->
 
+    <div id="videosSection">
+        <svg class="closeVideosButton cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
+            <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
+        </svg>
+
+        <div class="closeVideosButton back">
+            <span style="font-size:20px;line-height: 0;display: inline-block;">&#8592;</span> Back
+        </div>
+
+        <div class="flex container">
+
+            <div class="videoContainer">
+                <div class="overlay">
+                    <div class="container">
+                        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
+                            <rect x="0" y="0" width="4" height="10" fill="#fff" transform="translate(0 2.8612)">
+                              <animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                            </rect>
+                                <rect x="10" y="0" width="4" height="10" fill="#fff" transform="translate(0 10.4721)">
+                              <animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                            </rect>
+                                <rect x="20" y="0" width="4" height="10" fill="#fff" transform="translate(0 16.1945)">
+                              <animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                            </rect>
+                        </svg>
+                    </div>
+                </div>
+                <video muted controls width="100%">
+                    <source class="mp4" type="video/mp4">
+                    <source class="webm" type="video/webm">
+                </video>
+            </div>
+
+            <div class="textContainer">
+                <div class="flex">
+                    <div class="video" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close">
+                        Rays Swimming Close
+                    </div>
+                    <div class="video" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close%202">
+                        Rays Swimming Close Part 2
+                    </div>
+                    <div class="video" data-videourl="https://streaming.oceanarchive.io/carousel_test/Fish%20swarm">
+                        Fish Swarm
+                    </div>
+                    <div class="video" data-videourl="https://streaming.oceanarchive.io/carousel_test/Shark%20and%20Ray%20near%20each%20other">
+                        Sharks & Rays having a party.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
     <script src="./vendor/owl_carousel/owl.carousel.min.js"></script>
     <script src="./vendor/lity/lity.min.js"></script>
 
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/videos.js"></script>
     <script src="./scripts/panel.js"></script>
     <script src="./scripts/subscribe.js"></script>
 

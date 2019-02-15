@@ -1,0 +1,228 @@
+.joanjonasContainer {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.joanjonas {
+    cursor: pointer;
+    border: 2px solid;
+    padding: 20px;
+    font-size: 20px;
+    letter-spacing: 3px;
+
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    transition: color 0.5s;
+}
+.joanjonas:hover {
+    color: #fff;
+}
+.joanjonas .title {
+    width: 40%;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.joanjonas .view {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#videosSection {
+    position: fixed;
+    background: #000;
+    padding: 40px 0 20px 0;
+    color: #fff;
+
+    z-index: 9999;
+    overflow: hidden;
+
+    top: -150%;
+    left: 0;
+
+    height: 100vh;
+    max-height: calc(100vh - 60px); /* screen - padding */
+    width: 100%;
+}
+
+/* START Close Button */
+#videosSection .closeVideosButton.back {
+    display: none;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+
+    text-shadow: 0 0 6px #000;
+
+    /*background: rgba(255, 255, 255, 0.2);*/
+    /*padding: 10px;*/
+    /*box-shadow: 0 0 10px -1px rgba(0,0,0,0.75);*/
+}
+
+#videosSection .closeVideosButton.cross {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    height: 20px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    z-index: 999999;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#videosSection .closeVideosButton.cross .lines {
+    stroke:#fff;
+    stroke-linecap:square;
+    stroke-miterlimit:10;
+    stroke-width:0.5px;
+}
+/* END Close Button */
+
+
+/* START FLEX BOX VIDEOS */
+#videosSection .flex {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+}
+#videosSection .flex.container {
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+}
+
+#videosSection .videoContainer {
+    position: relative;
+    flex: 0;
+}
+#videosSection .videoContainer .overlay {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9999999;
+    background: rgba(0,0,0,0.8);
+}
+#videosSection .videoContainer .overlay .container {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    line-height: 0;
+    transform: translateY(-50%);
+}
+#videosSection .videoContainer .overlay svg {
+    width: 25px;
+    height: 30px;
+}
+
+#videosSection .textContainer {
+    padding: 20px 20px 0;
+    flex: 1 1 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#videosSection .textContainer .video {
+    margin-top: 5px;
+    cursor: pointer;
+}
+#videosSection .textContainer .video.currentlyPlaying {
+    color: #ffff00;
+}
+/* END FLEX BOX VIDEOS */
+
+@media screen and (max-width: 768px) and (orientation:landscape) {
+    #videosSection .flex.container {
+        align-items: center;
+    }
+
+    #videosSection .videoContainer {
+        position: relative;
+        display: flex;
+        flex: 1 50vh;
+    }
+
+    #videosSection .textContainer {
+        padding: 20px 20px 0;
+        flex: 0 50vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
+
+
+@media all and (min-width: 768px) {
+    #videosSection .flex.container {
+        flex-direction: row;
+    }
+    #videosSection .videoContainer {
+        position: relative;
+        order: 2;
+        flex: 1 1 auto;
+    }
+
+    #videosSection .closeVideosButton.cross {
+        display: none;
+    }
+    #videosSection .closeVideosButton.back {
+        display: block;
+    }
+}
+
+@media all and (min-width: 1200px) {
+
+    #videosSection .videoContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+
+        z-index: -1;
+        flex: unset;
+        order: unset;
+    }
+    #videosSection .videoContainer video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    #videosSection .textContainer .flex {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        max-width: 100%;
+    }
+    #videosSection .textContainer .flex .video {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+    #videosSection .textContainer .video.currentlyPlaying {
+        background: rgba(255, 255, 0, 0.5);
+        color: #fff;
+    }
+}

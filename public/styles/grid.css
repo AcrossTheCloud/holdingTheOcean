@@ -2,6 +2,8 @@
     header {
         font-size: 3em !important;
         margin: 27px 10px !important;
+
+        height: calc(100% - 112px);
     }
 
     nav#options {
@@ -15,12 +17,6 @@
 
 /* mobile */
 @media (min-width: 320px) and (max-width: 768px){
-  .mobile{
-    display: block;
-  }
-  .desktop{
-    display: none;
-  }
   header {
       font-size: 3.5em;
       letter-spacing: -4px;
@@ -37,9 +33,6 @@
   }
   body{
       overflow: hidden;
-  }
-  #bgVideo{
-      height: 100%;
   }
   nav {
       margin: 20px;
@@ -82,12 +75,6 @@
     nav{
         margin: 20px 40px;
     }
-    .mobile{
-        display: none;
-    }
-    .desktop{
-        display: block;
-    }
     .callToAction{
         width: 50%;
     }
@@ -109,6 +96,16 @@
     /* Extra padding aligns the forms with the body content */
     form#contributeForm, #followForm {
         padding-top: 10px;
+    }
+}
+@media (orientation: landscape) and (max-width: 1200px) {
+    #aboutPanel.active {
+        display: flex;
+    }
+    #aboutPanel .credit{
+        margin-left: unset;
+        position: relative;
+        bottom: unset;
     }
 }
 
