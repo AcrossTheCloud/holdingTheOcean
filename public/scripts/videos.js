@@ -7,8 +7,10 @@ $(document).ready( function() {
 
     $('#videosSection .closeVideosButton').click(function() {
         $player.get(0).pause();
-        $videosSection.animate({ top: '-150%' }, 2000, function () {
+
+        $videosSection.fadeOut(1000, function () {
             $videosSection.removeClass('open');
+            $videosSection.css('z-index', -20);
         });
     });
 
@@ -18,6 +20,7 @@ $(document).ready( function() {
             isPaused = $player.get(0).paused;
 
         $overlay.fadeIn();
+        $videosSection.css('z-index', 999);
 
         if (isDesktop) {
             if(!$player.get(0).duration) {
@@ -25,7 +28,7 @@ $(document).ready( function() {
             }
         }
 
-        $videosSection.animate({ top: 0 }, 2000, function () {
+        $videosSection.fadeIn(1000, function () {
             if (!isDesktop) {
                 if(!$player.get(0).duration) {
                     $('.video:first-child').click();

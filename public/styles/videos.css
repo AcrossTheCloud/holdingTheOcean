@@ -37,11 +37,12 @@
     padding: 40px 0 20px 0;
     color: #fff;
 
-    z-index: 9999;
     overflow: hidden;
 
-    top: -150%;
+    top: 0;
     left: 0;
+
+    z-index: -20;
 
     height: 100vh;
     max-height: calc(100vh - 60px); /* screen - padding */
