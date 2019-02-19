@@ -1,8 +1,8 @@
 
 var errorMessage = {
-    email: 'please enter correct email',
+    email: 'Please enter a valid email address',
     general: 'Oh no! Something went wrong.',
-    network: 'ops. network error, email us please.'
+    network: 'Pps. network error, email us please.'
 };
 
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
     if(isEmail(email)){
         postToMailer(body, url);
     }else{
-        $('.error-message').text('please enter correct email').show();
+        $('.error-message').text(errorMessage.email).show();
     }
 
     });
