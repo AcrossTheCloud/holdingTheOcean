@@ -1,34 +1,44 @@
 .joanjonasContainer {
-    flex: 1;
-    display: inline-flex;
-    align-items: center;
+    flex: 1 auto;
 }
 
 .joanjonas {
     cursor: pointer;
-    border: 2px solid;
-    padding: 20px;
-    font-size: 20px;
+    /*border: 2px solid;*/
+    /*padding: 20px;*/
+    font-size: 30px;
     letter-spacing: 3px;
 
-    -webkit-transition: color 0.5s;
-    -moz-transition: color 0.5s;
-    -ms-transition: color 0.5s;
-    -o-transition: color 0.5s;
-    transition: color 0.5s;
-}
-.joanjonas:hover {
-    color: #fff;
+    opacity: 1;
+
+    -webkit-transition: opacity 1s, color 0.5s;
+    -moz-transition: opacity 1s, color 0.5s;
+    -ms-transition: opacity 1s, color 0.5s;
+    -o-transition: opacity 1s, color 0.5s;
+    transition: opacity 1s, color 0.5s;
 }
 .joanjonas .title {
     width: 40%;
     border-bottom: 1px solid;
     padding-bottom: 10px;
 }
+.joanjonas .light {
+    font-family: 'GravurCondensed-Light', sans-serif;
+}
+.joanjonas .thin {
+    font-family: 'GravurCondensed-Thin', sans-serif;
+}
 .joanjonas .view {
-    font-size: 13px;
-    text-align: center;
+    font-size: 18px;
     margin-top: 10px;
+    border: 1px solid;
+    display: inline-block;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-family: 'GravurCondensed-Light', sans-serif;
+}
+.joanjonas .view:hover {
+    color: #fff;
 }
 
 #videosSection {
@@ -127,6 +137,9 @@
     width: 25px;
     height: 30px;
 }
+#videosSection .videoContainer .overlay svg rect {
+    fill: #ffff00;
+}
 
 #videosSection .textContainer {
     padding: 20px 20px 0;
@@ -144,24 +157,6 @@
 }
 /* END FLEX BOX VIDEOS */
 
-@media screen and (max-width: 768px) and (orientation:landscape) {
-    #videosSection .flex.container {
-        align-items: center;
-    }
-
-    #videosSection .videoContainer {
-        position: relative;
-        display: flex;
-        flex: 1 50vh;
-    }
-
-    #videosSection .textContainer {
-        padding: 20px 20px 0;
-        flex: 0 50vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-}
 
 
 @media all and (min-width: 768px) {
@@ -179,6 +174,25 @@
     }
     #videosSection .closeVideosButton.back {
         display: block;
+    }
+}
+
+@media (orientation:landscape) and (max-width: 900px) {
+    #videosSection .flex.container {
+        align-items: center;
+    }
+
+    #videosSection .videoContainer {
+        position: relative;
+        display: flex;
+        flex: 1 50vh;
+    }
+
+    #videosSection .textContainer {
+        padding: 20px 20px 0;
+        flex: 0 50vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 }
 

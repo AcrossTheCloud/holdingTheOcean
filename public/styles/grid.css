@@ -1,3 +1,7 @@
+.desktop {
+    display: none;
+}
+
 @media (min-width: 320px) and (max-width: 460px) {
     header {
         font-size: 3em !important;
@@ -69,8 +73,13 @@
         bottom: 20px;
     }
 }
+
  /* larger than mobile */
 @media (min-width: 768px) {
+
+    .desktop {
+        display: block;
+    }
 
     nav{
         margin: 20px 40px;
@@ -98,6 +107,28 @@
         padding-top: 10px;
     }
 }
+@media (orientation:landscape) and (max-width: 900px) {
+    header {
+        font-size: 40px;
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    header .title {
+        flex: 1 50% !important;
+    }
+
+    .joanjonasContainer {
+        display: block;
+        padding-left: 30px;
+    }
+
+    .joanjonas {
+        font-size: 25px;
+    }
+}
+
+
 @media (orientation: landscape) and (max-width: 1200px) {
     #aboutPanel.active {
         display: flex;

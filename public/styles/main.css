@@ -1,4 +1,5 @@
 @import url('typography.css');
+@import url('videos.css');
 @import url('panel.css');
 @import url('grid.css');
 @import url('subscribe.css');
@@ -29,7 +30,7 @@ h1, h2, h3 {
     scroll-behavior: smooth;
 }
 
-header{
+header {
     color: #ffff00;
     margin: 40px 20px;
     height: calc(100% - 138px);
@@ -43,12 +44,21 @@ header{
 
     cursor: default;
 
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
 }
 
 header.open {
     opacity: 0.2;
+}
+
+header.open .joanjonas {
+    opacity: 0;
+}
+
+
+header .title {
+    flex: 1 auto;
 }
 
 #bgVideo{
