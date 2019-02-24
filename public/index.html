@@ -62,9 +62,9 @@
         <div id="aboutPanel" class="panel-content">
             <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into a curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
             <div class="credit">
-                <p class="creditText">IMAGES COURTESY OF DAVID GRUBER</p>
-                <br />
-                <img style="width:150px; padding: 10px 40px;" src="./icons/tba21-academy-logo.png"/>
+                <p class="creditText">IMAGES COURTESY OF DAVID GRUBER
+                    <img style="width: 150px;padding: 15px 0;display: block;" src="./icons/tba21-academy-logo.png"/>
+                </p>
             </div>
         </div>
         <div id="openAPIPanel" class="panel-content">
@@ -73,7 +73,7 @@
             </p>
         </div>
         <div id="followPanel" class="panel-content">
-            <p class="callToAction">Join the Ocean Archive Mailing List to receive updates on our public programs, exhibitions, events, and initiatives.</p>
+            <p class="callToAction one-column">Join the Ocean Archive Mailing List to receive updates on our public programs, exhibitions, events, and initiatives.</p>
             <form action="https://api.oceanarchive.io/subscribe" id="followForm">
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
@@ -87,7 +87,7 @@
             </form>
         </div>
         <div id="contributePanel" class="panel-content">
-            <p class="callToAction">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us.</p>
+            <p class="callToAction one-column">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us.</p>
             <form action="https://api.oceanarchive.io/subscribe" id="contributeForm">
                 <input type="text" name="name" placeholder="Name">
                 <input type="email" name="email" placeholder="Email">
@@ -111,31 +111,25 @@
 
 
     <div id="videosSection" style="display:none">
-        <svg class="closeVideosButton cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
-            <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
-        </svg>
-
-        <div class="closeVideosButton back">
-            <span style="font-size:20px;line-height: 0;display: inline-block;">&#8592;</span> Back
+        <div class="left top desktop">
+            <div>Joan Jonas</div>
+            <div>Moving Off The Land. Oceans</div>
+        </div>
+        <div class="closeButton">
+            <div class="crossWrapper">
+                <svg class="closeVideosButton cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36">
+                    <line class="lines" x2="36" y2="36"/><line class="lines" x1="36" y2="36"/>
+                </svg>
+            </div>
+            <div class="text">
+                Back to OceanArchive.io
+            </div>
         </div>
 
         <div class="flex container">
-
             <div class="videoContainer">
                 <div class="overlay">
-                    <div class="container">
-                        <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
-                            <rect x="0" y="0" width="3" height="10" fill="#fff" transform="translate(0 2.8612)">
-                              <animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                            </rect>
-                                <rect x="10" y="0" width="3" height="10" fill="#fff" transform="translate(0 10.4721)">
-                              <animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0.2s" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                            </rect>
-                                <rect x="20" y="0" width="3" height="10" fill="#fff" transform="translate(0 16.1945)">
-                              <animateTransform attributeType="xml" attributeName="transform" type="translate" values="0 0; 0 20; 0 0" begin="0.4s" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                            </rect>
-                        </svg>
-                    </div>
+                    <div id="loader"></div>
                 </div>
                 <video muted controls width="100%">
                     <source class="mp4" type="video/mp4">
@@ -162,6 +156,36 @@
 
         </div>
 
+    </div>
+
+    <div id="joanjonas_text" style="display:none">
+        <div class="closeButton">
+            <div class="crossWrapper">
+                <svg class="closeVideosButton cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36">
+                    <line class="lines" x2="36" y2="36"/><line class="lines" x1="36" y2="36"/>
+                </svg>
+            </div>
+            <div class="text">
+                Back to archival editions
+            </div>
+        </div>
+        <div class="left one-column">
+            <div class="title">
+                <div>Joan Jonas</div>
+                <div>Moving Off The Land. Oceans</div>
+            </div>
+            <div class="content">
+                <p>Hero to a generation of younger artists, Joan Jonas is a pioneer of performance and video who has pushed the boundaries of art for the last five decades.</p>
+
+                <p>Experience the largest exhibition of Jonas’s work ever held in the UK. Early works from the late 1960s are shown alongside recent installations dealing with topical themes such as climate change and extinction. You can see her landmark installations including Lines in the Sand, The Juniper Tree and Reanimation.</p>
+
+                <p>For the first time at Tate Modern, a single artist’s work is explored in the exhibition galleries, and in film screenings in the Starr Cinema and installations in the Tanks – an experimental exhibition for an experimental artist.</p>
+
+                <p>Joan Jonas will also perform live alongside other artists as part of the BMW Tate Live Exhibition: Ten Days Six Nights programme.</p>
+
+                <p>The exhibition is organised by Tate Modern and Haus der Kunst, Munich in partnership with the Serralves Museum of Contemporary Art, Porto</p>
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript -->

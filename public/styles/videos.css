@@ -1,86 +1,38 @@
-.joanjonasContainer {
-    flex: 1 auto;
-}
-
-.joanjonas {
-    cursor: pointer;
-    /*border: 2px solid;*/
-    /*padding: 20px;*/
-    font-size: 30px;
-    letter-spacing: 3px;
-
-    opacity: 1;
-
-    -webkit-transition: opacity 1s, color 0.5s;
-    -moz-transition: opacity 1s, color 0.5s;
-    -ms-transition: opacity 1s, color 0.5s;
-    -o-transition: opacity 1s, color 0.5s;
-    transition: opacity 1s, color 0.5s;
-}
-.joanjonas .title {
-    width: 40%;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
-}
-.joanjonas .light {
-    font-family: 'GravurCondensed-Light', sans-serif;
-}
-.joanjonas .thin {
-    font-family: 'GravurCondensed-Thin', sans-serif;
-}
-.joanjonas .view {
-    font-size: 18px;
-    margin-top: 10px;
-    border: 1px solid;
-    display: inline-block;
-    padding: 10px 10px;
-    cursor: pointer;
-    font-family: 'GravurCondensed-Light', sans-serif;
-}
-.joanjonas .view:hover {
-    color: #fff;
-}
-
 #videosSection {
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -20;
+
     background: #000;
-    padding: 40px 0 20px 0;
     color: #fff;
 
     overflow: hidden;
 
-    top: 0;
-    left: 0;
-
-    z-index: -20;
-
-    height: 100vh;
-    max-height: calc(100vh - 60px); /* screen - padding */
+    height: 100%;
     width: 100%;
 }
 
-/* START Close Button */
-#videosSection .closeVideosButton.back {
-    display: none;
+#videosSection .top.left {
+    font-family: 'GravurCondensed-Light', sans-serif;
 
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
+    color: #ffff00;
+
+    font-size: 30px;
+    line-height: 36px;
+
     cursor: pointer;
-
-    text-shadow: 0 0 6px #000;
-
-    /*background: rgba(255, 255, 255, 0.2);*/
-    /*padding: 10px;*/
-    /*box-shadow: 0 0 10px -1px rgba(0,0,0,0.75);*/
 }
 
-#videosSection .closeVideosButton.cross {
+/* START Close Button */
+.closeButton {
     position: absolute;
-    right: 15px;
-    top: 10px;
+    right: 30px;
+    top: 30px;
 
-    height: 20px;
     cursor: pointer;
 
     -webkit-user-select: none;
@@ -91,13 +43,41 @@
     z-index: 999999;
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    display: inline-flex;
+    flex-direction: column;
 }
 
-#videosSection .closeVideosButton.cross .lines {
-    stroke:#fff;
-    stroke-linecap:square;
-    stroke-miterlimit:10;
-    stroke-width:0.5px;
+.crossWrapper {
+    flex: 0;
+    width: 36px;
+    align-self: flex-end;
+}
+
+.closeButton .closeVideosButton.cross {
+    height: 36px;
+    display: block;
+}
+
+.closeButton .closeVideosButton.cross .lines {
+    stroke: #fff;
+    stroke-width: 0.5px;
+}
+
+.closeButton .closeVideosButton.cross:hover .lines {
+    stroke: #fff000;
+}
+.closeButton .text {
+    display: none;
+    width: 100px;
+    color: #fff000;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    line-height: 14px;
+}
+.closeButton:hover .text {
+    display: block
 }
 /* END Close Button */
 
@@ -119,10 +99,8 @@
     flex: 0;
 }
 #videosSection .videoContainer .overlay {
-    text-align: center;
     width: 100%;
     height: 100%;
-    position: absolute;
     z-index: 9999999;
     background: rgba(0,0,0,0.8);
 }
@@ -149,14 +127,23 @@
 }
 
 #videosSection .textContainer .video {
-    margin-top: 5px;
+    border: .5px solid rgba(255, 240, 0, 0);
     cursor: pointer;
+    color: #fff000;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 14px;
+
+    margin-bottom: 7.25px;
+    padding: 7.75px 6.75px;
 }
 #videosSection .textContainer .video.currentlyPlaying {
-    color: #ffff00;
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+#videosSection .textContainer .video:hover {
+    border: .5px solid rgba(255, 240, 0, 1);
 }
 /* END FLEX BOX VIDEOS */
-
 
 
 @media all and (min-width: 768px) {
@@ -167,13 +154,6 @@
         position: relative;
         order: 2;
         flex: 1 1 auto;
-    }
-
-    #videosSection .closeVideosButton.cross {
-        display: none;
-    }
-    #videosSection .closeVideosButton.back {
-        display: block;
     }
 }
 
@@ -226,18 +206,17 @@
         transform: translate(-50%, -50%);
     }
 
+    #videosSection .flex.container {
+        display: inline-block;
+    }
+
+    #videosSection .textContainer {
+        padding: 30px;
+        position: absolute;
+        bottom: 0;
+    }
+
     #videosSection .textContainer .flex {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-evenly;
-        max-width: 100%;
-    }
-    #videosSection .textContainer .flex .video {
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.3);
-    }
-    #videosSection .textContainer .video.currentlyPlaying {
-        background: rgba(255, 255, 0, 0.5);
-        color: #fff;
+        flex-direction: column;
     }
 }

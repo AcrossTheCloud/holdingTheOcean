@@ -14,13 +14,29 @@ $(document).ready( function() {
         });
     });
 
-    $('.joanjonas').click(function() {
+    $('#videosSection .top.left').click(function() {
+        var $jj = $('#joanjonas_text');
+        $jj.css('z-index', 6);
+        $jj.fadeIn(function () {
+            $videosSection.css('z-index', -20);
+        });
+    });
+
+    $('#joanjonas_text .closeButton').click(function() {
+        var $jj = $('#joanjonas_text');
+        $jj.fadeOut(function() {
+            $videosSection.css('z-index', 5);
+            $jj.css('z-index', -20);
+        });
+    });
+
+    $('.joanjonas .view').click(function() {
         var
             isDesktop = $(window).width() > 1200,
             isPaused = $player.get(0).paused;
 
         $overlay.fadeIn();
-        $videosSection.css('z-index', 999);
+        $videosSection.css('z-index', 5);
 
         if (isDesktop) {
             if(!$player.get(0).duration) {

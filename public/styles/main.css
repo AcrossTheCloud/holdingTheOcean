@@ -3,6 +3,14 @@
 @import url('panel.css');
 @import url('grid.css');
 @import url('subscribe.css');
+@import url('loader.css');
+@import url('joanjonas.css');
+
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
 
 html, body {
     font-family: 'GravurCondensed-Regular', sans-serif;
@@ -32,9 +40,8 @@ h1, h2, h3 {
 
 header {
     color: #ffff00;
-    margin: 40px 20px;
-    height: calc(100% - 138px);
     opacity: 1;
+    height: calc(100% - 112px);
 
     -webkit-transition: opacity .5s;
     -moz-transition: opacity .5s;
@@ -43,23 +50,17 @@ header {
     transition: opacity .5s;
 
     cursor: default;
+}
 
-    display: inline-flex;
-    flex-direction: column;
+header .title {
+    letter-spacing: -4px;
+    margin: 30px 0 30px 30px;
 }
 
 header.open {
     opacity: 0.2;
 }
 
-header.open .joanjonas {
-    opacity: 0;
-}
-
-
-header .title {
-    flex: 1 auto;
-}
 
 #bgVideo{
     position: fixed;
@@ -122,6 +123,12 @@ p{
 
 .info-panel.open .closebtn {
     display: block;
+}
+
+form input.send {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
 }
 
 

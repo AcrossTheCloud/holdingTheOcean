@@ -5,9 +5,10 @@
 @media (min-width: 320px) and (max-width: 460px) {
     header {
         font-size: 3em !important;
-        margin: 27px 10px !important;
+    }
 
-        height: calc(100% - 112px);
+    header .title {
+        margin: 27px 10px !important;
     }
 
     nav#options {
@@ -21,74 +22,70 @@
 
 /* mobile */
 @media (min-width: 320px) and (max-width: 768px){
-  header {
+    header {
       font-size: 3.5em;
-      letter-spacing: -4px;
-      opacity: 1;
-
-      -webkit-transition: opacity .5s;
-      -moz-transition: opacity .5s;
-      -ms-transition: opacity .5s;
-      -o-transition: opacity .5s;
-      transition: opacity .5s;
-  }
-  header.open{
+    }
+    header.open{
       opacity: 0 !important;
-  }
-  body{
-      overflow: hidden;
-  }
-  nav {
-      margin: 20px;
-  }
+    }
 
-  .info-panel.open nav {
+    body{
+      overflow: hidden;
+    }
+    nav {
+      margin: 20px;
+    }
+
+    .info-panel.open nav {
       display: flex;
       flex-wrap: wrap;
       flex-flow: column;
       align-items: flex-start;
-  }
+    }
 
-  .option-item{
+    .option-item{
       padding: 3px;
       margin: 10px 0 0;
-  }
+    }
 
-  form{
+    form {
       margin: 0 20px;
-  }
+    }
 
-  #tbaLogo{
+    #tbaLogo {
       width: 150px;
       margin: 40px 20px;
-  }
-  p{
+    }
+
+    p {
      margin: 0 20px;
      padding: 20px 10px 40px;
-  }
+    }
+
     p.creditText {
         padding: 10px 20px;
     }
+
     .credit{
         bottom: 20px;
     }
 }
 
- /* larger than mobile */
+/* larger than mobile */
 @media (min-width: 768px) {
 
-    .desktop {
-        display: block;
+    header {
+        height: calc(100% - 138px);
+    }
+    nav {
+        margin: 20px 30px;
     }
 
-    nav{
-        margin: 20px 40px;
-    }
-    .callToAction{
-        width: 50%;
-    }
     .two-column{
         column-count: 2;
+        -webkit-column-width: 610px;
+        -moz-column-width: 610px;
+        column-width: 610px;
         width: 95%;
         column-gap: 40px;
         max-width: 1260px;
@@ -99,15 +96,31 @@
         bottom: 20px;
     }
     p{
-        padding:  20px 40px;
+        padding: 20px 30px;
     }
 
     /* Extra padding aligns the forms with the body content */
     form#contributeForm, #followForm {
-        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .desktop {
+        display: block;
     }
 }
-@media (orientation:landscape) and (max-width: 900px) {
+
+@media (min-width: 768px) and (min-height: 700px) {
+    .desktop {
+        display: none;
+    }
+
+    /* Extra padding aligns the forms with the body content */
+    form#contributeForm, #followForm {
+        margin: 0 30px;
+    }
+}
+
+@media (orientation:landscape) and (max-width: 900px), (min-width: 769px ) and (max-height: 650px) {
     header {
         font-size: 40px;
         display: flex !important;
@@ -117,17 +130,12 @@
     header .title {
         flex: 1 50% !important;
     }
-
-    .joanjonasContainer {
-        display: block;
-        padding-left: 30px;
+    
+    .desktop {
+        display: none;
     }
 
-    .joanjonas {
-        font-size: 25px;
-    }
 }
-
 
 @media (orientation: landscape) and (max-width: 1200px) {
     #aboutPanel.active {
@@ -138,17 +146,4 @@
         position: relative;
         bottom: unset;
     }
-}
-
-
-  /* tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1025px) {
-
-
 }

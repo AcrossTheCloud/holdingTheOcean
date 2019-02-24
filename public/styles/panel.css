@@ -35,8 +35,8 @@
     border: .5px solid rgba(230, 230, 230, .0);
     cursor: pointer;
     background: transparent;
-    padding: 4.75px 4.75px 3px 4.75px;
-    margin: .5px 20px .5px .5px;
+    padding: 3.75px 4.75px;
+    margin: .5px 30px .5px .5px;
 }
 
 .option-item:last-child {

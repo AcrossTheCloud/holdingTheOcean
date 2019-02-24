@@ -62,14 +62,13 @@ nav span{
 p.creditText {
     font-size: 13px;
     text-transform: uppercase;
-    padding: 10px 40px;
+    padding: 10px 30px;
 }
 p.callToAction,
 p.contribute{
-    font-family: 'GravurCondensed-Light', sans-serif;
+    font-family: 'GravurCondensed-Regular', sans-serif;
     font-size: 22px;
     line-height: 27px;
-    letter-spacing: .05px;
     margin-top : 0;
 }
 
