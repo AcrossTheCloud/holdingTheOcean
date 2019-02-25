@@ -103,7 +103,9 @@
     form#contributeForm, #followForm {
         margin-top: 10px;
     }
-
+}
+/* larger than mobile */
+@media (min-width: 1200px) and (min-height:700px ){
     .desktop {
         display: block;
     }
@@ -134,7 +136,6 @@
     .desktop {
         display: none;
     }
-
 }
 
 @media (orientation: landscape) and (max-width: 1200px) {

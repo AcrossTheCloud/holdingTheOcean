@@ -176,6 +176,14 @@
     }
 }
 
+
+@media (min-width: 1200px ) and (min-height: 650px) {
+    #videosSection .top.left.desktop {
+        display: block;
+    }
+
+}
+
 @media all and (min-width: 1200px) {
 
     #videosSection .videoContainer {
