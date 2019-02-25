@@ -63,7 +63,7 @@ header.open .joanjonas {
 }
 
 #joanjonas_text .left {
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
 }

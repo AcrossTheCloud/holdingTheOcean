@@ -122,7 +122,7 @@
 #videosSection .textContainer {
     padding: 20px 20px 0;
     flex: 1 1 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -171,7 +171,7 @@
     #videosSection .textContainer {
         padding: 20px 20px 0;
         flex: 0 50vh;
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
     }
 }
