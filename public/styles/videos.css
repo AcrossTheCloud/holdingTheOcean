@@ -15,16 +15,16 @@
 
 #videosSection .top.left {
     font-family: 'GravurCondensed-Light', sans-serif;
-
-    position: absolute;
-    top: 30px;
-    left: 30px;
     color: #ffff00;
 
     font-size: 30px;
     line-height: 36px;
 
     cursor: pointer;
+
+    padding: 30px 80px 30px 30px;
+    top: 0;
+    left: 0;
 }
 
 /* START Close Button */
@@ -126,6 +126,15 @@
     overflow-x: hidden;
 }
 
+#videosSection .textContainer .title.mobile {
+    font-family: 'GravurCondensed-Light', sans-serif;
+    color: #ffff00;
+    font-size: 30px;
+    line-height: 36px;
+    cursor: pointer;
+    padding-bottom: 15px;
+}
+
 #videosSection .textContainer .video {
     border: .5px solid rgba(255, 240, 0, 0);
     cursor: pointer;
@@ -146,25 +155,33 @@
 /* END FLEX BOX VIDEOS */
 
 
-@media all and (min-width: 768px) {
+@media (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
     #videosSection .flex.container {
         flex-direction: row;
     }
     #videosSection .videoContainer {
         position: relative;
         order: 2;
-        flex: 1 1 auto;
+        flex: 1 1 80%;
+        min-height: 300px;
+    }
+
+    #videosSection .textContainer {
+        flex: 1 1 20%;
     }
 }
 
 @media (orientation:landscape) and (max-width: 900px) {
-    #videosSection .flex.container {
-        align-items: center;
+    .desktop {
+        display: none;
     }
 
     #videosSection .videoContainer {
         position: relative;
-        display: flex;
         flex: 1 50vh;
     }
 
@@ -177,7 +194,7 @@
 }
 
 
-@media (min-width: 1200px ) and (min-height: 650px) {
+@media (min-width: 768px ) and (min-height: 650px) {
     #videosSection .top.left.desktop {
         display: block;
     }
