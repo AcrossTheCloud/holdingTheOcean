@@ -64,14 +64,14 @@ functions:
           method: post
           cors: true
   doubleOptIn:
-    handler: mailer.optIn
+    handler: mailer.doubleOptIn
     events:
       - http:
           path: doubleOptIn
           method: post
           cors: true
   contribution:
-    handler: mailer.optIn
+    handler: mailer.contribution
     events:
       - http:
           path: contribution
