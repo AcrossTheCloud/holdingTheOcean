@@ -27,6 +27,7 @@ provider:
     EMAIL_INFO: ${env:EMAIL_INFO}
     SMTP_USER: ${env:SMTP_USER}
     SMTP_PASS: ${env:SMTP_PASS}
+    UUID_NAMESPACE: ${env:UUID_NAMESPACE}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -71,6 +72,13 @@ functions:
     events:
       - http:
           path: doubleOptIn
+          method: post
+          cors: true
+  unsubscribe:
+    handler: mailer.unsubscribe
+    events:
+      - http:
+          path: unsubscribe
           method: post
           cors: true
   contribution:

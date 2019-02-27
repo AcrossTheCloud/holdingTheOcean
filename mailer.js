@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 const AWS = require('aws-sdk');
-const uuidv1 = require('uuid/v1');
+const uuidv5 = require('uuid/v5');
 
 // MAILER
 const smtpConfig = {
@@ -26,7 +26,7 @@ const docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 module.exports.optIn = async (event, context, callback) => {
 
     const body = JSON.parse(event.body);
-    const key = uuidv1();
+    const key = uuidv5(body.email, process.env.UUID_NAMESPACE);
 
     const putItemParams = {
         TableName: process.env.EMAIL_TABLE,
@@ -40,8 +40,8 @@ module.exports.optIn = async (event, context, callback) => {
     try {
         await docClient.put(putItemParams).promise();
 
-        const textMessage = `Dear ${body.name}, \n\n To confirm your subscription the ocean archive please visit https://localhost:5000/confirm.html?key=${key}`;
-        const htmlMessage = `Dear ${body.name},<p>To confirm your subscription to the ocean archive please click on <a href="https://localhost:5000/confirm.html?key=${key}">this link</a>`;
+        const textMessage = `Dear ${body.name}, \n\n To confirm your subscription the ocean archive please visit https://localhost:5000/confirm.html?key=${key}. If this email was unexpected please let us know by reply email.`;
+        const htmlMessage = `Dear ${body.name},<p>To confirm your subscription to the ocean archive please click on <a href="https://localhost:5000/confirm.html?key=${key}">this link</a>. If this email was unexpected please let us know by reply email.`;
         const subject = `confirm your subscription to the ocean archive`;
 
         let mailOption = {
@@ -116,6 +116,34 @@ module.exports.doubleOptIn = async (event, context, callback) => {
         callback(error, response);
     }
 
+}
+
+module.exports.unsubscribe = async (event, context, callback) => {
+    const body = JSON.parse(event.body);
+    const key = uuidv5(body.email, process.env.UUID_NAMESPACE);
+    const deleteItemParams = {
+        TableName: process.env.EMAIL_TABLE,
+        Key: {
+            key: key
+        }
+    };
+    try {
+        await docClient.delete(deleteItemParams).promise();
+        const response = {
+            statusCode: 200,
+            headers: headers,
+            body: JSON.stringify({ "message": "OK" }),
+        };
+        callback(null, response);
+    } catch (error) {
+        console.log(JSON.stringify(error));
+        const response = {
+            statusCode: 503,
+            headers: headers,
+            body: error.toString()
+        }
+        callback(err, response);  
+    }
 }
 
 module.exports.contribution = async (event, context, callback) => {
