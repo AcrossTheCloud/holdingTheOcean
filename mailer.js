@@ -112,8 +112,8 @@ module.exports.contribution = async (event, callback) => {
 
         let sendmail = await transport.sendMail(mailOption);
         
-        let message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
-        let subject = `recieved contribution confirmation`;
+        message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
+        subject = `recieved contribution confirmation`;
 
         let mailOption = {
             from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
