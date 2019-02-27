@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const AWS = require('aws-sdk');
+const uuidv1 = require('uuid/v1');
 
 // MAILER
 const smtpConfig = {
@@ -14,107 +15,127 @@ const smtpConfig = {
 };
 const transport = nodemailer.createTransport(smtpConfig);
 
-const CORSHeaders = {
+const headers = {
     "Access-Control-Allow-Origin": "*", // Required for CORS support to work
     "Access-Control-Allow-Credentials": true // Required for cookies, authorization headers with HTTPS
 };
 
-
-// DYNAMO DB
+// DynamoDB doc client
 const docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 
-module.exports.confirm  = async (event, context, callback) => {
-    let body = JSON.parse(event.body);
-    let type = body.type;
+module.exports.optIn = async (event, context, callback) => {
+
+    const body = JSON.parse(event).body;
+    const key = uuidv1();
+
+    const putItemParams = {
+        TableName: process.env.EMAIL_TABLE,
+        Item: {
+            key:key,
+            userName: body.name,
+            email: body.email,
+            confirmed: false
+        }
+    };
     try {
-        if (type === "contribute") {
-            await sayHello(body);
-        } else {
-            await subscribeToMaillist(body);
+        await docClient.put(putItemParams).promise();
+
+        const textMessage = `Dear ${body.name}, \n\n To confirm your subscription the ocean archive please visit https://localhost:5000/confirm.html?key=${key}`;
+        const htmlMessage = `Dear ${body.name},<p>To confirm your subscription to the ocean archive please click on <a href="https://localhost:5000/confirm.html?key=${key}">this link</a>`;
+        const subject = `confirm your subscription to the ocean archive`;
+
+        var mailOption = {
+            from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+            to: body.email,
+            subject: subject,
+            text: textMessage,
+            html: htmlMessage
         }
-        const response = {
-            statusCode: 200,
-            headers: CORSHeaders,
-            body: JSON.stringify({"message": "OK"})
-        }
-        callback(null,response);
+
+        let sendmail = await transport.sendMail(mailOption);
+
     } catch (error) {
-        console.log(error);
         const response = {
             statusCode: 503,
-            headers: CORSHeaders,
-            body: JSON.stringify({ "message": "Server error " + error.toString() })
-        };
-        callback(null, response);
+            headers: headers,
+            body: error.toString()
+        }        
     }
-
 }
 
-
-async function subscribeToMaillist(body) {
-
+module.exports.doubleOptIn = async (event, callback) => {
+    
     // params to look for existing email in DB
     const getItemParams = {
         TableName: process.env.EMAIL_TABLE,
         Key: {
-            "userId": body.email
+            "key": event.queryStringParameters.uuid
         }
     };
 
     let data = await docClient.get(getItemParams).promise();
     if (data.Item) {
-        throw 'email already exists ' + body.email
-    } else {
         // save email in DB
         const putItemParams = {
             TableName: process.env.EMAIL_TABLE,
             Item: {
-                userId: body.email,
-                userName: body.name,
+                key: data.Item.key,
+                userName: data.Item.name,
+                email: data.Item.email,
+                confirmed: true,
                 signUpDate: new Date().toISOString(),
             }
         };
         await docClient.put(putItemParams).promise();
-        sendConfirmation(body);
+        const response = {
+            statusCode: 200,
+            headers: headers,
+            body: 'OK',
+        };
+        callback(response);
     }
+
 }
 
-async function sendConfirmation(body, isContribute){
-    if(isContribute){
-        var message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
-        var subject = `recieved confirmation`
-    }else{
-        var message = `Dear ${body.name}, \n\n Thanks for your interest, stay tuned! \n\n\n — ocean archive team`
-        var subject = `ocean archive subscribed`
-    }
+module.exports.contribution = async (event, callback) => {
 
-    var mailOption = {
-      from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
-      to: body.email,
-      subject: subject,
-      text: message
-    }
-
-    let sendmail = await transport.sendMail(mailOption);
-    
-}
-
-async function sayHello(body) {
-    // the amazon one
-    var message = `${body.message} \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
-    var mailOption = {
-      from: `"oceanarchive.io" <${process.env.MAIL_INFO}>`,
-      to: process.env.MAIL_ADDRESS, // change this later to config.MAIL.INFO
-      subject: `HOLDING inquiry: ${body.subject}`,
-      text: message
-    }
-    // 'error sending to archive@tba21.org'
     try {
+        const body = JSON.parse(event).body;
+
+        let message = `${body.message} \n\n\nFrom: ${body.name}\nEmail: ${body.email}`;
+        let mailOption = {
+            from: `"oceanarchive.io" <${process.env.MAIL_INFO}>`,
+            to: process.env.MAIL_ADDRESS, // change this later to config.MAIL.INFO
+            subject: `HOLDING inquiry: ${body.subject}`,
+            text: message
+        }
+
         let sendmail = await transport.sendMail(mailOption);
-        let confirmation = await sendConfirmation(body, true);
-        return true;
-    } catch (err) {
-        console.log(err);
-        return false;
+        
+        let message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
+        let subject = `recieved contribution confirmation`;
+
+        let mailOption = {
+            from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+            to: body.email,
+            subject: subject,
+            text: message
+        }
+
+        let sendmail = await transport.sendMail(mailOption);
+        
+        const response = {
+            statusCode: 200,
+            headers: headers,
+            body: 'OK',
+        };
+
+        callback(response);
+
+    } catch (error) {
+
     }
+
+
+    
 }

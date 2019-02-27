@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/qclin/holdingTheOcean#readme",
   "dependencies": {
-    "nodemailer": "^5.1.1"
+    "nodemailer": "^5.1.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "serve": "^10.1.2"

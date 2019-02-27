@@ -56,11 +56,24 @@ resources:
         TableName: holdingTheOcean-email-${opt:stage, self:provider.stage}
 
 functions:
-  confirm:
-    handler: mailer.confirm
+  optIn:
+    handler: mailer.optIn
     events:
       - http:
-          path: subscribe
+          path: optIn
           method: post
           cors: true
-  
+  doubleOptIn:
+    handler: mailer.optIn
+    events:
+      - http:
+          path: doubleOptIn
+          method: post
+          cors: true
+  contribution:
+    handler: mailer.optIn
+    events:
+      - http:
+          path: contribution
+          method: post
+          cors: true
