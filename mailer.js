@@ -4,7 +4,7 @@ const uuidv1 = require('uuid/v1');
 
 // MAILER
 const smtpConfig = {
-    host: 'email-smtp.us-east-1.amazonaws.com',
+    host: 'email-smtp.us-west-2.amazonaws.com',
     port: 465,
     secure: true,
     requireTLS: true,
@@ -25,13 +25,13 @@ const docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 
 module.exports.optIn = async (event, context, callback) => {
 
-    const body = JSON.parse(event).body;
+    const body = JSON.parse(event.body);
     const key = uuidv1();
 
     const putItemParams = {
         TableName: process.env.EMAIL_TABLE,
         Item: {
-            key:key,
+            key: key,
             userName: body.name,
             email: body.email,
             confirmed: false
@@ -44,8 +44,8 @@ module.exports.optIn = async (event, context, callback) => {
         const htmlMessage = `Dear ${body.name},<p>To confirm your subscription to the ocean archive please click on <a href="https://localhost:5000/confirm.html?key=${key}">this link</a>`;
         const subject = `confirm your subscription to the ocean archive`;
 
-        var mailOption = {
-            from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+        let mailOption = {
+            from: `"ocean archive" <${process.env.EMAIL_INFO}>`, // replace this email with @oceanarchive.org
             to: body.email,
             subject: subject,
             text: textMessage,
@@ -54,88 +54,117 @@ module.exports.optIn = async (event, context, callback) => {
 
         let sendmail = await transport.sendMail(mailOption);
 
+        const response = {
+            statusCode: 200,
+            headers: headers,
+            body: JSON.stringify({"message":"OK"})
+        }
+        callback(null, response);
+
     } catch (error) {
+        console.log(error);
         const response = {
             statusCode: 503,
             headers: headers,
             body: error.toString()
-        }        
+        }
+        callback(error, response);
     }
 }
 
-module.exports.doubleOptIn = async (event, callback) => {
-    
+module.exports.doubleOptIn = async (event, context, callback) => {
+
     // params to look for existing email in DB
     const getItemParams = {
         TableName: process.env.EMAIL_TABLE,
         Key: {
-            "key": event.queryStringParameters.uuid
+            "key": event.queryStringParameters.key
         }
     };
+    console.log(getItemParams);
 
-    let data = await docClient.get(getItemParams).promise();
-    if (data.Item) {
-        // save email in DB
-        const putItemParams = {
-            TableName: process.env.EMAIL_TABLE,
-            Item: {
-                key: data.Item.key,
-                userName: data.Item.name,
-                email: data.Item.email,
-                confirmed: true,
-                signUpDate: new Date().toISOString(),
-            }
-        };
-        await docClient.put(putItemParams).promise();
+    try {
+        let data = await docClient.get(getItemParams).promise();
+        if (data.Item) {
+            console.log(data.Item);
+            // save email in DB
+            const putItemParams = {
+                TableName: process.env.EMAIL_TABLE,
+                Item: {
+                    key: data.Item.key,
+                    userName: data.Item.name,
+                    email: data.Item.email,
+                    confirmed: true,
+                    signUpDate: new Date().toISOString(),
+                }
+            };
+            await docClient.put(putItemParams).promise();
+            const response = {
+                statusCode: 200,
+                headers: headers,
+                body: JSON.stringify({"message":"OK"}),
+            };
+            callback(null, response);
+        }
+    } catch (error) {
+        console.log(error);
         const response = {
-            statusCode: 200,
+            statusCode: 503,
             headers: headers,
-            body: 'OK',
+            body: error.toString()
         };
-        callback(response);
+        callback(error, response);
     }
 
 }
 
-module.exports.contribution = async (event, callback) => {
+module.exports.contribution = async (event, context, callback) => {
 
     try {
-        const body = JSON.parse(event).body;
+        const body = JSON.parse(event.body);
+        console.log(body);
 
         let message = `${body.message} \n\n\nFrom: ${body.name}\nEmail: ${body.email}`;
+        let subject = 'contribution enquiry';
         let mailOption = {
-            from: `"oceanarchive.io" <${process.env.MAIL_INFO}>`,
-            to: process.env.MAIL_ADDRESS, // change this later to config.MAIL.INFO
+            from: `"oceanarchive.io" <${process.env.EMAIL_INFO}>`,
+            to: process.env.EMAIL_INFO, // change this later to config.MAIL.INFO
             subject: `HOLDING inquiry: ${body.subject}`,
             text: message
         }
 
         let sendmail = await transport.sendMail(mailOption);
-        
-        message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
-        subject = `recieved contribution confirmation`;
+        console.log(sendmail);
 
-        let mailOption = {
-            from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+        message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
+        subject = 'recieved contribution confirmation';
+
+        mailOption = {
+            from: `"ocean archive" <${process.env.EMAIL_INFO}>`, // replace this email with @oceanarchive.org
             to: body.email,
             subject: subject,
             text: message
         }
 
-        let sendmail = await transport.sendMail(mailOption);
-        
+        sendmail = await transport.sendMail(mailOption);
+        console.log(sendmail);
+
         const response = {
             statusCode: 200,
             headers: headers,
-            body: 'OK',
+            body: JSON.stringify({"message":"OK"}),
         };
 
-        callback(response);
+        callback(null, response);
 
     } catch (error) {
+        console.log(JSON.stringify(error));
+        const response = {
+            statusCode: 503,
+            headers: headers,
+            body: error.toString()
+        }
+        callback(err, response);  
 
     }
-
-
-    
 }

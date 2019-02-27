@@ -25,6 +25,8 @@ provider:
   environment:
     EMAIL_TABLE: holdingTheOcean-email-${opt:stage, self:provider.stage}
     EMAIL_INFO: ${env:EMAIL_INFO}
+    SMTP_USER: ${env:SMTP_USER}
+    SMTP_PASS: ${env:SMTP_PASS}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -45,11 +47,11 @@ resources:
       Properties:
         AttributeDefinitions:
           -
-            AttributeName: userId
+            AttributeName: key
             AttributeType: S
         KeySchema:
           -
-            AttributeName: userId
+            AttributeName: key
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 2
