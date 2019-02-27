@@ -24,6 +24,7 @@ provider:
   region: ${env:REGION, 'eu-central-1'}
   environment:
     EMAIL_TABLE: holdingTheOcean-email-${opt:stage, self:provider.stage}
+    EMAIL_INFO: ${env:EMAIL_INFO}
   iamRoleStatements:
     - Effect: Allow
       Action:
