@@ -5,11 +5,13 @@
 
 body{
     background: #15212C;
+    font-weight: normal;
 }
 
 
 h1, h2, h3 {
     color: #ffff00;
+    font-weight: normal;
 }
 
 /* Smooth scrolling for Mobile */
