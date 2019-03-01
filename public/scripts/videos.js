@@ -1,4 +1,4 @@
-$(document).ready( function() {
+$(document).ready(function() {
     var
         $videosSection = $('#videosSection'),
         $player = $('#videosSection .videoContainer video'),
@@ -32,29 +32,15 @@ $(document).ready( function() {
 
     $('.joanjonas .view').click(function() {
         var
-            isDesktop = $(window).width() > 1200,
             isPaused = $player.get(0).paused;
 
         $overlay.fadeIn();
         $videosSection.css('z-index', 5);
 
-        if (isDesktop) {
-            if(!$player.get(0).duration) {
-                $('.video:first-child').click();
-            }
-        }
-
         $videosSection.fadeIn(1000, function () {
-            if (!isDesktop) {
-                if(!$player.get(0).duration) {
-                    $('.video:first-child').click();
-                    $overlay.fadeOut();
-                } else {
-                    $overlay.fadeOut();
-                    $player.get(0).play();
-                }
-            } else {
-                $overlay.fadeOut();
+            if(!$player.get(0).duration) {
+                $('#videosSection .video').get(0).click();
+            } else if (isPaused) {
                 $player.get(0).play();
             }
             $videosSection.addClass('open');
