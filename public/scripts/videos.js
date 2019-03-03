@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     $('.joanjonas .view').click(function() {
         var
-            isPaused = $player.get(0).paused;
+             isPaused = $player.get(0).paused;
 
         $overlay.fadeIn();
         $videosSection.css('z-index', 5);
