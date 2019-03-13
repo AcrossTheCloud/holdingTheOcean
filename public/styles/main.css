@@ -66,6 +66,7 @@ header {
 header .title {
     letter-spacing: -0.4px;
     margin: 20px 0 20px 20px;
+    font-family: 'GravurCondensed-Thin', sans-serif;
 }
 
 header.open {
