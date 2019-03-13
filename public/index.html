@@ -13,12 +13,7 @@
 
         <link rel="shortcut icon" href="" type="image/x-icon"/>
         <title>ocean archive</title>
-
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="./styles/main.css?v=1.1"/>
-        <!-- JavaScript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js?v=3.1.0"></script>
-
+        <link rel="stylesheet" href="./styles/main.css"/>
     </head>
     <body>
         <header>
@@ -108,6 +103,12 @@
             </div>
 
             <div class="flex container">
+
+                <div class="title mobile">
+                    <div>Lorem Ipsum</div>
+                    <div>In posuere quis dolor et tristique</div>
+                </div>
+
                 <div class="videoContainer">
                     <div class="overlay">
                         <div id="loader"></div>
@@ -120,11 +121,6 @@
 
                 <div class="textContainer">
                     <div class="flex">
-                        <div class="title mobile">
-                            <div>Lorem Ipsum</div>
-                            <div>In posuere quis dolor et tristique</div>
-                        </div>
-
                         <div class="video" data-videourl="https://streaming.oceanarchive.io/carousel_test/2%20Rays%20swimming%20close">
                             Rays Swimming Close
                         </div>
@@ -139,9 +135,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <div id="joanjonas_text" style="display:none">
@@ -167,7 +161,9 @@
             </div>
         </div>
 
-        <!-- JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <!-- jQuery local fallback -->
+        <script>window.jQuery || document.write('<script src="./scripts/vendor/jquery-3.1.0.min.js"><\/script>')</script>
         <script src="./scripts/main.js?v=1.1.0"></script>
         <script src="./scripts/videos.js?v=1.1.0"></script>
         <script src="./scripts/panel.js?v=1.1.0"></script>

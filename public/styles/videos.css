@@ -30,8 +30,8 @@
 /* START Close Button */
 .closeButton {
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right: 20px;
+    top: 20px;
 
     cursor: pointer;
 
@@ -50,7 +50,7 @@
 
 .crossWrapper {
     flex: 0;
-    width: 36px;
+    width: 30px;
     align-self: flex-end;
 }
 
@@ -86,12 +86,10 @@
 #videosSection .flex {
      display: flex;
      flex-direction: column;
-     height: 100%;
 }
 #videosSection .flex.container {
      display: flex;
      flex-direction: column;
-     height: 100%;
 }
 
 #videosSection .videoContainer {
@@ -99,10 +97,13 @@
     flex: 0;
 }
 #videosSection .videoContainer .overlay {
-    width: 100%;
-    height: 100%;
+    width: 100.1%;
+    height: 100.1%;
     z-index: 9999999;
     background: rgba(0,0,0,0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 #videosSection .videoContainer .overlay .container {
     position: absolute;
@@ -126,13 +127,14 @@
     overflow-x: hidden;
 }
 
-#videosSection .textContainer .title.mobile {
+#videosSection .title.mobile {
     font-family: 'GravurCondensed-Light', sans-serif;
     color: #ffff00;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 25px;
+    line-height: 29px;
+    letter-spacing: -0.4px;
     cursor: pointer;
-    padding-bottom: 15px;
+    padding: 20px 60px 20px 20px;
 }
 
 #videosSection .textContainer .video {
@@ -172,6 +174,18 @@
 
     #videosSection .textContainer {
         flex: 1 1 20%;
+    }
+
+    .closeButton {
+        right: 30px;
+        top: 30px;
+    }
+    .crossWrapper {
+        width: 36px;
+    }
+
+    .closeButton .closeVideosButton.cross {
+        height: 30px;
     }
 }
 

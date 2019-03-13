@@ -31,7 +31,7 @@ header.open .joanjonas {
     border: .5px solid rgba(255, 240, 0, 1);
     display: inline-block;
     cursor: pointer;
-    margin: 27px 0 0;
+    margin: 12.25px 15.25px 0;
     padding: 7.75px 6.75px;
 
     font-size: 13px;
@@ -39,11 +39,6 @@ header.open .joanjonas {
     line-height: 14px;
     text-transform: uppercase;
     font-family: 'GravurCondensed-Regular', sans-serif;
-}
-
-.joanjonas .view:hover {
-    border: .5px solid rgba(255, 240, 0, 1);
-    padding: 7.75px 6.75px;
 }
 
 #joanjonas_text {
@@ -71,39 +66,43 @@ header.open .joanjonas {
 #joanjonas_text .title {
     padding: 30px 30px 0;
 }
+#joanjonas_text .title > div {
+    font-size: 30px;
+    font-family: 'GravurCondensed-Light', sans-serif;
+    letter-spacing: -0.4px;
+    line-height: 36px;
+}
 #joanjonas_text .one-column p {
     margin: 0;
     padding: 15px 30px;
+    font-size: 22px;
+    letter-spacing: -0.4px;
+    line-height: 27px;
+    font-family: 'GravurCondensed-Regular', sans-serif;
 }
 
-@media (min-width: 320px) and (max-width: 460px) {
-    .joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
-        margin: 0 0 0 10px;
-    }
+.joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
+    margin: 0 20px 0;
+}
 
-    .joanjonasContainer .view {
-        margin: 27px 0 0 10px;
+@media (min-width: 320px) {
+    .joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
+        font-size: 25px;
+        letter-spacing: -0.4px;
+        line-height: 29px;
     }
 }
 
-@media (min-width: 460px) {
-    .joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
-        margin: 0 0 0 30px;
-    }
-
+@media (min-width: 768px) {
     .joanjonas .light, .joanjonas .thin {
         font-size: 30px;
         line-height: 36px;
     }
-
     .joanjonas .view {
-        border: .5px solid rgba(255, 240, 0, 0);
         margin: 30px 0 0 30px;
-        padding: 0;
     }
-    .joanjonas .view:hover {
-        margin: 22.25px 23.25px;
-        padding: 7.75px 6.75px;
+    .joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
+        margin: 0 30px;
     }
 }
 
