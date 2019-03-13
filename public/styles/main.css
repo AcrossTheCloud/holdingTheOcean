@@ -38,6 +38,16 @@ h1, h2, h3 {
     scroll-behavior: smooth;
 }
 
+/* No select */
+.disable-select {
+    cursor: default;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
 header {
     color: #ffff00;
     opacity: 1;
