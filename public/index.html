@@ -15,6 +15,7 @@
         <title>ocean archive</title>
 
         <!-- Stylesheets -->
+        <link href="vendor/lity/lity.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./styles/main.css?v=1.2"/>
 
     </head>
@@ -88,10 +89,9 @@
           <source src="https://oceanarchive.io/media/Divers_01.webm" type="video/webm">
         </video>
 
-        <div id="liveSteam" >
-            <iframe width="420" height="315" src="https://www.youtube.com/embed/live_stream?channel=UC8RrXCMNjpl3fZpd-0l0gbA&autoplay=1" frameborder="0" allowfullscreen>
-            </iframe>
-        </div>
+        
+        <div id="livestream" style="display:none">Livestream</div>
+
 
         <div id="videosSection" style="display:none">
             <div class="left top desktop">
@@ -173,6 +173,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js?v=3.1.0"></script>
         <!-- jQuery local fallback -->
         <script>window.jQuery || document.write('<script src="./scripts/vendor/jquery-3.1.0.min.js"><\/script>')</script>
+        <script src="vendor/lity/lity.min.js"></script>
 
         <script src="./scripts/main.js?v=1.2"></script>
         <script src="./scripts/videos.js?v=1.2"></script>

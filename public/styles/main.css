@@ -162,6 +162,46 @@ a.lightboxVideo .overlay img {
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+/*Twitch live stream style*/
+#livestream {
+    border: .5px solid rgba(255, 240, 0, 1);
+    color:rgba(255, 240, 0, 1);;
+    display: inline-block;
+    cursor: pointer;
+    margin: 27px 0 0;
+    padding: 7.75px 6.75px;
+
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 14px;
+    text-transform: uppercase;
+    font-family: 'GravurCondensed-Regular', sans-serif;
+}
+.lity-close {
+    display: none;
+}
+.lity-content .closebtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.lity-container {
+    height: 100%;
+    width: 100%;
+}
+.iframe-container iframe {
+    height: calc(100vh - 35px);
+    width: 100%;
+}
+.iframe-container {
+    display: flex;
+    height: 100vh;
+    align-items: flex-end;
+}
 
 /* Owl Carousel */
 .carouselWrapper .owl-carousel{
@@ -194,6 +234,7 @@ a.lightboxVideo .overlay img {
         cursor: pointer;
     }
 }
+
 
 @media (min-width: 768px) {
     .carouselWrapper .control.prev span {
