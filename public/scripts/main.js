@@ -24,7 +24,7 @@ $(document).ready(function(){
         }
     })
     .done( function(data) {
-        if (data.data.length > 0) {
+        if (data.data.length > 0) { 
             var lity = liveStream();
 
             var $liveStreamButton = $('#livestream');
