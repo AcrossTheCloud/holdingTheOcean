@@ -38,10 +38,21 @@ h1, h2, h3 {
     scroll-behavior: smooth;
 }
 
+/* No select */
+.disable-select {
+    cursor: default;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
 header {
     color: #ffff00;
     opacity: 1;
     height: calc(100% - 112px);
+    font-family: 'GravurCondensed-Light', sans-serif;
 
     -webkit-transition: opacity .5s;
     -moz-transition: opacity .5s;
@@ -53,8 +64,9 @@ header {
 }
 
 header .title {
-    letter-spacing: -4px;
-    margin: 30px 0 30px 30px;
+    letter-spacing: -0.4px;
+    margin: 20px 0 20px 20px;
+    font-family: 'GravurCondensed-Thin', sans-serif;
 }
 
 header.open {

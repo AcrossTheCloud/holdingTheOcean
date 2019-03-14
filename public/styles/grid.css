@@ -8,11 +8,12 @@
     }
 
     header .title {
-        margin: 27px 10px !important;
+        font-size: 45px;
+        line-height: 45px;
     }
 
     nav#options {
-        margin: 20px 10px !important;
+        margin: 10px 20px !important;
     }
     .info-panel.open .option-item {
         margin: 0 19px 5px !important;
@@ -33,10 +34,10 @@
       overflow: hidden;
     }
     nav {
-      margin: 20px;
+      margin: 10px 20px;
     }
 
-    .info-panel.open nav {
+    .info-panel nav {
       display: flex;
       flex-wrap: wrap;
       flex-flow: column;
@@ -59,11 +60,11 @@
 
     p {
      margin: 0 20px;
-     padding: 20px 10px 40px;
+     padding: 20px 0 40px;
     }
 
     p.creditText {
-        padding: 10px 20px;
+        padding: 10px 0;
     }
 
     .credit{
@@ -77,8 +78,14 @@
     header {
         height: calc(100% - 138px);
     }
+    header .title {
+        margin: 30px 0 30px 30px;
+    }
     nav {
         margin: 20px 30px;
+    }
+    .info-panel {
+        top: calc(100% - 58px);
     }
 
     .two-column{

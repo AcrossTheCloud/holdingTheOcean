@@ -39,7 +39,7 @@
 header{
     font-family: 'GravurCondensed-Thin', sans-serif;
     font-size: 100px;
-    letter-spacing: -4px;
+    letter-spacing: -0.4px;
 }
 
 span.note,
@@ -58,6 +58,7 @@ textarea::placeholder {
 nav span{
     font-size: 13px;
     text-transform: uppercase;
+    letter-spacing: 0;
 }
 p.creditText {
     font-size: 13px;
