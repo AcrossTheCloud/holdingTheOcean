@@ -20,6 +20,16 @@
 
     </head>
     <body>
+        <div id="livestream" style="display:none">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+            </svg>
+            <span class="titlewrap">
+                <span class="title">We're live streaming!</span>
+            </span>
+            <span class="dot">&#183;</span>
+            <span>Watch Now</span>
+        </div>
         <header>
             <div class="title disable-select">
                 ocean archive
@@ -88,10 +98,6 @@
           <source src="https://oceanarchive.io/media/Divers_01.mp4" type="video/mp4">
           <source src="https://oceanarchive.io/media/Divers_01.webm" type="video/webm">
         </video>
-
-        
-        <div id="livestream" style="display:none">Livestream</div>
-
 
         <div id="videosSection" style="display:none">
             <div class="left top desktop">
@@ -176,6 +182,7 @@
         <script src="./scripts/videos.js?v=1.3.0"></script>
         <script src="./scripts/panel.js?v=1.3.0"></script>
         <script src="./scripts/subscribe.js?v=1.3.0"></script>
+        <script src="./scripts/liveStream.js?v=1.3.0"></script>
 
     </body>
 </html>
