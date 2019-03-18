@@ -1,11 +1,11 @@
 $(document).ready(function(){
     var videoList = [
-        "https://ocean-archive.io/media/Divers_01",
-        "https://ocean-archive.io/media/Turtle_Glowing+Fishies",
-        "https://ocean-archive.io/media/%5B1%5DDeepstar",
-        "https://ocean-archive.io/media/%5B2%5DDeepstar",
-        "https://ocean-archive.io/media/%5B3%5DDeepstar",
-        "https://ocean-archive.io/media/%5B4%5DDeepstar"
+        "https://ocean-archive.org/media/Divers_01",
+        "https://ocean-archive.org/media/Turtle_Glowing+Fishies",
+        "https://ocean-archive.org/media/%5B1%5DDeepstar",
+        "https://ocean-archive.org/media/%5B2%5DDeepstar",
+        "https://ocean-archive.org/media/%5B3%5DDeepstar",
+        "https://ocean-archive.org/media/%5B4%5DDeepstar"
     ];
 
     var videoFile = videoList[Math.floor(Math.random() * videoList.length)];

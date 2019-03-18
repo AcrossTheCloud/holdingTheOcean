@@ -103,7 +103,7 @@ async function sayHello(body) {
     // the amazon one
     var message = `${body.message} \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
     var mailOption = {
-      from: `"ocean-archive.io" <${process.env.MAIL_INFO}>`,
+      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
       to: process.env.MAIL_ADDRESS, // change this later to config.MAIL.INFO
       subject: `HOLDING inquiry: ${body.subject}`,
       text: message
