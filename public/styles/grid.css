@@ -52,15 +52,6 @@
       width: 150px;
       margin: 40px 20px;
     }
-
-    p {
-     margin: 0 20px;
-     padding: 20px 0 40px;
-    }
-
-    p.creditText {
-        padding: 10px 0;
-    }
 }
 
 /* larger than mobile */
@@ -180,11 +171,5 @@
     
     .desktop {
         display: none;
-    }
-}
-
-@media (orientation: landscape) and (max-width: 1200px) {
-    #aboutPanel.active {
-        display: flex;
     }
 }

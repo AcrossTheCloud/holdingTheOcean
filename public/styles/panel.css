@@ -16,6 +16,7 @@
 }
 .panel-content.active{
     display: flex;
+    flex-wrap: wrap;
 }
 .info-panel a {
     text-decoration: none;
@@ -96,14 +97,18 @@
 }
 
 @media (min-width: 768px){
-    .info-panel.open{
+    body .info-panel.open {
         top: 142px;
+        height: calc(100vh - 142px);
+    }
+    body.livestream .info-panel.open {
+        top: 173px;
+        height: calc(100vh - 173px);
     }
 }
 
 @media (max-width: 769px) {
     .info-panel.open{
-        height: 100%;
         top: 0;
     }
     .closebtn{
