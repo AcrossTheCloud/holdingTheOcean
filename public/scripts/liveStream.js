@@ -21,8 +21,7 @@ $(document).ready(function() {
 
   $.ajax({
     type: 'GET',
-    url: 'https://api.twitch.tv/helix/streams?user_login=calithon',
-    //url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
+    url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
     headers: {
       "Accept":"application/vnd.twitchtv.v5+json",
       "Client-ID":"brdrlyou2po431ot4owmi1zzjn6n0x"
