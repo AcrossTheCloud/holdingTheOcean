@@ -17,6 +17,7 @@ $(document).ready(function(){
         }
 
         $infoPanel.addClass('open');
+
         $('header').addClass('open');
 
         $('.message span').hide();
@@ -33,7 +34,13 @@ $(document).ready(function(){
         }
     });
 });
+function openNav(){
+    $('body').addClass('noscroll');
 
+    $('.info-panel').addClass('open');
+    $('#aboutPanel').addClass('active');
+    $('.option-item[data-value="about"]').addClass('active');
+}
 function closeNav() {
     $('body').removeClass('noscroll open');
 

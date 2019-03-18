@@ -97,7 +97,7 @@ hr{
     margin-left: 0;
 }
 
-p {
+p{
     vertical-align: top;
     display: inline-block;
     cursor: default;
@@ -155,7 +155,8 @@ p {
 
 .closebtn {
     right: 0;
-    margin: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
     display: none;
     width: 20px;
     height: 20px;
@@ -168,6 +169,7 @@ p {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 }
+
 .closebtn .lines{
     stroke:#fff;
     stroke-linecap:square;
