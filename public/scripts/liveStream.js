@@ -28,7 +28,11 @@ $(document).ready(function() {
         var lity;
 
         var $liveStreamContainer = $('#livestream');
-        if (response.data[0].title) { $('#livestream .title').html(response.data[0].title); }
+        if (response.data[0].title) {
+          $('#livestream .streamTitle').html(' | ' + response.data[0].title);
+          $('#livestream .titlewrap .wrapper').addClass('marquee');
+
+        }
         $liveStreamContainer.fadeIn();
 
         $liveStreamContainer.on('click', function () {

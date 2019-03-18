@@ -1,7 +1,6 @@
 @import url('typography.css');
 @import url('videos.css');
 @import url('panel.css');
-@import url('grid.css');
 @import url('subscribe.css');
 @import url('loader.css');
 @import url('joanjonas.css');
@@ -49,6 +48,7 @@ h1, h2, h3 {
 }
 
 header {
+    display: inline-block;
     color: #ffff00;
     opacity: 1;
     height: calc(100% - 112px);
@@ -64,9 +64,11 @@ header {
 }
 
 header .title {
-    letter-spacing: -0.4px;
+    letter-spacing: 0;
     margin: 20px 0 20px 20px;
-    font-family: 'GravurCondensed-Thin', sans-serif;
+    font-family: 'GravurCondensed-Light', sans-serif;
+    font-size: 45px;
+    line-height: 45px;
 }
 
 header.open {
@@ -98,6 +100,49 @@ p{
     vertical-align: top;
     display: inline-block;
     cursor: default;
+}
+
+.watch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.watch:hover .view {
+    color: rgba(255, 255, 0, 0.5);
+}
+
+.watch:hover svg path {
+    fill: rgba(255, 255, 0, 0.5);
+}
+
+.watch svg {
+    padding-top: 20px;
+    height: 38px;
+}
+.watch svg path{
+    fill: #ffff00;
+    -webkit-transition: fill .5s;
+    -moz-transition: fill .5s;
+    -ms-transition: fill .5s;
+    -o-transition: fill .5s;
+    transition: fill .5s;
+}
+.watch .view {
+    color: #ffff00;
+    font-family: 'GravurCondensed-Thin', sans-serif;
+    font-weight: normal;
+    font-size: 100px;
+    letter-spacing: -0.4px;
+    line-height: 90px;
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -ms-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
 }
 
 .closebtn {
@@ -182,7 +227,24 @@ a.lightboxVideo .overlay img {
     text-transform: uppercase;
     font-family: 'GravurCondensed-Regular', sans-serif;
     background: rgba(0, 0, 0, 0.6);
-    padding: 10px 0;
+    padding: 8px 0;
+
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -ms-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
+
+    cursor: pointer;
+}
+#livestream:hover {
+    color: rgba(255, 255, 255, 0.6);
+
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -ms-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
 }
 #livestream svg {
     height: 14px;
@@ -190,16 +252,23 @@ a.lightboxVideo .overlay img {
     vertical-align: text-top;
 }
 #livestream .titlewrap {
-    max-width: 50%;
-    text-overflow: ellipsis;
+    width: 360px;
     height: 13px;
     display: inline-block;
-    overflow: hidden;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+#livestream .titlewrap .wrapper.marquee {
+    animation: marquee 10s linear infinite;
+    display: inline-block;
+    padding-left: 360px;
+    position: absolute;
 }
 #livestream span {
     font-family: 'GravurCondensed-Light', sans-serif;
     vertical-align: middle;
+    display: inline-block;
 }
 #livestream .dot {
     font-size: 55px;
@@ -295,5 +364,49 @@ a.lightboxVideo .overlay img {
     .carouselWrapper .control.next:hover span {
         right: 20px;
         color: #ffff00;
+    }
+}
+
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+.animate-flicker {
+    -webkit-animation: flickerAnimation 2s infinite;
+    -moz-animation: flickerAnimation 2s infinite;
+    -o-animation: flickerAnimation 2s infinite;
+    animation: flickerAnimation 2s infinite;
+}
+
+@keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%);
     }
 }

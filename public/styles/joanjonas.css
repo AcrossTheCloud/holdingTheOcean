@@ -2,43 +2,31 @@ header.open .joanjonas {
     opacity: 0;
 }
 
-.joanjonas {
-    /*border: 2px solid;*/
-    /*padding: 20px;*/
-    font-size: 30px;
-    letter-spacing: 3px;
-
-    opacity: 1;
-
-    -webkit-transition: opacity 1s, color 0.5s;
-    -moz-transition: opacity 1s, color 0.5s;
-    -ms-transition: opacity 1s, color 0.5s;
-    -o-transition: opacity 1s, color 0.5s;
-    transition: opacity 1s, color 0.5s;
-}
-.joanjonas .title {
-    width: 40%;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
-}
-.joanjonas .light {
+.joanjonasContainer {
+    margin: 20px 0 20px 20px;
     font-family: 'GravurCondensed-Light', sans-serif;
 }
+
+.joanjonas {
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.joanjonas div {
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -ms-transition: color .5s;
+    -o-transition: color .5s;
+    transition: color .5s;
+}
+.joanjonas:hover div {
+    color: rgba(255, 255, 0, 0.5);
+}
+
 .joanjonas .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
-}
-.joanjonas .view {
-    border: .5px solid rgba(255, 240, 0, 1);
-    display: inline-block;
-    cursor: pointer;
-    margin: 12.25px 15.25px 0;
-    padding: 7.75px 6.75px;
-
-    font-size: 13px;
-    letter-spacing: 0;
-    line-height: 14px;
-    text-transform: uppercase;
-    font-family: 'GravurCondensed-Regular', sans-serif;
 }
 
 #joanjonas_text {
@@ -68,7 +56,6 @@ header.open .joanjonas {
 }
 #joanjonas_text .title > div {
     font-size: 30px;
-    font-family: 'GravurCondensed-Light', sans-serif;
     letter-spacing: -0.4px;
     line-height: 36px;
 }
@@ -81,47 +68,8 @@ header.open .joanjonas {
     font-family: 'GravurCondensed-Regular', sans-serif;
 }
 
-.joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
-    margin: 0 20px 0;
-}
-
-@media (min-width: 320px) {
-    .joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
-        font-size: 25px;
-        letter-spacing: -0.4px;
-        line-height: 29px;
-    }
-}
-
 @media (min-width: 768px) {
-    .joanjonas .light, .joanjonas .thin {
-        font-size: 30px;
-        line-height: 36px;
-    }
-    .joanjonas .view {
-        margin: 30px 0 0 30px;
-    }
-    .joanjonasContainer .light, header .joanjonasContainer .thin.desktop {
-        margin: 0 30px;
-    }
-}
-
-/* iphone 5 / SE */
-@media (orientation:landscape) and (max-width: 568px) and (max-height: 320px){
-    .joanjonas .light, .joanjonas .thin {
-        font-size: 28px;
-        line-height: 32px;
-    }
-}
-
-@media (orientation:landscape) and (max-width: 900px), screen and (min-width: 769px) and (max-height: 650px) {
-
     .joanjonasContainer {
-        display: block;
-        padding: 30px 30px;
-    }
-
-    .joanjonas {
-        font-size: 25px;
+        margin: 30px 0 30px 30px;
     }
 }
