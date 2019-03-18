@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
-        $('body').addClass('noscroll, open');
+        $('body').addClass('noscroll open');
 
         $('.panel-content').removeClass('active');
         $('.option-item').removeClass('active');
@@ -35,7 +35,7 @@ $(document).ready(function(){
 });
 
 function closeNav() {
-    $('body').removeClass('noscroll, open');
+    $('body').removeClass('noscroll open');
 
     $('.info-panel').removeClass('open fullscreen');
     $('.option-item.active').removeClass('active');

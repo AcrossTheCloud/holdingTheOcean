@@ -57,8 +57,7 @@
 
 @media (min-width: 768px){
     .info-panel.open{
-        height: 50%;
-        top: 50%;
+        top: 142px;
     }
 }
 
