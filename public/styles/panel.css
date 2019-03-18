@@ -15,7 +15,7 @@
     display: none;
 }
 .panel-content.active{
-    display: block;
+    display: flex;
 }
 .info-panel a {
     text-decoration: none;

@@ -1,10 +1,17 @@
-header.open .joanjonas {
-    opacity: 0.2;
+body.open .joanjonasContainer {
+    opacity: 0;
 }
 
 .joanjonasContainer {
+    color: #ffff00;
     margin: 20px 0 20px 20px;
     font-family: 'GravurCondensed-Light', sans-serif;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
 }
 
 .joanjonas {
@@ -61,7 +68,6 @@ header.open .joanjonas {
 }
 #joanjonas_text .one-column p {
     margin: 0;
-    padding: 15px 30px;
     font-size: 22px;
     letter-spacing: -0.4px;
     line-height: 27px;

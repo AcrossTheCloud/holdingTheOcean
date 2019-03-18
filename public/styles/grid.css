@@ -61,10 +61,6 @@
     p.creditText {
         padding: 10px 0;
     }
-
-    .credit{
-        bottom: 20px;
-    }
 }
 
 /* larger than mobile */
@@ -93,11 +89,6 @@
         width: 95%;
         column-gap: 40px;
         max-width: 1260px;
-    }
-    .credit{
-        margin-left: 630px;
-        position: absolute;
-        bottom: 20px;
     }
     p{
         padding: 20px 30px;
@@ -198,10 +189,5 @@
 @media (orientation: landscape) and (max-width: 1200px) {
     #aboutPanel.active {
         display: flex;
-    }
-    #aboutPanel .credit{
-        margin-left: unset;
-        position: relative;
-        bottom: unset;
     }
 }

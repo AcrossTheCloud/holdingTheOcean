@@ -10,7 +10,7 @@ $(document).ready(function(){
             $infoPanel = $('.info-panel');
 
         $(this).addClass('active');
-        $(`#${key}Panel`).addClass('active');
+        $('#' + key + 'Panel').addClass('active');
 
         if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
             $infoPanel.addClass('fullscreen');

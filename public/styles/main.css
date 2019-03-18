@@ -71,10 +71,10 @@ header .title {
 }
 
 header.open {
-    opacity: 0.2;
+    opacity: 1;
 }
 body.open .watch {
-    opacity: 0.2;
+    opacity: 0;
 }
 
 
@@ -97,20 +97,26 @@ hr{
     margin-left: 0;
 }
 
-p{
-  
+p {
     vertical-align: top;
     display: inline-block;
     cursor: default;
 }
 
 .watch {
+    opacity: 1;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     cursor: pointer;
+
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
 }
 
 .watch:hover .view {
@@ -173,6 +179,8 @@ p{
 }
 .one-column{
     max-width: 610px;
+    flex: 0 0 610px;
+    padding: 20px 30px;
 }
 
 .right{
