@@ -64,20 +64,35 @@ body.open .joanjonasContainer {
 }
 #joanjonas_text .title {
     padding-top: 20px;
+
 }
 #joanjonas_text .title > div {
-    font-size: 30px;
+    font-size: 22px;
+    line-height: 27pt;
     letter-spacing: -0.4px;
-    line-height: 36px;
+    font-family: 'GravurCondensed-Light', sans-serif;
 }
-#joanjonas_text .one-column p {
-    margin: 0;
+
+#joanjonas_text .closeButton {
+    position: absolute;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    padding-right: 50px;
+
+}
+
+#joanjonas_text .content p {
     font-size: 22px;
     letter-spacing: -0.4px;
     line-height: 27px;
-    font-family: 'GravurCondensed-Regular', sans-serif;
+    font-family: 'GravurCondensed-Light', sans-serif;
 }
 
+.wrapper {
+    padding: 30px;
+    height: 90%;
+}
 @media (min-width: 768px) {
     .joanjonasContainer {
         margin: 30px 0 30px 30px;
