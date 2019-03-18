@@ -1,5 +1,5 @@
 .desktop {
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 320px) and (max-width: 460px) {
@@ -33,19 +33,15 @@
     }
 
     .info-panel nav {
-      display: flex;
-      flex-wrap: wrap;
-      flex-flow: column;
-      align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: column;
+        align-items: flex-start;
     }
 
     .option-item{
       padding: 3px;
       margin: 10px 0 0;
-    }
-
-    form {
-      margin: 0 20px;
     }
 
     #tbaLogo {
@@ -77,11 +73,6 @@
         width: 95%;
         column-gap: 40px;
         max-width: 1260px;
-    }
-
-    /* Extra padding aligns the forms with the body content */
-    form#contributeForm, #followForm {
-        margin-top: 10px;
     }
 
     .lity {
@@ -121,11 +112,6 @@
 @media (min-width: 768px) and (max-height: 700px) {
     .desktop {
         display: none;
-    }
-
-    /* Extra padding aligns the forms with the body content */
-    form#contributeForm, #followForm {
-        margin: 0 30px;
     }
 }
 
