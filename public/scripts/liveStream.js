@@ -32,6 +32,9 @@ $(document).ready(function() {
           $('#livestream .streamTitle').html(' | ' + response.data[0].title);
           $('#livestream .titlewrap .wrapper').addClass('marquee');
 
+          // offset body by 31px the Marquee
+          $('body').addClass('livestream');
+
         }
         $liveStreamContainer.fadeIn();
 

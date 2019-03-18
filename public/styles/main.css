@@ -19,10 +19,20 @@ html, body {
 
 body {
     background: #15212C;
+
+    -webkit-transition: padding-top .5s;
+    -moz-transition: padding-top .5s;
+    -ms-transition: padding-top .5s;
+    -o-transition: padding-top .5s;
+    transition: padding-top .5s;
 }
 /* Prevent scrolling the background when the menu is open */
 body.noscroll{
     overflow:hidden;
+}
+
+body.livestream {
+    padding-top: 31px;
 }
 
 h1, h2, h3 {
@@ -179,7 +189,7 @@ p {
 }
 .one-column{
     max-width: 610px;
-    flex: 0 0 610px;
+    flex: auto;
     padding: 20px 30px;
 }
 .credit {
@@ -247,6 +257,9 @@ a.lightboxVideo .overlay img {
     -ms-transition: color .5s;
     -o-transition: color .5s;
     transition: color .5s;
+    position: fixed;
+    width: 100%;
+    top: 0;
 
 }
 #livestream:hover {
