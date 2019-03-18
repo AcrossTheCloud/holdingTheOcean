@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
-        $('body').addClass('noscroll');
+        $('body').addClass('noscroll, open');
+
         $('.panel-content').removeClass('active');
         $('.option-item').removeClass('active');
 
@@ -26,13 +27,15 @@ $(document).ready(function(){
     });
 
 
-    $('header').click(function(){
-        closeNav();
+    $('header, .watch').click(function(){
+        if( $('header').hasClass('open') ) {
+            closeNav();
+        }
     });
 });
 
 function closeNav() {
-    $('body').removeClass('noscroll');
+    $('body').removeClass('noscroll, open');
 
     $('.info-panel').removeClass('open fullscreen');
     $('.option-item.active').removeClass('active');

@@ -22,7 +22,6 @@ body{
 }
 /* Prevent scrolling the background when the menu is open */
 body.noscroll{
-    position:fixed;
     overflow:hidden;
 }
 
@@ -72,6 +71,9 @@ header .title {
 }
 
 header.open {
+    opacity: 0.2;
+}
+body.open .watch {
     opacity: 0.2;
 }
 

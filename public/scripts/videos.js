@@ -15,6 +15,8 @@ $(document).ready(function() {
     });
 
     $('#videosSection .top.left, .joanjonas').click(function() {
+        if( $('header').hasClass('open') ) { return; }
+
         var $jj = $('#joanjonas_text');
         $jj.css('z-index', 6);
         $jj.fadeIn(function () {
@@ -31,6 +33,8 @@ $(document).ready(function() {
     });
 
     $('.watch .view').click(function() {
+        if( $('header').hasClass('open') ) { return; }
+
         var
              isPaused = $player.get(0).paused;
 
