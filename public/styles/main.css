@@ -192,7 +192,8 @@ p{
 .one-column{
     max-width: 610px;
     flex: auto;
-    padding: 20px 30px 0;
+    padding-right: 30px;
+    margin: 0;
 }
 .credit {
     align-self: flex-end;

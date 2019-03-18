@@ -58,8 +58,12 @@ body.open .joanjonasContainer {
     height: 100%;
 }
 
+#joanjonas_text {
+    padding: 20px 20px 0;
+
+}
 #joanjonas_text .title {
-    padding: 30px 30px 0;
+    padding-top: 20px;
 }
 #joanjonas_text .title > div {
     font-size: 30px;
@@ -77,5 +81,8 @@ body.open .joanjonasContainer {
 @media (min-width: 768px) {
     .joanjonasContainer {
         margin: 30px 0 30px 30px;
+    }
+    #joanjonas_text {
+        padding: 30px 30px 0;
     }
 }

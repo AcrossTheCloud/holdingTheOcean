@@ -11,12 +11,13 @@
     transition: 0.5s;
     color: #fff;
 }
-.panel-content{
+.panel-content {
     display: none;
 }
-.panel-content.active{
+.panel-content.active {
     display: flex;
     flex-wrap: wrap;
+    padding: 40px 30px 60px;
 }
 .info-panel a {
     text-decoration: none;

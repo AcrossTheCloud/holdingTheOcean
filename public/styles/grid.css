@@ -78,9 +78,6 @@
         column-gap: 40px;
         max-width: 1260px;
     }
-    p{
-        padding: 20px 30px;
-    }
 
     /* Extra padding aligns the forms with the body content */
     form#contributeForm, #followForm {
