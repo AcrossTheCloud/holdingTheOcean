@@ -163,6 +163,38 @@ p{
     transition: color .5s;
 }
 
+.backTo {
+    color: #ffff00;
+    font-family: 'GravurCondensed-Light', sans-serif;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 1;
+
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+.backTo:hover {
+    opacity: 0.5;
+}
+.backTo .small {
+    letter-spacing: 0;
+    font-size: 13px;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+.backTo .text {
+    letter-spacing: 0;
+    font-size: 22px;
+    line-height: 27px;
+}
+
 .closebtn {
     right: 0;
     margin-top: 20px;
@@ -180,7 +212,7 @@ p{
 
 }
 
-.closebtn .lines{
+.closebtn .lines {
     stroke:#fff;
     stroke-linecap:square;
     stroke-miterlimit:10;
@@ -243,7 +275,10 @@ a.lightboxVideo .overlay img {
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
-/*Twitch live stream style*/
+
+/*
+    START LIVE STREAM
+ */
 #livestream {
     color: #fff;
     cursor: pointer;
@@ -263,7 +298,7 @@ a.lightboxVideo .overlay img {
     position: fixed;
     width: 100%;
     top: 0;
-
+    z-index: 9999;
 }
 #livestream:hover {
     color: rgba(255, 255, 255, 0.6);
@@ -276,7 +311,7 @@ a.lightboxVideo .overlay img {
 }
 #livestream svg {
     height: 14px;
-    margin: 0 20px;
+    margin: 0 20px 0 30px;
     vertical-align: text-top;
 }
 #livestream .titlewrap {
@@ -319,15 +354,64 @@ a.lightboxVideo .overlay img {
     height: 100%;
     width: 100%;
 }
-.iframe-container iframe {
+#livestreamVideoContainer {
+    z-index: -20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    padding-top: 35px;
+}
+#livestreamVideoContainer.open {
+    z-index: 7;
+}
+#livestreamVideoContainer .flex {
+    display: flex;
+}
+#livestreamVideoContainer .flex .left {
+    flex: 1 1 auto;
+    max-width: 270px;
+    padding: 0 30px 40px;
+    flex-wrap: wrap;
+}
+#livestreamVideoContainer .flex .left .bottom {
+    flex: auto;
+    align-self: flex-end;
+}
+#livestreamVideoContainer .flex .left .video {
+    border: .5px solid rgba(255, 240, 0, 0);
+    cursor: pointer;
+    color: #fff000;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 14px;
+
+    margin-bottom: 7.25px;
+    padding: 7.75px 6.75px;
+}
+
+#livestreamVideoContainer .flex .left .video.currentlyPlaying {
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+#livestreamVideoContainer .flex .left .video:hover {
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+
+#livestreamVideoContainer .flex .videoContainer {
+    flex: 1 1 auto;
     height: calc(100vh - 35px);
+}
+#livestreamVideoContainer .flex iframe {
+    height: 100%;
     width: 100%;
 }
-.iframe-container {
-    display: flex;
-    height: 100vh;
-    align-items: flex-end;
-}
+/*
+
+END LIVE STREAM
+
+ */
 
 /* Owl Carousel */
 .carouselWrapper .owl-carousel{

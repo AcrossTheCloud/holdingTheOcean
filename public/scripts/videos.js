@@ -33,24 +33,14 @@ $(document).ready(function() {
     });
 
     $('.watch .view').click(function() {
-        if( $('header').hasClass('open') ) { return; }
-
-        var
-             isPaused = $player.get(0).paused;
-
-        $overlay.fadeIn();
-        $videosSection.css('z-index', 5);
-
-        $videosSection.fadeIn(1000, function () {
-            if(!$player.get(0).duration) {
-                $('#videosSection .video').get(0).click();
-            } else if (isPaused) {
-                $player.get(0).play();
-            }
-            $videosSection.addClass('open');
-        });
+        openVideoSection();
     });
 
+    // Livestream video buttons load the video section
+    $('#livestreamVideoContainer .video').click( function() {
+        closeLiveStream();
+        openVideoSection($(this).data('videourl'));
+    });
 
     $('#videosSection .video').click(function() {
         if ( !$(this).hasClass('currentlyPlaying') ) {
@@ -61,6 +51,29 @@ $(document).ready(function() {
             $(this).addClass('currentlyPlaying');
         }
     });
+
+    function openVideoSection(url) {
+        if( $('header').hasClass('open') ) { return; }
+
+        var
+          isPaused = $player.get(0).paused;
+
+        $overlay.fadeIn();
+        $videosSection.css('z-index', 5);
+
+        $videosSection.fadeIn(1000, function () {
+            if(url) {
+                loadVideo(url);
+            } else {
+                if(!$player.get(0).duration) {
+                    $('#videosSection .video').get(0).click();
+                } else if (isPaused) {
+                    $player.get(0).play();
+                }
+            }
+            $videosSection.addClass('open');
+        });
+    }
 
     function loadVideo(url) {
         $player.find('.webm').attr('src', url + '.webm');

@@ -4,20 +4,25 @@ var liveStream = function() {
     autoplay = true;
   }
 
-  return lity('<div class="iframe-container"> \
-        <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18"><line class="lines" x2="17.68" y2="17.68"></line><line class="lines" x1="17.68" y2="17.68"></line></svg> \
-        <iframe \
-        src="https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay + '"\
-        frameborder="0" \
-        scrolling="no" \
-        allowfullscreen="true"> \
-        </iframe></div>');
-}
+  $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay);
+};
 
 $(document).ready(function() {
+  var
+    $liveStreamContainer = $('#livestream'),
+    $livestreamVideoContainer = $('#livestreamVideoContainer');
+
+  $('#livestreamVideoContainer .videoContainer iframe').on('load', function() {
+    $('#livestreamVideoContainer .loader').fadeOut(function() {
+      $('#livestreamVideoContainer .videoContainer iframe').fadeIn();
+
+    });
+  });
+
   $.ajax({
     type: 'GET',
-    url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
+    url: 'https://api.twitch.tv/helix/streams?user_login=calithon',
+    //url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
     headers: {
       "Accept":"application/vnd.twitchtv.v5+json",
       "Client-ID":"brdrlyou2po431ot4owmi1zzjn6n0x"
@@ -25,26 +30,36 @@ $(document).ready(function() {
   })
     .done( function(response) {
       if (response.data.length > 0) {
-        var lity;
 
-        var $liveStreamContainer = $('#livestream');
         if (response.data[0].title) {
           $('#livestream .streamTitle').html(' | ' + response.data[0].title);
           $('#livestream .titlewrap .wrapper').addClass('marquee');
 
           // offset body by 31px the Marquee
           $('body').addClass('livestream');
-
         }
         $liveStreamContainer.fadeIn();
 
         $liveStreamContainer.on('click', function () {
-          lity = liveStream();
+          liveStream();
+
+          $livestreamVideoContainer
+            .addClass('open')
+            .fadeIn(1000);
         });
 
-        $(document).on('click', '.lity-content .closebtn', function () {
-          lity.close();
+        $('#livestreamVideoContainer .backTo').on('click', function () {
+          closeLiveStream();
         });
       }
     });
 });
+
+function closeLiveStream() {
+  $('#livestreamVideoContainer')
+    .fadeOut(1000, function() {
+      $('#livestreamVideoContainer .loader').show();
+      $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();
+      $(this).removeClass('open');
+    });
+}

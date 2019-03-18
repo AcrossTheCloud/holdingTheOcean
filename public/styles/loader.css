@@ -2,7 +2,7 @@
 https://codepen.io/_fbrz/pen/ljuJn
  */
 
-#loader {
+.loader {
     animation: animate 1.5s linear infinite;
     clip: rect(0, 80px, 80px, 40px);
     height: 80px;
@@ -19,7 +19,7 @@ https://codepen.io/_fbrz/pen/ljuJn
         transform: rotate(220deg)
     }
 }
-#loader:after {
+.loader:after {
     animation: animate2 1.5s ease-in-out infinite;
     clip: rect(0, 80px, 80px, 40px);
     content:'';
