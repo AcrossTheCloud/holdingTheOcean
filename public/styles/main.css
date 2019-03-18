@@ -83,10 +83,6 @@ header .title {
 header.open {
     opacity: 1;
 }
-body.open .watch {
-    opacity: 0;
-}
-
 
 #bgVideo{
     position: fixed;
@@ -111,56 +107,6 @@ p{
     vertical-align: top;
     display: inline-block;
     cursor: default;
-}
-
-.watch {
-    opacity: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    cursor: pointer;
-
-    -webkit-transition: opacity .5s;
-    -moz-transition: opacity .5s;
-    -ms-transition: opacity .5s;
-    -o-transition: opacity .5s;
-    transition: opacity .5s;
-}
-
-.watch:hover .view {
-    color: rgba(255, 255, 0, 0.5);
-}
-
-.watch:hover svg path {
-    fill: rgba(255, 255, 0, 0.5);
-}
-
-.watch svg {
-    padding-top: 20px;
-    height: 38px;
-}
-.watch svg path{
-    fill: #ffff00;
-    -webkit-transition: fill .5s;
-    -moz-transition: fill .5s;
-    -ms-transition: fill .5s;
-    -o-transition: fill .5s;
-    transition: fill .5s;
-}
-.watch .view {
-    color: #ffff00;
-    font-family: 'GravurCondensed-Thin', sans-serif;
-    font-weight: normal;
-    font-size: 100px;
-    letter-spacing: -0.4px;
-    line-height: 90px;
-    -webkit-transition: color .5s;
-    -moz-transition: color .5s;
-    -ms-transition: color .5s;
-    -o-transition: color .5s;
-    transition: color .5s;
 }
 
 .backTo {

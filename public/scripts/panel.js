@@ -26,13 +26,6 @@ $(document).ready(function(){
     $('div.jelly').click(function(){
         $(this).siblings('.send').click();
     });
-
-
-    $('header, .watch').click(function(){
-        if( $('header').hasClass('open') ) {
-            closeNav();
-        }
-    });
 });
 function openNav(){
     $('body').addClass('noscroll');
