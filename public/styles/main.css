@@ -33,6 +33,10 @@ body .bodyContainer {
     overflow: hidden;
 }
 
+body.livestream .mobile.menu{
+   bottom: 55px;
+} 
+
 h1, h2, h3 {
     color: #ffff00;
 }
@@ -215,6 +219,7 @@ a.lightboxVideo .overlay img {
     START LIVE STREAM
  */
 #livestream {
+    display: flex;
     color: #fff;
     cursor: pointer;
     font-size: 13px;
@@ -249,8 +254,11 @@ a.lightboxVideo .overlay img {
     margin: 0 20px 0 30px;
     vertical-align: text-top;
 }
+#livestream .dot.animate-flicker {
+    display: none;
+}
 #livestream .play path {
-    fill: #3200FF;
+    fill:#3200ff;
 }
 #livestream .titlewrap {
     width: 360px;
@@ -270,6 +278,11 @@ a.lightboxVideo .overlay img {
     font-family: 'GravurCondensed-Light', sans-serif;
     vertical-align: middle;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+#livestream .watchnow {
+    display: none;
 }
 #livestream .dot {
     font-size: 55px;
@@ -339,7 +352,6 @@ END LIVE STREAM
     flex-direction: column;
     height: calc(100% - 20px);
     width: 100%;
-    position: relative;
  }
  .mainContent .leftSticky {
     flex: 0 0 auto;
@@ -377,7 +389,6 @@ END LIVE STREAM
     color: #ffff00;
     font-size: 13px;
     line-height: 14px;
-
     max-width: 181px;
 }
 
@@ -408,7 +419,7 @@ END LIVE STREAM
     START Social Media Icons
  */
 .share {
-    display: inline-block;
+    display: none; /*change back to inline-block */
 }
 .share img {
     height: 20px;
@@ -467,7 +478,12 @@ END LIVE STREAM
     body.livestream .mainContent {
         height: calc(100% - 98px);
     }
-
+    #livestream .watchnow {
+        display: inline-block;
+    }
+    #livestream .dot.animate-flicker {
+        display: inline-block;
+    }
     .mainContent .leftSticky {
         flex: 1 0 250px;
         min-width: 250px;
