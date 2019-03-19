@@ -20,26 +20,17 @@ html, body {
 
 body {
     background: #15212C;
-
-    -webkit-transition: padding-top .5s;
-    -moz-transition: padding-top .5s;
-    -ms-transition: padding-top .5s;
-    -o-transition: padding-top .5s;
-    transition: padding-top .5s;
 }
 /* Prevent scrolling the background when the menu is open */
 body.noscroll{
     overflow:hidden;
 }
 
-body.livestream {
-    padding-top: 31px;
-}
-
 body .bodyContainer {
-    height: auto;
-    min-height: 100%;
-    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 h1, h2, h3 {
@@ -239,7 +230,7 @@ a.lightboxVideo .overlay img {
     -ms-transition: color .5s;
     -o-transition: color .5s;
     transition: color .5s;
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
     top: 0;
     z-index: 9999;
@@ -348,7 +339,7 @@ END LIVE STREAM
     flex-direction: column;
     height: 100%;
     width: 100%;
-    margin-left: 20px;
+    position: relative;
  }
  .mainContent .leftSticky {
     flex: 0 0 auto;
@@ -356,7 +347,6 @@ END LIVE STREAM
     color: #ffff00;
     flex-direction: column;
     justify-content: left;
-    margin-top: 30px;
  }
 
  .mainContent .leftStickyHeader {
@@ -380,22 +370,14 @@ END LIVE STREAM
  .mainContent .leftStickyJoan .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
  }
- .mainContent .videoLinks {
+ .videoLinks {
     font-family: 'GravurCondensed-Regular', sans-serif;
     color: #ffff00;
     font-size: 13px;
     line-height: 14px;
     position: absolute;
-    left: 0;
-    bottom: 170px;
-    margin-left: 20px;
- }
-
- .mainContent .rightBox {
-    flex: 1 1 auto;
-    height: 100px;
-    right: 30px;
-    top: 30px;
+    left: 20px;
+    bottom: 20px;
  }
 
 /* Owl Carousel */
@@ -475,11 +457,22 @@ END LIVE STREAM
         right: 20px;
         color: #ffff00;
     }
+
     .mainContent {
+        height: calc(100% - 58px);
         flex-direction: row;
+        position: relative;
     }
+
+    body.livestream .mainContent {
+        height: calc(100% - 98px);
+    }
+
     .mainContent .leftSticky {
-        margin-left: 30px;
+        flex: 0 0 20%;
+    }
+    .mainContent .rightBox {
+        flex: 1 1 auto;
     }
 }
 

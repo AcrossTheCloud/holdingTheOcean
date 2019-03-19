@@ -1,16 +1,10 @@
 #videosSection {
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    z-index: -20;
-
-    background: #000;
-    color: #fff;
-
-    overflow: hidden;
-
+    position: relative;
     height: 100%;
     width: 100%;
+}
+#videosSection video {
+    max-height: 100%;
 }
 
 #videosSection .top.left {
