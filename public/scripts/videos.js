@@ -54,7 +54,6 @@ $(document).ready(function() {
           isPaused = $player.get(0).paused;
 
         $overlay.fadeIn();
-        $videosSection.css('z-index', 5);
 
         $videosSection.fadeIn(1000, function () {
             if(url) {

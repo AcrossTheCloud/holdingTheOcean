@@ -337,7 +337,7 @@ END LIVE STREAM
  .mainContent {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 20px);
     width: 100%;
     position: relative;
  }
@@ -346,9 +346,7 @@ END LIVE STREAM
     display: flex;
     color: #ffff00;
     flex-direction: column;
-    justify-content: left;
  }
-
  .mainContent .leftStickyHeader {
     display: flex;
     flex: 0 0 auto;
@@ -370,15 +368,18 @@ END LIVE STREAM
  .mainContent .leftStickyJoan .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
  }
+.mainContent .rightBox {
+    display: inline-flex;
+    height: 100%;
+}
  .videoLinks {
     font-family: 'GravurCondensed-Regular', sans-serif;
     color: #ffff00;
     font-size: 13px;
     line-height: 14px;
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
- }
+
+    max-width: 181px;
+}
 
 /* Owl Carousel */
 .carouselWrapper .owl-carousel{
@@ -459,7 +460,7 @@ END LIVE STREAM
     }
 
     .mainContent {
-        height: calc(100% - 58px);
+        height: calc(100% - 118px);
         flex-direction: row;
         position: relative;
     }
@@ -469,10 +470,19 @@ END LIVE STREAM
     }
 
     .mainContent .leftSticky {
-        flex: 0 0 20%;
+        flex: 1 0 250px;
+        min-width: 250px;
+        max-width: 250px;
+
     }
     .mainContent .rightBox {
         flex: 1 1 auto;
+    }
+
+    .videoLinks {
+        position: absolute;
+        left: 20px;
+        bottom: 0;
     }
 }
 
