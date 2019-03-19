@@ -32,10 +32,6 @@ $(document).ready(function() {
         });
     });
 
-    $('.watch .view').click(function() {
-        openVideoSection();
-    });
-
     // Livestream video buttons load the video section
     $('#livestreamVideoContainer .video').click( function() {
         closeLiveStream();

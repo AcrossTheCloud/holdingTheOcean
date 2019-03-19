@@ -1,8 +1,17 @@
+.mobile.menu {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+}
+
 .info-panel {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    /*top: calc(100% - 58px);*/
-    top: calc(100% - 125px);
+    width: 100vw;
+    top: 110%;
     position: fixed;
     left: 0;
     z-index: 1;
@@ -15,7 +24,7 @@
     display: none;
 }
 .panel-content.active {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     padding: 40px 30px 60px;
 }
@@ -33,21 +42,8 @@
     position: absolute;
     top: 0;
 }
-.info-panel #openbtn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 20px;
-    margin-right: 20px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+nav.options {
+    flex: 0 1 auto;
 }
 
 .option-item {
@@ -75,10 +71,6 @@
     top: 0;
 }
 
-.info-panel.open #openbtn {
-    display: none;
-}
-
 #aboutPanel {
     position: relative;
     font-family: 'GravurCondensed-Regular', sans-serif;
@@ -87,14 +79,22 @@
     margin-top: 0;
 }
 
-#aboutPanel div {
-    position: relative;
-    width: 50%;
+.one-column{
+    flex: 0 1 610px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+.credit {
+    align-self: flex-end;
+}
+.credit img {
+    width: 150px;
+    padding: 15px 0;
+    display: block;
 }
 
-#aboutPanel div img {
-   position: absolute;
-   bottom: 42px
+#openAPIPanel p {
+    margin-bottom: 0;
 }
 
 @media (min-width: 768px){
@@ -105,6 +105,51 @@
     body.livestream .info-panel.open {
         top: 173px;
         height: calc(100vh - 173px);
+    }
+
+    .info-panel .closebtn {
+        position: absolute;
+        top: 0;
+    }
+    .info-panel .openbtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .info-panel.open .openbtn {
+        display: none;
+    }
+}
+
+/*
+    Specific media break point for the info-panel and it's flex boxes.
+ */
+@media (min-width: 849px){
+    .one-column{
+        max-width: 610px;
+        padding-right: 30px;
+        padding-bottom: 0;
+    }
+
+    #openAPIPanel p {
+        flex: 0 0 calc(50% - 10px);
+        max-width: 610px;
+    }
+
+    #openAPIPanel p.right {
+        padding-left: 20px;
     }
 }
 

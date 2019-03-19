@@ -61,7 +61,7 @@
 
 .closeButton .closeVideosButton.cross .lines {
     stroke: #fff;
-    stroke-width: 0.5px;
+    stroke-width: 2px;
 }
 
 .closeButton .closeVideosButton.cross:hover .lines {
@@ -161,7 +161,7 @@
 
 @media (min-width: 768px) {
     .mobile {
-        display: none;
+        display: none !important;
     }
 
     #videosSection .flex.container {
