@@ -3,9 +3,7 @@ var liveStream = function() {
   if ($(window).width() > 480) {
     autoplay = true;
   }
-
   $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay);
-
   $('#livestreamVideoContainer .overlay').fadeOut();
   $('body').addClass('liveStreamOpen');
 };
@@ -23,7 +21,7 @@ $(document).ready(function() {
 
   $.ajax({
     type: 'GET',
-    url: 'https://api.twitch.tv/helix/streams?user_login=nickitaylor',
+    url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
     headers: {
       "Accept":"application/vnd.twitchtv.v5+json",
       "Client-ID":"brdrlyou2po431ot4owmi1zzjn6n0x"
@@ -31,6 +29,7 @@ $(document).ready(function() {
   })
     .done( function(response) {
       if (response.data.length > 0) {
+        $('#livestreamVideoContainer .placeholder').hide();
 
         if (response.data[0].title) {
           $('#livestream .streamTitle').html(' | ' + response.data[0].title);
@@ -48,6 +47,18 @@ $(document).ready(function() {
             $livestreamVideoContainer
               .addClass('open')
               .fadeIn(1000);
+          });
+        });
+      } else {
+        $(document).on('click', '#livestream, #livestreamButton', function () {
+          closeVideoSection(function () {
+            $livestreamVideoContainer
+              .addClass('open')
+              .fadeIn(1000);
+
+
+            $('#livestreamVideoContainer .overlay').fadeOut();
+            $('body').addClass('liveStreamOpen');
           });
         });
       }
