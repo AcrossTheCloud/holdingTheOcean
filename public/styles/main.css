@@ -413,6 +413,66 @@ END LIVE STREAM
 
  */
 
+ /* Left sticky div*/
+ .mainContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+ }
+ .mainContent .leftSticky {
+    flex: 0 0 auto;
+    display: flex;
+    color: #ffff00;
+    flex-direction: column;
+    justify-content: left;
+    margin-top: 30px;
+ }
+
+ .mainContent .leftStickyHeader {
+    display: flex;
+    flex: 0 0 auto;
+    font-family: 'GravurCondensed-Light', sans-serif;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0;
+    margin-bottom: 30px;
+ }
+
+ .mainContent .leftStickyJoan {
+    flex: 0 0 auto;
+    flex-direction: column;
+    font-family: 'GravurCondensed-Light', sans-serif;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0;
+ }
+ .mainContent .leftStickyJoan .thin {
+    font-family: 'GravurCondensed-Thin', sans-serif;
+ }
+ .mainContent .leftStickyVideos {
+    font-family: 'GravurCondensed-Regular', sans-serif;
+    color: #ffff00;
+    font-size: 13px;
+    line-height: 14px;
+    position: absolute;
+    left: 0;
+    bottom: 170px;
+    margin-left: 20px;
+ }
+
+ .mainContent .leftStickyVideos div {
+     padding-bottom: 15px;
+ }
+
+ .mainContent .rightBox {
+    flex: 1 1 auto;
+    height: 100px;
+    right: 30px;
+    top: 30px;
+ }
+
 /* Owl Carousel */
 .carouselWrapper .owl-carousel{
     position: relative;
@@ -476,6 +536,15 @@ END LIVE STREAM
     .carouselWrapper .control.next:hover span {
         right: 20px;
         color: #ffff00;
+    }
+    .mainContent {
+        flex-direction: row;
+    }
+    .mainContent .leftStickyVideos div {
+        margin-left: 30px;
+    }
+    .mainContent .leftSticky {
+        margin-left: 30px;
     }
 }
 
