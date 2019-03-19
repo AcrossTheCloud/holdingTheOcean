@@ -89,7 +89,7 @@ body.open .joanjonasContainer {
     font-family: 'GravurCondensed-Light', sans-serif;
 }
 
-.wrapper {
+#joanjonas_text .wrapper {
     padding: 30px;
     height: 90%;
 }

@@ -157,6 +157,9 @@ nav.options {
     .info-panel.open{
         top: 0;
     }
+    body.livestream .info-panel.open{
+        top: 40px;
+    }
     .closebtn{
         margin: 0 auto;
         top: -20px;

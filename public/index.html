@@ -25,9 +25,11 @@
                 <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
                 </svg>
-                <span class="titlewrap">                 
+                <span class="titlewrap">
+                    <div class="wrapper">
                         <span class="title">Livestreaming from Venice: Moving Off the Land II</span>
-                        <span class="streamTitle"></span>                   
+                        <span class="streamTitle"></span>
+                    </div>
                 </span>
                 <span class="dot animate-flicker">&#183;</span>
                 <span class="watchnow">Watch Now</span>
@@ -35,7 +37,7 @@
 
             <section class="mainContent">
                 <div class="leftSticky">
-                    <div class="leftStickyHeader">
+                    <div class="leftStickyHeader disable-select">
                         Ocean Archive
                         <br/>Under Construction
                     </div>
@@ -43,17 +45,15 @@
                         <div>Joan Jonas</div>
                         <div class="thin">Moving Off the Land II</div>
                         <div class="thin">Mar 24 - Sep 29, 2019</div>
-
-                        </div>
+                    </div>
                 </div>
                 <div class="rightBox">
-
                     <div id="videosSection" style="display:none">
                         <div class="videoContainer">
                             <div class="overlay">
                                 <div class="loader"></div>
                             </div>
-                            <video muted controls width="100%">
+                            <video muted controls>
                                 <source class="mp4" type="video/mp4">
                                 <source class="webm" type="video/webm">
                             </video>
@@ -61,39 +61,18 @@
                     </div>
 
                     <div id="livestreamVideoContainer" style="display:none">
-                        <div class="flex">
-
-                            <div class="left flex">
-                                <div class="backTo">
-                                    <div class="small">Back To</div>
-                                    <div class="text">Ocean Archive</div>
-                                </div>
-                                <div class="bottom">
-                                    <div class="video" data-videourl="https://streaming.ocean-archive.org/carousel_test/2%20Rays%20swimming%20close">
-                                        Rays Swimming Close
-                                    </div>
-                                    <div class="video" data-videourl="https://streaming.ocean-archive.org/carousel_test/2%20Rays%20swimming%20close%202">
-                                        Rays Swimming Close Part 2
-                                    </div>
-                                    <div class="video" data-videourl="https://streaming.ocean-archive.org/carousel_test/Fish%20swarm">
-                                        Fish Swarm
-                                    </div>
-                                    <div class="video" data-videourl="https://streaming.ocean-archive.org/carousel_test/Shark%20and%20Ray%20near%20each%20other">
-                                        Sharks & Rays
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="videoContainer">
+                        <div class="videoContainer">
+                            <div class="overlay">
                                 <div class="loader"></div>
-                                <iframe
-                                        src=""
-                                        frameborder="0"
-                                        scrolling="no"
-                                        allowfullscreen="true"
-                                        style="display: none"
-                                >
-                                </iframe>
                             </div>
+                            <iframe
+                                src=""
+                                frameborder="0"
+                                scrolling="no"
+                                allowfullscreen="true"
+                                style="display: none"
+                            >
+                            </iframe>
                         </div>
                     </div>
 
@@ -119,7 +98,7 @@
                     <div class="video" data-videourl="https://streaming.ocean-archive.org/carousel_test/Fish%20swarm">
                         OCEAN ARCHIVE TRAILER
                     </div>
-                    <div class="video" data-videourl="https://streaming.ocean-archive.org/carousel_test/Shark%20and%20Ray%20near%20each%20other">
+                    <div id="livestreamButton">
                         LIVESTREAM
                     </div>
 

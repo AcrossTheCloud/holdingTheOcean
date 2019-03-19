@@ -19,6 +19,19 @@ $(document).ready(function(){
     $video[0].load();
     $video[0].play();
 
+    $('.leftStickyHeader').click(function () {
+        closeVideoSection();
+        closeLiveStream();
+
+        $('video#bgVideo').css('opacity', 1);
+        var $videosSection = $('#videosSection');
+
+        $videosSection.fadeOut(1000, function () {
+            $videosSection.removeClass('open');
+            $videosSection.css('z-index', -20);
+        });
+    });
+
     // let bgVideo = $('#bgVideo').get(0);
     // // Pause the background video whenever a lightbox has opened.
     // $(document).on('lity:open', function(event, instance) {

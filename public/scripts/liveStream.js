@@ -5,6 +5,9 @@ var liveStream = function() {
   }
 
   $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay);
+
+  $('#livestreamVideoContainer .overlay').fadeOut();
+  $('body').addClass('liveStreamOpen');
 };
 
 $(document).ready(function() {
@@ -13,15 +16,14 @@ $(document).ready(function() {
     $livestreamVideoContainer = $('#livestreamVideoContainer');
 
   $('#livestreamVideoContainer .videoContainer iframe').on('load', function() {
-    $('#livestreamVideoContainer .loader').fadeOut(function() {
+    $('#livestreamVideoContainer .overlay').fadeOut(function() {
       $('#livestreamVideoContainer .videoContainer iframe').fadeIn();
-
     });
   });
 
   $.ajax({
     type: 'GET',
-    url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
+    url: 'https://api.twitch.tv/helix/streams?user_login=nickitaylor',
     headers: {
       "Accept":"application/vnd.twitchtv.v5+json",
       "Client-ID":"brdrlyou2po431ot4owmi1zzjn6n0x"
@@ -39,26 +41,28 @@ $(document).ready(function() {
         }
         $liveStreamContainer.fadeIn();
 
-        $liveStreamContainer.on('click', function () {
-          liveStream();
+        $(document).on('click', '#livestream, #livestreamButton', function () {
+          closeVideoSection(function () {
+            liveStream();
 
-          $livestreamVideoContainer
-            .addClass('open')
-            .fadeIn(1000);
-        });
-
-        $('#livestreamVideoContainer .backTo').on('click', function () {
-          closeLiveStream();
+            $livestreamVideoContainer
+              .addClass('open')
+              .fadeIn(1000);
+          });
         });
       }
     });
 });
 
-function closeLiveStream() {
+function closeLiveStream(callback) {
   $('#livestreamVideoContainer')
     .fadeOut(1000, function() {
-      $('#livestreamVideoContainer .loader').show();
+      $('body').removeClass('liveStreamOpen');
       $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();
       $(this).removeClass('open');
+
+      $('video#bgVideo').css('opacity', 1).get(0).play();
+      if (typeof callback === 'function') callback();
+
     });
 }

@@ -1,80 +1,36 @@
+var
+  $videosSection = $('#videosSection'),
+  $player = $('#videosSection video'),
+  $overlay = $('#videosSection .overlay'),
+  resizeTimeout = null;
+
 $(document).ready(function() {
-    var
-        $videosSection = $('#videosSection'),
-        $player = $('#videosSection video'),
-        $overlay = $('#videosSection .overlay'),
-        resizeTimeout = null;
-
-    $('#videosSection .closeVideosButton').click(function() {
-        $player.get(0).pause();
-
-        $videosSection.fadeOut(1000, function () {
-            $videosSection.removeClass('open');
-            $videosSection.css('z-index', -20);
-        });
-    });
-
-    $('#videosSection .top.left, .joanjonas').click(function() {
-        if( $('header').hasClass('open') ) { return; }
-
-        var $jj = $('#joanjonas_text');
-        $jj.css('z-index', 6);
-        $jj.fadeIn(function () {
-            $videosSection.css('z-index', -20);
-        });
-    });
-
-    $('#joanjonas_text .closeButton').click(function() {
-        var $jj = $('#joanjonas_text');
-        $jj.fadeOut(function() {
-            $videosSection.css('z-index', 5);
-            $jj.css('z-index', -20);
-        });
-    });
 
     // Livestream video buttons load the video section
-    $('.video').click( function() {
-        openVideoSection($(this).data('videourl'));
-    });
+    $('.videoLinks .video').click( function() {
+        var _video = $(this);
+        closeLiveStream(function () {
+            $('video#bgVideo').css('opacity', 0).get(0).pause();
 
-    $('#videosSection .video').click(function() {
-        if ( !$(this).hasClass('currentlyPlaying') ) {
-            $overlay.fadeIn();
-
-            loadVideo( $(this).data('videourl') );
-            $('#videosSection .video.currentlyPlaying').removeClass('currentlyPlaying');
-            $(this).addClass('currentlyPlaying');
-        }
-    });
-
-    function openVideoSection(url) {
-        closeLiveStream();
-
-        var
-          isPaused = $player.get(0).paused;
-
-        $overlay.fadeIn();
-
-        $videosSection.fadeIn(1000, function () {
-            if(url) {
-                loadVideo(url);
+            if (!$(_video).hasClass('currentlyPlaying')) {
+                openVideoSection($(this).data('videourl'), function () {
+                    loadVideo($(_video).data('videourl'));
+                    $('.videoLinks .video.currentlyPlaying').removeClass('currentlyPlaying');
+                    $(_video).addClass('currentlyPlaying');
+                });
             } else {
-                if(!$player.get(0).duration) {
-                    $('#videosSection .video').get(0).click();
-                } else if (isPaused) {
-                    $player.get(0).play();
+                if(!$('body').hasClass('videoSectionOpen')) {
+                    openVideoSection(null,function () {
+                        $overlay.fadeOut(function () {
+                            $player.get(0).play();
+                        });
+                    });
                 }
             }
-            $videosSection.addClass('open');
+
+
         });
-    }
-
-    function loadVideo(url) {
-        $player.find('.webm').attr('src', url + '.webm');
-        $player.find('.mp4').attr('src', url + '.mp4');
-        $player.get(0).load();
-    }
-
+    });
 
     $player.get(0).onloadeddata = function() {
         if ($(window).width() > 1200) {
@@ -99,5 +55,46 @@ $(document).ready(function() {
             }
         }, 500)
     });
-
 });
+
+function openVideoSection(url, callback) {
+    var
+      isPaused = $player.get(0).paused;
+
+    $overlay.fadeIn();
+
+    $videosSection.fadeIn(1000, function () {
+        if(url) {
+            loadVideo(url);
+        } else {
+            if(!$player.get(0).duration) {
+                $('#videosSection video').get(0).click();
+            } else {
+                if (isPaused) {
+                    $player.get(0).play();
+                }
+            }
+        }
+        $videosSection.addClass('open');
+        $('body').addClass('videoSectionOpen');
+
+        if (typeof callback === 'function') callback();
+    });
+}
+
+function closeVideoSection(callback) {
+    $('body').removeClass('videoSectionOpen');
+    $videosSection.fadeOut(function () {
+        $player.get(0).pause();
+
+        $('video#bgVideo').css('opacity', 1).get(0).play();
+
+        if (typeof callback === 'function') callback();
+    });
+}
+
+function loadVideo(url) {
+    $player.find('.webm').attr('src', url + '.webm');
+    $player.find('.mp4').attr('src', url + '.mp4');
+    $player.get(0).load();
+}

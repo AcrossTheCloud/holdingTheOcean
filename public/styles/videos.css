@@ -1,11 +1,12 @@
-#videosSection {
+#videosSection, #livestreamVideoContainer {
     position: relative;
     width: 100%;
+    text-align: center;
 }
 #videosSection video {
     max-height: 100%;
 }
-#videosSection .videoContainer {
+#videosSection .videoContainer, #livestreamVideoContainer .videoContainer {
     position: relative;
     height: 100%;
 }
@@ -80,7 +81,7 @@
 
 
 /* START RIGHT VIDEOS */
-#videosSection .overlay {
+#videosSection .overlay, #livestreamVideoContainer .overlay {
     width: 100.1%;
     height: 100.1%;
     z-index: 9999999;
@@ -89,24 +90,24 @@
     left: 0;
     top: 0;
 }
-#videosSection .overlay .container {
+#videosSection .overlay .container, #livestreamVideoContainer .overlay .container {
     position: absolute;
     width: 100%;
     top: 50%;
     line-height: 0;
     transform: translateY(-50%);
 }
-#videosSection .overlay svg {
+#videosSection .overlay svg, #livestreamVideoContainer .overlay svg {
     width: 25px;
     height: 30px;
 }
-#videosSection .overlay svg rect {
+#videosSection .overlay svg rect, #livestreamVideoContainer .overlay svg rect {
     fill: #ffff00;
 }
 /* END RIGHT VIDEOS */
 
 /* START LEFT VIDEO BUTTONS */
-.video {
+.video, #livestreamButton {
     border: .5px solid rgba(255, 240, 0, 0);
     cursor: pointer;
     color: #fff000;
@@ -118,10 +119,10 @@
     padding: 7.75px 6.75px;
 }
 
-.video.currentlyPlaying {
+body.videoSectionOpen .video.currentlyPlaying, body.liveStreamOpen #livestreamButton {
     border: .5px solid rgba(255, 240, 0, 1);
 }
-.video:hover {
+.video:hover, #livestreamButton:hover {
     border: .5px solid rgba(255, 240, 0, 1);
 }
 /* END LEFT VIDEO BUTTONS */
@@ -132,11 +133,11 @@
         display: none !important;
     }
 
-    #videosSection .flex.container {
+    #videosSection .flex.container, #livestreamVideoContainer .flex.container {
         flex-direction: row;
     }
 
-    #videosSection .textContainer {
+    #videosSection .textContainer, #livestreamVideoContainer .textContainer {
         flex: 1 1 20%;
     }
 
@@ -167,7 +168,7 @@
 
 @media all and (min-width: 1200px) {
 
-    #videosSection .flex.container {
+    #videosSection .flex.container, #livestreamVideoContainer .flex.container {
         display: inline-block;
     }
 

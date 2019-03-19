@@ -11,14 +11,6 @@ https://codepen.io/_fbrz/pen/ljuJn
     left: calc(50% - 40px);
     top: calc(50% - 40px);
 }
-@keyframes animate {
-    0% {
-        transform: rotate(0deg)
-    }
-    100% {
-        transform: rotate(220deg)
-    }
-}
 .loader:after {
     animation: animate2 1.5s ease-in-out infinite;
     clip: rect(0, 80px, 80px, 40px);
@@ -27,6 +19,16 @@ https://codepen.io/_fbrz/pen/ljuJn
     height: 80px;
     width: 80px;
     position: absolute;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(220deg)
+    }
 }
 @keyframes animate2 {
     0% {
