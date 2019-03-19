@@ -358,6 +358,8 @@ END LIVE STREAM
     display: flex;
     color: #ffff00;
     flex-direction: column;
+    margin-left: 20px;
+    margin-top: 30px;
  }
  .mainContent .leftStickyHeader {
     display: flex;
@@ -390,6 +392,7 @@ END LIVE STREAM
     font-size: 13px;
     line-height: 14px;
     max-width: 181px;
+    margin-left: 20px
 }
 
 /* Owl Carousel */
@@ -488,6 +491,7 @@ END LIVE STREAM
         flex: 1 0 250px;
         min-width: 250px;
         max-width: 250px;
+        margin-left: 30px;
 
     }
     .mainContent .rightBox {
@@ -496,7 +500,7 @@ END LIVE STREAM
 
     .videoLinks {
         position: absolute;
-        left: 20px;
+        left: 30px;
         bottom: 0;
     }
 }
