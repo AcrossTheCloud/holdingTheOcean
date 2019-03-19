@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var
         $videosSection = $('#videosSection'),
-        $player = $('#videosSection .videoContainer video'),
+        $player = $('#videosSection video'),
         $overlay = $('#videosSection .overlay'),
         resizeTimeout = null;
 
@@ -33,8 +33,7 @@ $(document).ready(function() {
     });
 
     // Livestream video buttons load the video section
-    $('#livestreamVideoContainer .video').click( function() {
-        closeLiveStream();
+    $('.video').click( function() {
         openVideoSection($(this).data('videourl'));
     });
 
@@ -49,7 +48,7 @@ $(document).ready(function() {
     });
 
     function openVideoSection(url) {
-        if( $('header').hasClass('open') ) { return; }
+        closeLiveStream();
 
         var
           isPaused = $player.get(0).paused;

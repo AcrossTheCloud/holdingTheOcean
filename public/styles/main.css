@@ -15,6 +15,7 @@ html, body {
     font-family: 'GravurCondensed-Regular', sans-serif;
     font-weight: normal;
     margin: 0;
+    height: 100vh;
 }
 
 body {
@@ -33,6 +34,12 @@ body.noscroll{
 
 body.livestream {
     padding-top: 31px;
+}
+
+body .bodyContainer {
+    height: auto;
+    min-height: 100%;
+    position: relative;
 }
 
 h1, h2, h3 {
@@ -320,24 +327,6 @@ a.lightboxVideo .overlay img {
     flex: auto;
     align-self: flex-end;
 }
-#livestreamVideoContainer .flex .left .video {
-    border: .5px solid rgba(255, 240, 0, 0);
-    cursor: pointer;
-    color: #fff000;
-    font-size: 13px;
-    text-transform: uppercase;
-    line-height: 14px;
-
-    margin-bottom: 7.25px;
-    padding: 7.75px 6.75px;
-}
-
-#livestreamVideoContainer .flex .left .video.currentlyPlaying {
-    border: .5px solid rgba(255, 240, 0, 1);
-}
-#livestreamVideoContainer .flex .left .video:hover {
-    border: .5px solid rgba(255, 240, 0, 1);
-}
 
 #livestreamVideoContainer .flex .videoContainer {
     flex: 1 1 auto;
@@ -391,7 +380,7 @@ END LIVE STREAM
  .mainContent .leftStickyJoan .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
  }
- .mainContent .leftStickyVideos {
+ .mainContent .videoLinks {
     font-family: 'GravurCondensed-Regular', sans-serif;
     color: #ffff00;
     font-size: 13px;
@@ -400,10 +389,6 @@ END LIVE STREAM
     left: 0;
     bottom: 170px;
     margin-left: 20px;
- }
-
- .mainContent .leftStickyVideos div {
-     padding-bottom: 15px;
  }
 
  .mainContent .rightBox {
@@ -435,6 +420,19 @@ END LIVE STREAM
     transform: translateY(-50%);
     cursor: pointer;
 }
+
+/*
+    START Social Media Icons
+ */
+.share {
+    display: inline-block;
+}
+.share img {
+    height: 20px;
+}
+/*
+    END Social Media Icons
+ */
 
 @media (max-width: 768px) {
     .carouselWrapper .control.prev span, .carouselWrapper .control.next span {
@@ -479,9 +477,6 @@ END LIVE STREAM
     }
     .mainContent {
         flex-direction: row;
-    }
-    .mainContent .leftStickyVideos div {
-        margin-left: 30px;
     }
     .mainContent .leftSticky {
         margin-left: 30px;
