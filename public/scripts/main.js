@@ -1,3 +1,8 @@
+function closeJoanJonas(callback) {
+    $('body').removeClass('blackBackground');
+    $('.joanjonas_text').fadeOut("slow",callback); 
+}
+
 $(document).ready(function(){
     var videoList = [
         "https://ocean-archive.org/media/Divers_01",
@@ -19,7 +24,18 @@ $(document).ready(function(){
     $video[0].load();
     $video[0].play();
 
+    $('.leftStickyJoan, .joanjonas_text_button').click(function() {
+        closeVideoSection(function() {
+            closeLiveStream(function() {
+                $('.joanjonas_text').fadeIn(); 
+                $('body').addClass('blackBackground'); 
+            });
+        });
+    });
+
+
     $('.leftStickyHeader').click(function () {
+        closeJoanJonas();
         closeVideoSection();
         closeLiveStream();
 

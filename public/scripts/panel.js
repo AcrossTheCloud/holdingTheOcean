@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
+
         $('body').addClass('noscroll open');
 
         $('.panel-content').removeClass('active');
@@ -11,7 +12,7 @@ $(document).ready(function(){
 
         $(this).addClass('active');
         $('#' + key + 'Panel').addClass('active');
-
+ 
         if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
             $infoPanel.addClass('fullscreen');
         }

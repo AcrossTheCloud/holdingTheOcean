@@ -36,68 +36,76 @@ body.open .joanjonasContainer {
     font-family: 'GravurCondensed-Thin', sans-serif;
 }
 
-#joanjonas_text {
-    z-index: -20;
-    position: fixed;
+.joanjonas_text {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
     color: #fff;
 
-    font-family: 'GravurCondensed-Regular', sans-serif;
+    font-family: 'GravurCondensed-Light', sans-serif;
     font-size: 22px;
     line-height: 27px;
     margin-top: 0;
+    padding-left: 20px;
 }
 
-#joanjonas_text .left {
+.joanjonas_text .left {
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
 }
 
-#joanjonas_text {
-    padding: 20px 20px 0;
-
-}
-#joanjonas_text .title {
-    padding-top: 20px;
-
-}
-#joanjonas_text .title > div {
+.joanjonas_text .title > div {
     font-size: 22px;
     line-height: 27pt;
     letter-spacing: -0.4px;
     font-family: 'GravurCondensed-Light', sans-serif;
 }
 
-#joanjonas_text .closeButton {
+.joanjonas_text .closeButton {
     position: absolute;
     cursor: pointer;
     height: 30px;
     width: 30px;
-    padding-right: 50px;
-
 }
 
-#joanjonas_text .content p {
+.joanjonas_text .joanjonas_content {
+    overflow-y: auto; 
+    overflow-x: hidden;
+    height: 100%;
+    width: 90%;
+    flex: 0 1 610px;
+    padding-top: 12px;
+    padding-bottom: 20px;
+}
+
+.joanjonas_text .joanjonas_content div p {
     font-size: 22px;
     letter-spacing: -0.4px;
     line-height: 27px;
     font-family: 'GravurCondensed-Light', sans-serif;
+    margin-left: 25%;
+    width: 40%;
+    margin-bottom: 0;
+    overflow: scroll;
+}
+.joanjonas_text .joanjonas_content span {
+    font-size: 22px;
+    font-family: 'GravurCondensed-Light', sans-serif;
 }
 
-#joanjonas_text .wrapper {
-    padding: 30px;
+.joanjonas_text .joanjonas_content p .cursive {
+    font-style: italic; 
+    font-size: 22px;
+    font-family: 'GravurCondensed-Light', sans-serif;
+}
+.joanjonas_text .joanjonas_content p .emphasis {
+    font-weight: bold;
+    font-size: 22px;
+    font-family: 'GravurCondensed-Light', sans-serif;
+}
+.joanjonas_text .wrapper {
     height: 90%;
 }
-@media (min-width: 768px) {
-    .joanjonasContainer {
-        margin: 30px 0 30px 30px;
-    }
-    #joanjonas_text {
-        padding: 30px 30px 0;
-    }
-}
+

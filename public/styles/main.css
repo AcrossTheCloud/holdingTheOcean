@@ -33,6 +33,10 @@ body .bodyContainer {
     overflow: hidden;
 }
 
+.blackBackground {
+    background: rgb(0, 0, 0)
+}
+
 h1, h2, h3 {
     color: #ffff00;
 }
@@ -403,7 +407,20 @@ END LIVE STREAM
     font-size: 13px;
     line-height: 14px;
     max-width: 181px;
-    margin-left: 20px
+    margin-left: 20px;
+    padding-top: 20px;
+}
+.videoLinks .joanjonas_text_button {
+    font-family: 'GravurCondensed-Regular', sans-serif;
+    border: .5px solid rgba(255, 240, 0, 0);
+    cursor: pointer;
+    color: #fff000;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 14px;
+
+    margin-bottom: 7.25px;
+    padding: 7.75px 6.75px;
 }
 
 /* Owl Carousel */
@@ -525,6 +542,7 @@ END LIVE STREAM
     .videoLinks {
         position: absolute;
         bottom: 0;
+        margin-left: 30px;
     }
 }
 

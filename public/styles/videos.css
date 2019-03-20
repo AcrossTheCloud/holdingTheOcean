@@ -5,6 +5,7 @@
 }
 #videosSection video {
     max-height: 100%;
+    width: 100%;
 }
 #videosSection .videoContainer, #livestreamVideoContainer .videoContainer {
     position: relative;
