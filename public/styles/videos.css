@@ -108,7 +108,7 @@
 /* END RIGHT VIDEOS */
 
 /* START LEFT VIDEO BUTTONS */
-.video, #livestreamButton {
+.video, .livestreamButton {
     border: .5px solid rgba(255, 240, 0, 0);
     cursor: pointer;
     color: #fff000;
@@ -120,10 +120,10 @@
     padding: 7.75px 6.75px;
 }
 
-body.videoSectionOpen .video.currentlyPlaying, body.liveStreamOpen #livestreamButton {
+body.videoSectionOpen .video.currentlyPlaying, body.liveStreamOpen .livestreamButton {
     border: .5px solid rgba(255, 240, 0, 1);
 }
-.video:hover, #livestreamButton:hover {
+.video:hover, .livestreamButton:hover {
     border: .5px solid rgba(255, 240, 0, 1);
 }
 /* END LEFT VIDEO BUTTONS */

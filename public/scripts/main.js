@@ -129,3 +129,14 @@ $(document).ready(function(){
     // });
 
 });
+
+function getUrlParameterValue(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+function getUrlParameterName() {
+    var regex = new RegExp('^[\\?&]([a-zA-Z0-9_.+-]+)');
+    return regex.exec(location.search)[1];
+}

@@ -5,7 +5,6 @@ var
   resizeTimeout = null;
 
 $(document).ready(function() {
-
     // Livestream video buttons load the video section
     $('.videoLinks .video').click( function() {
         var _video = $(this);

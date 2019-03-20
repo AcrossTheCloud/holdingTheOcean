@@ -40,7 +40,7 @@ $(document).ready(function() {
         }
         $liveStreamContainer.fadeIn();
 
-        $(document).on('click', '#livestream, #livestreamButton', function () {
+        $(document).on('click', '#livestream, .livestreamButton', function () {
           closeVideoSection(function () {
             liveStream();
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
           });
         });
       } else {
-        $(document).on('click', '#livestream, #livestreamButton', function () {
+        $(document).on('click', '#livestream, .livestreamButton', function () {
           closeVideoSection(function () {
             $livestreamVideoContainer
               .addClass('open')
