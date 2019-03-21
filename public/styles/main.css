@@ -404,9 +404,7 @@ END LIVE STREAM
  .mainContent .leftStickyJoan .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
  }
- .mainContent .leftStickyJoan #oceanspace {
-    display: none;
- }
+
 .mainContent .rightBox {
     display: inline-flex;
     position: relative;
