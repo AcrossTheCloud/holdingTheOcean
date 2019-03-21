@@ -140,5 +140,9 @@ function getUrlParameterValue(name) {
 }
 function getUrlParameterName() {
     var regex = new RegExp('^[\\?&]([a-zA-Z0-9_.+-]+)');
-    return regex.exec(location.search)[1];
+    if (regex.exec(location.search)) {
+        return regex.exec(location.search)[1];
+    } else {
+        return '';
+    }
 }
