@@ -404,7 +404,9 @@ END LIVE STREAM
  .mainContent .leftStickyJoan .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
  }
-
+ .mainContent .leftStickyJoan #oceanspace {
+    display: none;
+ }
 .mainContent .rightBox {
     display: inline-flex;
     position: relative;
@@ -438,6 +440,11 @@ END LIVE STREAM
 .videoLinks .div:hover {
     border: .5px solid rgba(255, 240, 0, 1);
 }
+
+.videoLinks .joanjonas_text_button:hover {
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+
 /* Owl Carousel */
 .carouselWrapper .owl-carousel{
     position: relative;
