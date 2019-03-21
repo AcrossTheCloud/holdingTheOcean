@@ -8,28 +8,28 @@ $(document).ready(function() {
     // Livestream video buttons load the video section
     $('.videoLinks .video').click( function() {
         var _video = $(this);
-        closeJoanJonas(function() { 
-            closeLiveStream(
-                function () {
+        closeJoanJonas(function() {
+
+            closeLiveStream( function () {
                 $('video#bgVideo').css('opacity', 0).get(0).pause();
                 if (!$(_video).hasClass('currentlyPlaying')) {
-                    openVideoSection($(this).data('videourl'), function () {
-                        loadVideo($(_video).data('videourl'));
-                        $('.videoLinks .video.currentlyPlaying').removeClass('currentlyPlaying');
-                        $(_video).addClass('currentlyPlaying');
-                    });
+                  openVideoSection($(this).data('videourl'), function () {
+                    loadVideo($(_video).data('videourl'));
+                    $('.videoLinks .video.currentlyPlaying').removeClass('currentlyPlaying');
+                    $(_video).addClass('currentlyPlaying');
+                  });
                 } else {
-                    if(!$('body').hasClass('videoSectionOpen')) {
-                        openVideoSection(null,function () {
-                            $overlay.fadeOut(function () {
-                                $player.get(0).play();
-                            });
-                        });
-                    }
+                  if(!$('body').hasClass('videoSectionOpen')) {
+                    openVideoSection(null,function () {
+                      $overlay.fadeOut(function () {
+                        $player.get(0).play();
+                      });
+                    });
+                  }
                 }
-
-            })
-        });
+          
+              });
+          });
     });
 
     $player.get(0).onloadeddata = function() {

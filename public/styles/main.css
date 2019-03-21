@@ -364,6 +364,7 @@ END LIVE STREAM
     width: 100%;
  }
  .mainContent .leftSticky {
+    cursor: pointer;
     flex: 0 0 auto;
     display: flex;
     color: #ffff00;
