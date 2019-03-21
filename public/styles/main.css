@@ -350,6 +350,7 @@ a.lightboxVideo .overlay img {
 }
 
 #livestreamVideoContainer .flex .videoContainer {
+    overflow: hidden;
     flex: 1 1 auto;
     height: calc(100vh - 35px);
 }
@@ -381,7 +382,6 @@ END LIVE STREAM
  }
  .mainContent .rightBox {
      margin-top: 20px;
-     margin-right: 20px;
  }
  .mainContent .leftStickyHeader {
     display: flex;
