@@ -75,7 +75,6 @@ function closeLiveStream(callback) {
       $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();
       $(this).removeClass('open');
 
-      $('video#bgVideo').css('opacity', 1).get(0).play();
       if (typeof callback === 'function') callback();
 
     });

@@ -11,7 +11,7 @@ $(document).ready(function() {
         closeJoanJonas(function() {
 
             closeLiveStream( function () {
-                $('video#bgVideo').css('opacity', 0).get(0).pause();
+                $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
                 if (!$(_video).hasClass('currentlyPlaying')) {
                   openVideoSection($(this).data('videourl'), function () {
                     loadVideo($(_video).data('videourl'));
@@ -87,8 +87,6 @@ function closeVideoSection(callback) {
     $('body').removeClass('videoSectionOpen');
     $videosSection.fadeOut(function () {
         $player.get(0).pause();
-
-        $('video#bgVideo').css('opacity', 1).get(0).play();
 
         if (typeof callback === 'function') callback();
     });

@@ -1,7 +1,8 @@
 function closeJoanJonas(callback) {
     $('body').removeClass('joanjonasTextOpen');
-    $('.joanjonas_text').fadeOut("slow",callback);
-    $('video#bgVideo').css('opacity', 1).get(0).play(); 
+    $('.joanjonas_text').fadeOut("slow", function() {
+        if (typeof callback === 'function') return callback();
+    });
 }
 
 $(document).ready(function(){
@@ -28,25 +29,27 @@ $(document).ready(function(){
     $('.leftStickyJoan, .joanjonas_text_button').click(function() {
         closeVideoSection(function() {
             closeLiveStream(function() {
-                $('video#bgVideo').css('opacity', 0).get(0).pause();
-                $('.joanjonas_text').fadeIn(); 
-                $('body').addClass('joanjonasTextOpen'); 
+                $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
+                $('.joanjonas_text').fadeIn();
+                $('body').addClass('joanjonasTextOpen');
             });
         });
     });
 
 
     $('.leftStickyHeader').click(function () {
-        closeJoanJonas();
-        closeVideoSection();
-        closeLiveStream();
+        closeJoanJonas(function() {
+            closeVideoSection(function() {
+                closeLiveStream(function() {
+                    $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
+                    var $videosSection = $('#videosSection');
 
-        $('video#bgVideo').css('opacity', 1);
-        var $videosSection = $('#videosSection');
-
-        $videosSection.fadeOut(1000, function () {
-            $videosSection.removeClass('open');
-            $videosSection.css('z-index', -20);
+                    $videosSection.fadeOut(1000, function () {
+                        $videosSection.removeClass('open');
+                        $videosSection.css('z-index', -20);
+                    });
+                });
+            });
         });
     });
 
@@ -140,9 +143,6 @@ function getUrlParameterValue(name) {
 }
 function getUrlParameterName() {
     var regex = new RegExp('^[\\?&]([a-zA-Z0-9_.+-]+)');
-    if (regex.exec(location.search)) {
-        return regex.exec(location.search)[1];
-    } else {
-        return '';
-    }
+    var results = regex.exec(location.search);
+    return results === null ? '' : results[1];
 }
