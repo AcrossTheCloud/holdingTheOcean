@@ -32,9 +32,12 @@ body .bodyContainer {
     flex-direction: column;
     overflow: hidden;
 }
+body.joanjonasTextOpen .leftStickyJoan {
+    color: #fff;
+}
 
-.blackBackground {
-    background: rgb(0, 0, 0)
+body.videoSectionOpen, body.joanjonasTextOpen, body.liveStreamOpen .bodyContainer {
+    background: #181a20;
 }
 
 h1, h2, h3 {
@@ -397,6 +400,7 @@ END LIVE STREAM
  .mainContent .leftStickyJoan .thin {
     font-family: 'GravurCondensed-Thin', sans-serif;
  }
+
 .mainContent .rightBox {
     display: inline-flex;
     position: relative;

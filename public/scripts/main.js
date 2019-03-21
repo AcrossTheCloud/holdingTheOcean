@@ -1,5 +1,5 @@
 function closeJoanJonas(callback) {
-    $('body').removeClass('blackBackground');
+    $('body').removeClass('joanjonasTextOpen');
     $('.joanjonas_text').fadeOut("slow",callback);
     $('video#bgVideo').css('opacity', 1).get(0).play(); 
 }
@@ -30,7 +30,7 @@ $(document).ready(function(){
             closeLiveStream(function() {
                 $('video#bgVideo').css('opacity', 0).get(0).pause();
                 $('.joanjonas_text').fadeIn(); 
-                $('body').addClass('blackBackground'); 
+                $('body').addClass('joanjonasTextOpen'); 
             });
         });
     });
