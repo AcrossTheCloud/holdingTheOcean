@@ -4,18 +4,40 @@ var liveStream = function() {
     autoplay = true;
   }
   $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay);
-  $('#livestreamVideoContainer .overlay').fadeOut();
+  $('#livestreamVideoContainer .overlay').stop().fadeOut();
   $('body').addClass('liveStreamOpen');
+};
+
+var liveStreamButtonEvent = function(streaming) {
+  $(document).on('click', '#livestream, .livestreamButton', function () {
+    $('.videoLinks div.active').removeClass('active');
+    $('.videoLinks div.livestreamButton').addClass('active');
+
+    closeJoanJonas(function () {
+      closeVideoSection(function () {
+
+        if (streaming) liveStream();
+
+        $('#livestreamVideoContainer')
+          .addClass('open')
+          .stop()
+          .fadeIn(1000);
+
+
+        $('#livestreamVideoContainer .overlay').stop().fadeOut();
+        $('body').addClass('liveStreamOpen');
+      });
+    });
+  });
 };
 
 $(document).ready(function() {
   var
-    $liveStreamContainer = $('#livestream'),
-    $livestreamVideoContainer = $('#livestreamVideoContainer');
+    $liveStreamContainer = $('#livestream');
 
   $('#livestreamVideoContainer .videoContainer iframe').on('load', function() {
-    $('#livestreamVideoContainer .overlay').fadeOut(function() {
-      $('#livestreamVideoContainer .videoContainer iframe').fadeIn();
+    $('#livestreamVideoContainer .overlay').stop().fadeOut(function() {
+      $('#livestreamVideoContainer .videoContainer iframe').stop().fadeIn();
     });
   });
 
@@ -38,38 +60,21 @@ $(document).ready(function() {
           // offset body by 31px the Marquee
           $('body').addClass('livestream');
         }
-        $liveStreamContainer.fadeIn();
+        $liveStreamContainer.stop().fadeIn();
 
-        $(document).on('click', '#livestream, .livestreamButton', function () {
-          closeJoanJonas( function() {
-            closeVideoSection(function () {
-              liveStream();
-              $livestreamVideoContainer
-                .addClass('open')
-                .fadeIn(1000);
-            });
-          });
-        });
+        liveStreamButtonEvent(true);
       } else {
-        $(document).on('click', '#livestream, .livestreamButton', function () {
-          closeJoanJonas(function () {
-            closeVideoSection(function () {
-              $livestreamVideoContainer
-                .addClass('open')
-                .fadeIn(1000);
-
-
-              $('#livestreamVideoContainer .overlay').fadeOut();
-              $('body').addClass('liveStreamOpen');
-            });
-          });
-        });
+        liveStreamButtonEvent(false);
       }
+    })
+    .fail(function () {
+      liveStreamButtonEvent(false);
     });
 });
 
 function closeLiveStream(callback) {
   $('#livestreamVideoContainer')
+    .stop()
     .fadeOut(1000, function() {
       $('body').removeClass('liveStreamOpen');
       $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();

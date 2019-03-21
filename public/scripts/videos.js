@@ -7,6 +7,9 @@ var
 $(document).ready(function() {
     // Livestream video buttons load the video section
     $('.videoLinks .video').click( function() {
+        $('.videoLinks div.active').removeClass('active');
+        $(this).addClass('active');
+
         var _video = $(this);
         closeJoanJonas(function() {
 
@@ -62,9 +65,9 @@ function openVideoSection(url, callback) {
     var
       isPaused = $player.get(0).paused;
 
-    $overlay.fadeIn();
+    $overlay.stop().fadeIn();
 
-    $videosSection.fadeIn(1000, function () {
+    $videosSection.stop().fadeIn(1000, function () {
         if(url) {
             loadVideo(url);
         } else {
@@ -85,7 +88,7 @@ function openVideoSection(url, callback) {
 
 function closeVideoSection(callback) {
     $('body').removeClass('videoSectionOpen');
-    $videosSection.fadeOut(function () {
+    $videosSection.stop().fadeOut(function () {
         $player.get(0).pause();
 
         if (typeof callback === 'function') callback();

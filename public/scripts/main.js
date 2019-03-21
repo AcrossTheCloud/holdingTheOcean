@@ -1,11 +1,16 @@
-function closeJoanJonas(callback) {
-    $('body').removeClass('joanjonasTextOpen');
-    $('.joanjonas_text').fadeOut("slow", function() {
-        if (typeof callback === 'function') return callback();
+var queryStringParams = {};
+var parseQueryStringParams = function() {
+    var regex = new RegExp('([^?=&+]+)(=([^&]*))?', 'g');
+    var results = location.search.match( regex );
+    $.each(results, function (key, value) {
+        var split = value.split('=');
+        queryStringParams[split[0]] = split[1];
     });
 }
 
 $(document).ready(function(){
+    parseQueryStringParams();
+
     var videoList = [
         "https://ocean-archive.org/media/Divers_01",
         "https://ocean-archive.org/media/Turtle_Glowing+Fishies",
@@ -27,6 +32,9 @@ $(document).ready(function(){
     $video[0].play();
 
     $('.leftStickyJoan, .joanjonas_text_button').click(function() {
+        $('.videoLinks div.active').removeClass('active');
+        $('.videoLinks div.joanjonas_text_button').addClass('active');
+
         closeVideoSection(function() {
             closeLiveStream(function() {
                 $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
@@ -38,6 +46,8 @@ $(document).ready(function(){
 
 
     $('.leftStickyHeader').click(function () {
+        $('.videoLinks div.active').removeClass('active');
+
         closeJoanJonas(function() {
             closeVideoSection(function() {
                 closeLiveStream(function() {
@@ -135,14 +145,9 @@ $(document).ready(function(){
 
 });
 
-function getUrlParameterValue(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
-function getUrlParameterName() {
-    var regex = new RegExp('^[\\?&]([a-zA-Z0-9_.+-]+)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : results[1];
+function closeJoanJonas(callback) {
+    $('body').removeClass('joanjonasTextOpen');
+    $('.joanjonas_text').stop().fadeOut("slow", function() {
+        if (typeof callback === 'function') return callback();
+    });
 }

@@ -36,6 +36,10 @@ body.joanjonasTextOpen .leftStickyJoan {
     color: #fff;
 }
 
+body.videoSectionOpen .leftStickyHeader, body.joanjonasTextOpen .leftStickyHeader, body.liveStreamOpen .leftStickyHeader {
+    cursor: pointer;
+}
+
 body.videoSectionOpen, body.joanjonasTextOpen, body.liveStreamOpen .bodyContainer {
     background: #181a20;
 }
@@ -415,7 +419,7 @@ END LIVE STREAM
     margin-left: 20px;
     padding-top: 20px;
 }
-.videoLinks .joanjonas_text_button {
+.videoLinks div {
     font-family: 'GravurCondensed-Regular', sans-serif;
     border: .5px solid rgba(255, 240, 0, 0);
     cursor: pointer;
@@ -427,7 +431,11 @@ END LIVE STREAM
     margin-bottom: 7.25px;
     padding: 7.75px 6.75px;
 }
-.videoLinks .joanjonas_text_button:hover {
+
+.videoLinks .active {
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+.videoLinks .div:hover {
     border: .5px solid rgba(255, 240, 0, 1);
 }
 /* Owl Carousel */
