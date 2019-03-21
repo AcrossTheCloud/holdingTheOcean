@@ -30,7 +30,6 @@ body .bodyContainer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 body.joanjonasTextOpen .leftStickyJoan {
     color: #fff;
