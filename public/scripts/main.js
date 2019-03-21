@@ -39,6 +39,7 @@ $(document).ready(function(){
             closeLiveStream(function() {
                 $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
                 $('.joanjonas_text').fadeIn();
+                $('#oceanspace').fadeIn();
                 $('body').addClass('joanjonasTextOpen');
             });
         });
@@ -147,6 +148,7 @@ $(document).ready(function(){
 
 function closeJoanJonas(callback) {
     $('body').removeClass('joanjonasTextOpen');
+    $('#oceanspace').fadeOut();
     $('.joanjonas_text').stop().fadeOut("slow", function() {
         if (typeof callback === 'function') return callback();
     });

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
-
+        
         $('body').addClass('noscroll open');
 
         $('.panel-content').removeClass('active');
@@ -27,7 +27,8 @@ $(document).ready(function(){
     $('div.jelly').click(function(){
         $(this).siblings('.send').click();
     });
-});
+    });
+    
 function openNav(){
     $('body').addClass('noscroll');
 
