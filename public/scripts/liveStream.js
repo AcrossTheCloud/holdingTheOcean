@@ -41,24 +41,27 @@ $(document).ready(function() {
         $liveStreamContainer.fadeIn();
 
         $(document).on('click', '#livestream, .livestreamButton', function () {
-          closeVideoSection(function () {
-            liveStream();
-
-            $livestreamVideoContainer
-              .addClass('open')
-              .fadeIn(1000);
+          closeJoanJonas( function() {
+            closeVideoSection(function () {
+              liveStream();
+              $livestreamVideoContainer
+                .addClass('open')
+                .fadeIn(1000);
+            });
           });
         });
       } else {
         $(document).on('click', '#livestream, .livestreamButton', function () {
-          closeVideoSection(function () {
-            $livestreamVideoContainer
-              .addClass('open')
-              .fadeIn(1000);
+          closeJoanJonas(function () {
+            closeVideoSection(function () {
+              $livestreamVideoContainer
+                .addClass('open')
+                .fadeIn(1000);
 
 
-            $('#livestreamVideoContainer .overlay').fadeOut();
-            $('body').addClass('liveStreamOpen');
+              $('#livestreamVideoContainer .overlay').fadeOut();
+              $('body').addClass('liveStreamOpen');
+            });
           });
         });
       }
