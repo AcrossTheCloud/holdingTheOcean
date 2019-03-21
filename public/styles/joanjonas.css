@@ -50,6 +50,20 @@ body.open .joanjonasContainer {
     padding-left: 20px;
 }
 
+.joanjonas_content::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(255, 240, 0, 0);	
+}
+
+.joanjonas_content::-webkit-scrollbar{
+    width: 2px;	
+}
+
+.joanjonas_content::-webkit-scrollbar-thumb{
+	background-color: #ffff00;	
+}
+
+
+
 .joanjonas_text .left {
     overflow-y: auto;
     overflow-x: hidden;
