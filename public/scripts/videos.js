@@ -8,7 +8,7 @@ $(document).ready(function() {
     // Livestream video buttons load the video section
     $('.videoLinks .video').click( function() {
         var _video = $(this);
-        closeJoanJonas( 
+        closeJoanJonas(function() { 
             closeLiveStream(
                 function () {
                 $('video#bgVideo').css('opacity', 0).get(0).pause();
@@ -29,7 +29,7 @@ $(document).ready(function() {
                 }
 
             })
-        );
+        });
     });
 
     $player.get(0).onloadeddata = function() {
