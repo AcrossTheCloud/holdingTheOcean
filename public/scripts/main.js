@@ -1,6 +1,7 @@
 function closeJoanJonas(callback) {
     $('body').removeClass('blackBackground');
-    $('.joanjonas_text').fadeOut("slow",callback); 
+    $('.joanjonas_text').fadeOut("slow",callback);
+    $('video#bgVideo').css('opacity', 1).get(0).play(); 
 }
 
 $(document).ready(function(){
@@ -27,6 +28,7 @@ $(document).ready(function(){
     $('.leftStickyJoan, .joanjonas_text_button').click(function() {
         closeVideoSection(function() {
             closeLiveStream(function() {
+                $('video#bgVideo').css('opacity', 0).get(0).pause();
                 $('.joanjonas_text').fadeIn(); 
                 $('body').addClass('blackBackground'); 
             });
