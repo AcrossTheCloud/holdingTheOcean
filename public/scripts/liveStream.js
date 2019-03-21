@@ -3,7 +3,7 @@ var liveStream = function() {
   if ($(window).width() > 480) {
     autoplay = true;
   }
-  $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay);
+  $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay).fadeIn();
   $('#livestreamVideoContainer .overlay').stop().fadeOut();
   $('body').addClass('liveStreamOpen');
 };
@@ -34,12 +34,6 @@ var liveStreamButtonEvent = function(streaming) {
 $(document).ready(function() {
   var
     $liveStreamContainer = $('#livestream');
-
-  $('#livestreamVideoContainer .videoContainer iframe').on('load', function() {
-    $('#livestreamVideoContainer .overlay').stop().fadeOut(function() {
-      $('#livestreamVideoContainer .videoContainer iframe').stop().fadeIn();
-    });
-  });
 
   $.ajax({
     type: 'GET',
