@@ -7,13 +7,16 @@ var
 $(document).ready(function() {
     // Livestream video buttons load the video section
     $('.videoLinks .video').click( function() {
+        if(!buttonClickTimeout) setButtonClickTimeout();
+        else return;
+
         $('.videoLinks div.active').removeClass('active');
         $(this).addClass('active');
 
         var _video = $(this);
         closeJoanJonas(function() {
             closeLiveStream( function () {
-                $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
+                $('video#bgVideo').fadeTo(1000, 0).get(0).pause();
                 if (!$(_video).hasClass('currentlyPlaying')) {
                   openVideoSection($(this).data('videourl'), function () {
                     loadVideo($(_video).data('videourl'));
@@ -64,9 +67,9 @@ function openVideoSection(url, callback) {
     var
       isPaused = $player.get(0).paused;
 
-    $overlay.stop().fadeIn();
+    $overlay.fadeIn();
 
-    $videosSection.stop().fadeIn(1000, function () {
+    $videosSection.fadeIn(1000, function () {
         if(url) {
             loadVideo(url);
         } else {
@@ -87,7 +90,7 @@ function openVideoSection(url, callback) {
 
 function closeVideoSection(callback) {
     $('body').removeClass('videoSectionOpen');
-    $videosSection.stop().fadeOut(function () {
+    $videosSection.fadeOut(function () {
         $player.get(0).pause();
 
         if (typeof callback === 'function') callback();
