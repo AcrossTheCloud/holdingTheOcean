@@ -119,6 +119,9 @@ body.open .joanjonasContainer {
     body.joanjonasTextOpen .rightBox {
         height: unset;
     }
+    body.joanjonasTextOpen .mainContent {
+        display: block;
+    }
 }
 @media (min-width: 768px) {
     .joanjonas_text {

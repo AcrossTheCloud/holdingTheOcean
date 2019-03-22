@@ -154,11 +154,3 @@
         display: none;
     }
 }
-@media (max-width: 768px) and (min-width: 320px){
-.info-panel nav {
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: row;
-    align-items: flex-start;
-    }
-}
