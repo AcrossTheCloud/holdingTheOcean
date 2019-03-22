@@ -3,14 +3,17 @@ var liveStream = function() {
   if ($(window).width() > 480) {
     autoplay = true;
   }
-  $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
+  $('video#bgVideo').fadeTo(1000, 0).get(0).pause();
   $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=false&autoplay=' + autoplay).fadeIn();
-  $('#livestreamVideoContainer .overlay').stop().fadeOut();
+  $('#livestreamVideoContainer .overlay').fadeOut();
   $('body').addClass('liveStreamOpen');
 };
 
 var liveStreamButtonEvent = function(streaming) {
   $(document).on('click', '#livestream, .livestreamButton', function () {
+    if(!buttonClickTimeout) setButtonClickTimeout();
+    else return;
+
     $('.videoLinks div.active').removeClass('active');
     $('.videoLinks div.livestreamButton').addClass('active');
 
@@ -21,11 +24,11 @@ var liveStreamButtonEvent = function(streaming) {
 
         $('#livestreamVideoContainer')
           .addClass('open')
-          .stop()
+
           .fadeIn(1000);
 
 
-        $('#livestreamVideoContainer .overlay').stop().fadeOut();
+        $('#livestreamVideoContainer .overlay').fadeOut();
         $('body').addClass('liveStreamOpen');
       });
     });
@@ -55,7 +58,7 @@ $(document).ready(function() {
           // offset body by 31px the Marquee
           $('body').addClass('livestream');
         }
-        $liveStreamContainer.stop().fadeIn();
+        $liveStreamContainer.fadeIn();
 
         liveStreamButtonEvent(true);
       } else {
@@ -71,10 +74,10 @@ $(document).ready(function() {
 
 function closeLiveStream(callback) {
   $('#livestreamVideoContainer')
-    .stop()
+
     .fadeOut(1000, function() {
       $('body').removeClass('liveStreamOpen');
-      $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
+      $('video#bgVideo').fadeTo(1000, 1).get(0).play();
       $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();
       $(this).removeClass('open');
 
