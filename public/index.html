@@ -10,77 +10,231 @@
         <meta name="og:title" content="ocean archive"/>
         <meta name="og:image" content=""/>
         <meta name="og:description" content=""/>
-
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/favicons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        
         <link rel="shortcut icon" href="" type="image/x-icon"/>
         <title>ocean archive</title>
-        <link rel="stylesheet" href="./styles/main.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="./scripts/main.js"></script>
-        <script src="./scripts/panel.js"></script>
-        <script src="./scripts/subscribe.js"></script>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="./styles/main.css?v=1.3.0"/>
+        <link rel="stylesheet" href="./styles/grid.css?v=1.3.0"/>
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
 
     </head>
     <body>
-
-    <header>
-        <div class="desktop">ocean archive
-            <br/>under construction
-            <br/>ocean-archive.org
-        </div>
-        <div class="mobile">ocean archive
-            <br />under construction
-            <br />ocean-archive.org
-        </div>
-
-    </header>
-
-    <div class="info-panel">
-        <nav id="options">
-            <span class="option-item" data-value="about">About</span>
-            <span class="option-item" data-value="openAPI"> Open Ocean API</span>
-            <span class="option-item" data-value="contribute">Contribute</span>
-
-            <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
-                <line class="lines" x2="17.68" y2="17.68"/><line class="lines" x1="17.68" y2="17.68"/>
-            </svg>
-
-        </nav>
-        <div id="aboutPanel" class="panel-content">
-            <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into a curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
-            <div class="credit">
-                <p class="creditText">IMAGES COURTESY OF DAVID GRUBER</p>
-                <br />
-                <img style="width:150px; padding: 10px 40px;" src="./icons/tba21-academy-logo.png"/>
+        <div class="bodyContainer">
+            <div id="livestream" style="display:none"> 
+                <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                </svg>
+                <span class="titlewrap">
+                    <div class="wrapper">
+                        <span class="title">Livestreaming from Venice: Moving Off the Land II</span>
+                        <span class="streamTitle"></span>
+                    </div>
+                </span>
+                <span class="dot animate-flicker">&#183;</span>
+                <span class="watchnow">Watch Now</span>
             </div>
-        </div>
-        <div id="openAPIPanel" class="panel-content">
-            <p class="callToAction two-column">
-                Using an application program interface (API), developers can set up the protocols which determine how different pieces of software interact with one another. Today, as many ocean scientists and marine-environment scholars work across both disciplines and databases to conduct their research, the possibility for enhanced collaboration and co-discovery is more present than ever. To achieve this end, and to make the databases that drive contemporary research more open, accessible, and inter-operable for the next generation of ocean explorers, the TBA21–Academy is stewarding the Open Ocean API, a data protocol initiative that calls upon key institutions, archives, and collections to formulate, confirm, and implement an open API policy to improve ocean data search-ability and discover-ability. As part of the wider development process of TBA21– Academy’s Ocean Archive, this initiative focuses on partnerships related to data policy and access protocols as a means to foster a more open, accessible, and collaborative environment for ocean research, scholarship, and advocacy.
-            </p>
-        </div>
-        <div id="contributePanel" class="panel-content">
-            <p class="callToAction">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us.</p>
-            <form action="https://api.ocean-archive.org/subscribe" id="contributeForm">
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="text" name="subject" placeholder="Subject">
-                <textarea name="message" placeholder="Message"></textarea>
-                <div class="message">
-                    <span class="error-message">Oh no! Something went wrong.</span>
-                    <span class="success-message">Your message has been sent!</span>
-                    <span class="error-network">Oops. Network error, email us please!</span>
+
+            <section class="mainContent">
+                <div class="leftSticky">
+                    <div class="leftStickyHeader disable-select">
+                        Ocean Archive
+                        <br/>Under Construction
+                    </div>
+                    <div class="leftStickyJoan">
+                        <div>Joan Jonas</div>
+                        <div class="thin">Moving Off the Land II</div>
+                        <div class="thin">Mar 24 - Sep 29, 2019</div>
+                    <div id="oceanspace" style="display:none">
+                        <div class="thin">OCEANSPACE</div>
+                        <div class="thin">Chiesa di San Lorenzo</div>
+                        <div class="thin">Venezia, Italy</div>
+                    </div>
                 </div>
-                <div class="jelly"></div>
-                <input type="submit" class="send">
-            </form>
+                </div>
+                <div class="rightBox">
+                    <div id="videosSection" style="display:none">
+                        <div class="videoContainer">
+                            <div class="overlay">
+                                <div class="loader"></div>
+                            </div>
+                            <video controls>
+                                <source class="mp4" type="video/mp4">
+                                <source class="webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>
+
+                    <div id="livestreamVideoContainer" style="display:none">
+                        <div class="videoContainer">
+                            <div class="overlay">
+                                <div class="loader"></div>
+                            </div>
+
+                            <div class="placeholder">
+                                <div class="text">
+                                    <div class="titlewrap">
+                                        <div class="wrapper marquee">
+                                            <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                                            </svg>
+                                            <span class="title">Livestreaming from Venice: Moving Off the Land II</span>
+                                            <span class="streamTitle"></span>
+                                            <span class="dot animate-flicker">&#183;</span>
+                                            <span class="r">Next Event</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <iframe
+                                src=""
+                                frameborder="0"
+                                scrolling="no"
+                                allowfullscreen="true"
+                                style="display: none"
+                            >
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="joanjonas_text" style="display:none">
+                            <div class="joanjonas_content">
+
+                                <p></p><span class="cursive">Moving Off the Land II</span></p>
+                                <p>For the inaugural public project at the Ocean Space, TBA21–Academy is proud to present an immersive multi-media installation by the acclaimed artist Joan Jonas, the culmination of three years of intensive research and explorations with the itinerant academy. Curated by Stefanie Hessler, and on view from 24 March until 29 September 2019, <span class="cursive">Moving Off the Land II</span> will occupy 500 square metres of what was once the nave of the church of San Lorenzo and will be activated by Jonas with a live performance on 7 May 2019, coinciding with the opening of the 58th Venice Biennale. </p>
+
+                                <p>Joan Jonas is one of the most renowned artists of her generation. She is celebrated as a pioneer of performance and video art since the 1960s, a time when art was leaving the confines of the gallery space, converged with dance, music, and theater and tackled complex questions surrounding our relationship with the environment. For her latest work, Jonas has devised a large-scale installation that deconstructs and translates her mesmerizing performance <span class="cursive">Moving Off the Land</span> (2016–ongoing). The exhibition includes video, sculpture, drawing, and sound, centring on the oceans as a totemic, spiritual, and ecological touchstone. The performance was commissioned by TBA21–Academy and first presented in parallel to the 2016 Kochi – Muziris Biennale, and again in collaboration with Tate Modern at the Turbine Hall in 2018. As is often the case in Jonas’s work, the performance has grown and morphed since its first iteration. </p>
+
+                                <p>Jonas’s new work dives deep into the oceans, swims with the fish that inhabit the world’s hydrosphere, and turns to literature and poetry by writers who have homed in on the liquid masses that cover two thirds of the planet. Following the methodology that has gained her lauded reputation, Jonas combines prose by writers like Emily Dickinson and Herman Melville with texts by Rachel Carson and Sy Montgomery, and with moving images filmed in aquariums around the world, as well as at the coast of Jamaica, where algae blooms and overfishing pose urgent threats to the environment. Employing her own voice, as well as music by the celebrated composer and drummer Ikue Mori and by the acclaimed musician María Huld Markan Sigfusdottir, Jonas creates an evocative, poetic, and spellbinding experience.</p>
+
+                                <p>Over many years, Jonas has visited and recorded footage in aquariums around the world. In the last year and a half, as part of a sustained dialogue about their respective work, the marine biologist and coral reef and photosynthesis expert David Gruber has shared with Jonas his captivating underwater recordings that focus on bioluminescence. In 2018, Gruber visited Jonas at her summer home in Cape Breton, Canada, where he shot footage of Jonas’s dog, Ozu, on the shoreline. </p>
+
+                                <p><span class="cursive emphasis">Moving Off the Land II</span> is commissioned by <span class="emphasis">TBA21–Academy</span> and co-produced with <span class="emphasis">Luma Foundation.</span></p>
+
+                                <p><span class="emphasis">OCEAN SPACE</span></p>
+
+                                <p>The exhibition at Ocean Space is the first in a series of shows, performances, symposia, concerts, screenings, and other events organized by TBA21–Academy that explore the oceans from different perspectives over the course of the coming years. For March 2019, Office for Political Innovation by Andrés Jaque collaborated with Joan Jonas to create an initial interior platform that forms the setting for <span class="cursive">Moving Off the Land II</span> a performance space in part of the church.</p>
+
+                                <p><span class="emphasis">OCEAN ARCHIVE</span></p>
+
+                                <p>As a digital extension of Joan Jonas’s exhibition, Ocean Archive, a project initiated by TBA21–Academy and currently under construction, will publish a selection of complementary material, including an exclusive interview with Jonas, videos of related works, and additional materials that have influenced and informed the exhibition in Venice. Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform will host materials related to Academy expeditions, exhibitions, and public events and integrate these into a curated selection of additional ocean-related art, scholarship, and  information about policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is currently being developed by User Group for TBA21–Academy and will be launched at the Ocean Space in September 2019.</p>
+                            </div>
+                        </div>
+                    <div class="share" style="display:none">
+                        <img src="icons/share.svg">
+                        <div class="icons">
+                            <a href="#" target="_blank"><img src="icons/link.svg"></a>
+                            <a href="#" target="_blank"><img src="icons/google-plus.svg"></a>
+                            <a href="#" target="_blank"><img src="icons/telegram.svg"></a>
+                            <a href="#" target="_blank"><img src="icons/twitter.svg"></a>
+                            <a href="#" target="_blank"><img src="icons/facebook.svg"></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="videoLinks">
+                    <div class="video" id="share_jjtrailer" data-videourl="https://streaming.ocean-archive.org/media/20190320_Ocean_Space_JJ_Venice_subtitles">
+                        <img src="icons/font-awesome/playbutton.svg" class="playButton" />
+                           JOAN JONAS TRAILER 
+                    </div>
+                    <div class="joanjonas_text_button">
+                            JOAN JONAS TEXT
+                    </div>
+                    <div class="video" id="share_oat" data-videourl="https://streaming.ocean-archive.org/media/20190320_Ocean_Archive_Trailer_Full">
+                        <img src="icons/font-awesome/playbutton.svg" class="playButton" />
+                            OCEAN ARCHIVE TRAILER
+                    </div>
+                    <div id="share_livestream" class="livestreamButton">
+                            LIVESTREAM
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="info-panel">
+                <nav id="options">
+                    <span class="option-item" data-value="about">About</span>
+                    <span class="option-item" data-value="openAPI"> Open Ocean API</span>
+                    <span class="option-item" data-value="contribute">Contribute</span>
+
+                    <svg class="closebtn" onclick="closeNav()"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36">
+                        <line class="lines" x2="36" y2="36"></line>
+                        <line class="lines" x1="36" y2="36"></line>
+                    </svg>
+                </nav>
+
+                <div id="aboutPanel" class="panel-content">
+                    <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into a curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
+                    <div class="credit">
+                        <img src="./icons/tba21-academy-logo.png"/>
+                    </div>
+                </div>
+                <div id="openAPIPanel" class="panel-content">
+                    <p class="callToAction left">
+                        Using an application program interface (API), developers can set up the protocols which determine how different pieces of software interact with one another.
+                        Today, as many ocean scientists and marine-environment scholars work across both disciplines and databases to conduct their research, the possibility for enhanced collaboration and co-discovery is more present than ever.
+                        To achieve this end, and to make the databases that drive contemporary research more open, accessible, and inter-operable for the next generation of ocean explorers,
+                    </p>
+                    <p class="callToAction right">
+                        the TBA21–Academy is stewarding the Open Ocean API, a data protocol initiative that calls upon key institutions, archives, and collections to formulate, confirm, and implement an open API policy to improve ocean data search-ability and discover-ability. As part of the wider development process of TBA21– Academy’s Ocean Archive, this initiative focuses on partnerships related to data policy and access protocols as a means to foster a more open, accessible, and collaborative environment for ocean research, scholarship, and advocacy.
+                    </p>
+                </div>
+                <div id="contributePanel" class="panel-content">
+                    <p class="callToAction one-column">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us.</p>
+                    <form action="https://api.ocean-archive.org/subscribe" id="contributeForm">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Message"></textarea>
+                        <div class="message">
+                            <span class="error-message">Oh no! Something went wrong.</span>
+                            <span class="success-message">Your message has been sent!</span>
+                            <span class="error-network">Oops. Network error, email us please!</span>
+                        </div>
+                        <div class="jelly"></div>
+                        <input type="submit" class="send">
+                    </form>
+                </div>
+            </div>
+
+            <div class="mobile menu" onclick="openNav()">
+                <img src="icons/menu.svg" />
+            </div>
+
+            <video id="bgVideo" autoplay muted loop playsinline>
+              <source src="https://ocean-archive.org/media/Divers_01.mp4" type="video/mp4">
+              <source src="https://ocean-archive.org/media/Divers_01.webm" type="video/webm">
+            </video>
+
 
         </div>
-    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <!-- jQuery local fallback -->
+        <script>window.jQuery || document.write('<script src="./scripts/vendor/jquery-3.1.0.min.js"><\/script>')</script>
 
-    <video id="bgVideo" autoplay muted loop playsinline>
-      <source src="https://ocean-archive.org/media/Divers_01.mp4" type="video/mp4">
-      <source src="https://ocean-archive.org/media/Divers_01.webm" type="video/webm">
-    </video>
+        <script src="./scripts/main.js?v=1.3.0"></script>
+        <script defer src="./scripts/videos.js?v=1.3.0"></script>
+        <script src="./scripts/panel.js?v=1.3.0"></script>
+        <script src="./scripts/subscribe.js?v=1.3.0"></script>
+        <script src="./scripts/liveStream.js?v=1.3.0"></script>
+        <script src="./scripts/share.js?v=1.3.0"></script>
 
     </body>
 </html>

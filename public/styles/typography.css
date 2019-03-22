@@ -39,7 +39,7 @@
 header{
     font-family: 'GravurCondensed-Thin', sans-serif;
     font-size: 100px;
-    letter-spacing: -4px;
+    letter-spacing: -0.4px;
 }
 
 span.note,
@@ -56,22 +56,15 @@ textarea::placeholder {
     text-transform: uppercase;
 }
 nav span{
-    font-family: 'GravurCondensed-Regular', sans-serif;
     font-size: 13px;
     text-transform: uppercase;
-}
-p.creditText {
-    font-family: 'GravurCondensed-Regular', sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-    padding: 10px 40px;
+    letter-spacing: 0;
 }
 p.callToAction,
 p.contribute{
-    font-family: 'GravurCondensed-Light', sans-serif;
+    font-family: 'GravurCondensed-Regular', sans-serif;
     font-size: 22px;
     line-height: 27px;
-    letter-spacing: .05px;
     margin-top : 0;
 }
 
@@ -90,7 +83,7 @@ label{
     font-family: 'NHaasGroteskDSPro-55Rg', sans-serif;
     font-size: 18px;
 }
-span{
+span {
     font-family: 'NHaasGroteskDSPro-55Rg', sans-serif;
     font-size: 16px;
 }

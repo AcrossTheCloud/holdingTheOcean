@@ -1,31 +1,47 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
-        $('.panel-content').removeClass('active');
-        $('.option-item').removeClass('active');
+        closeJoanJonas();
+        closeLiveStream();
+        closeVideoSection();
+                $('body').addClass('noscroll open');
 
-        var key = $(this).data('value');
-        $(this).addClass('active');
-        $(`#${key}Panel`).addClass('active');
-        $('.info-panel').addClass('open');
+                $('.panel-content').removeClass('active');
+                $('.option-item').removeClass('active');
 
-        $('header').addClass('open');
+                var
+                    key = $(this).data('value'),
+                    $infoPanel = $('.info-panel');
 
-        $('.message span').hide();
-    });
+                $(this).addClass('active');
+                $('#' + key + 'Panel').addClass('active');
+        
+                if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
+                    $infoPanel.addClass('fullscreen');
+                }
+
+                $infoPanel.addClass('open');
+
+                $('header').addClass('open');
+
+                $('.message span').hide();
+
+            });
 
     $('div.jelly').click(function(){
         $(this).siblings('.send').click();
     });
-
-
-    $('header').click(function(){
-        closeNav();
     });
-});
-
+    
+function openNav(){
+    $('body').addClass('noscroll');
+    $('.info-panel').addClass('open');
+    $('#aboutPanel').addClass('active');
+    $('.option-item[data-value="about"]').addClass('active');
+}
 function closeNav() {
-    $('.info-panel').removeClass('open');
+    $('body').removeClass('noscroll open');
+    $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
+    $('.info-panel').removeClass('open fullscreen');
     $('.option-item.active').removeClass('active');
-
     $('header').removeClass('open');
 }

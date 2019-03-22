@@ -1,0 +1,195 @@
+#videosSection, #livestreamVideoContainer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+#videosSection video {
+    max-height: 100%;
+    width: 100%;
+}
+#videosSection .videoContainer {
+    position: relative;
+    height: 100%;
+}
+body.livestream #livestreamVideoContainer .videoContainer {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+body.no_livestream #livestreamVideoContainer .videoContainer {
+    height: 100%;
+}
+
+#videosSection .top.left {
+    font-family: 'GravurCondensed-Regular', sans-serif;
+    color: #ffff00;
+
+    font-size: 30px;
+    line-height: 36px;
+
+    cursor: pointer;
+
+    padding: 30px 80px 30px 30px;
+    top: 0;
+    left: 0;
+}
+
+/* START Close Button */
+.closeButton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    z-index: 999999;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.crossWrapper {
+    flex: 0;
+    width: 30px;
+    align-self: flex-end;
+}
+
+.closeButton .closeVideosButton.cross {
+    height: 36px;
+    display: block;
+}
+
+.closeButton .closeVideosButton.cross .lines {
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.closeButton .closeVideosButton.cross:hover .lines {
+    stroke: #fff000;
+}
+.closeButton .text {
+    display: none;
+    width: 100px;
+    color: #fff000;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    line-height: 14px;
+}
+.closeButton:hover .text {
+    display: block
+}
+/* END Close Button */
+
+
+/* START RIGHT VIDEOS */
+#videosSection .overlay, #livestreamVideoContainer .overlay {
+    width: 100.1%;
+    height: 100.1%;
+    z-index: 9999999;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#videosSection .overlay .container, #livestreamVideoContainer .overlay .container {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    line-height: 0;
+    transform: translateY(-50%);
+}
+#videosSection .overlay svg, #livestreamVideoContainer .overlay svg {
+    width: 25px;
+    height: 30px;
+}
+#videosSection .overlay svg rect, #livestreamVideoContainer .overlay svg rect {
+    fill: #ffff00;
+}
+/* END RIGHT VIDEOS */
+
+/* START LEFT VIDEO BUTTONS */
+.video, .livestreamButton {
+    border: .5px solid rgba(255, 240, 0, 0);
+    cursor: pointer;
+    color: #fff000;
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 14px;
+
+    margin-bottom: 7.25px;
+    padding: 7.75px 6.75px;
+}
+
+body.videoSectionOpen .video.currentlyPlaying, body.liveStreamOpen .livestreamButton {
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+.video:hover, .livestreamButton:hover {
+    border: .5px solid rgba(255, 240, 0, 1);
+}
+/* END LEFT VIDEO BUTTONS */
+
+
+@media (min-width: 768px) {
+    .mobile {
+        display: none !important;
+    }
+
+    #videosSection .flex.container, #livestreamVideoContainer .flex.container {
+        flex-direction: row;
+    }
+
+    #videosSection .textContainer, #livestreamVideoContainer .textContainer {
+        flex: 1 1 20%;
+    }
+
+    .closeButton {
+        right: 30px;
+        top: 30px;
+    }
+    .crossWrapper {
+        width: 36px;
+    }
+
+    .closeButton .closeVideosButton.cross {
+        height: 30px;
+    }
+}
+
+@media (orientation:landscape) and (max-width: 900px) {
+    .desktop {
+        display: none;
+    }
+    #videosSection .textContainer {
+        padding: 20px 20px 0;
+        flex: 0 50vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media all and (min-width: 1200px) {
+
+    #videosSection .flex.container, #livestreamVideoContainer .flex.container {
+        display: inline-block;
+    }
+
+    #videosSection .textContainer {
+        margin-left: 30px;
+        margin-bottom: 40px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #videosSection .textContainer .flex {
+        flex-direction: column;
+    }
+}
