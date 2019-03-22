@@ -1,43 +1,15 @@
-var liveStream = function() {
-    var autoplay = false;
-    if ($(window).width() > 480) {
-        autoplay = true;
-    }
-
-    return lity('<div class="iframe-container"> \
-        <svg class="closebtn" onclick="closeNav()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18"><line class="lines" x2="17.68" y2="17.68"></line><line class="lines" x1="17.68" y2="17.68"></line></svg> \
-        <iframe \
-        src="https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay + '"\
-        frameborder="0" \
-        scrolling="no" \
-        allowfullscreen="true"> \
-        </iframe></div>');
+var queryStringParams = {};
+var parseQueryStringParams = function() {
+    var regex = new RegExp('([^?=&+]+)(=([^&]*))?', 'g');
+    var results = location.search.match( regex );
+    $.each(results, function (key, value) {
+        var split = value.split('=');
+        queryStringParams[split[0]] = split[1];
+    });
 }
 
 $(document).ready(function(){
-    $.ajax({
-        type: 'GET',
-        url: 'https://api.twitch.tv/helix/streams?user_login=oceanspaceorg',
-        headers: {
-         "Accept":"application/vnd.twitchtv.v5+json",
-         "Client-ID":"brdrlyou2po431ot4owmi1zzjn6n0x"
-        }
-    })
-    .done( function(data) {
-        if (data.data.length > 0) { 
-            var lity = liveStream();
-
-            var $liveStreamButton = $('#livestream');
-            $liveStreamButton.fadeIn();
-            $liveStreamButton.on('click', function () {
-                lity = liveStream();
-            });
-
-            $(document).on('click', '.lity-content .closebtn', function () {
-                lity.close();
-            });
-        }
-    });
+    parseQueryStringParams();
 
     var videoList = [
         "https://ocean-archive.org/media/Divers_01",
@@ -58,6 +30,39 @@ $(document).ready(function(){
 
     $video[0].load();
     $video[0].play();
+
+    $('.leftStickyJoan, .joanjonas_text_button').click(function() {
+        $('.videoLinks div.active').removeClass('active');
+        $('.videoLinks div.joanjonas_text_button').addClass('active');
+
+        closeVideoSection(function() {
+            closeLiveStream(function() {
+                $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
+                $('.joanjonas_text').fadeIn();
+                $('#oceanspace').fadeIn();
+                $('body').addClass('joanjonasTextOpen');
+            });
+        });
+    });
+
+
+    $('.leftStickyHeader').click(function () {
+        $('.videoLinks div.active').removeClass('active');
+
+        closeJoanJonas(function() {
+            closeVideoSection(function() {
+                closeLiveStream(function() {
+                    $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
+                    var $videosSection = $('#videosSection');
+
+                    $videosSection.fadeOut(1000, function () {
+                        $videosSection.removeClass('open');
+                        $videosSection.css('z-index', -20);
+                    });
+                });
+            });
+        });
+    });
 
     // let bgVideo = $('#bgVideo').get(0);
     // // Pause the background video whenever a lightbox has opened.
@@ -140,3 +145,11 @@ $(document).ready(function(){
     // });
 
 });
+
+function closeJoanJonas(callback) {
+    $('body').removeClass('joanjonasTextOpen');
+    $('#oceanspace').fadeOut();
+    $('.joanjonas_text').stop().fadeOut("slow", function() {
+        if (typeof callback === 'function') return callback();
+    });
+}

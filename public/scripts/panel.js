@@ -1,41 +1,47 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
-        $('body').addClass('noscroll');
-        $('.panel-content').removeClass('active');
-        $('.option-item').removeClass('active');
+        closeJoanJonas();
+        closeLiveStream();
+        closeVideoSection();
+                $('body').addClass('noscroll open');
 
-        var
-            key = $(this).data('value'),
-            $infoPanel = $('.info-panel');
+                $('.panel-content').removeClass('active');
+                $('.option-item').removeClass('active');
 
-        $(this).addClass('active');
-        $(`#${key}Panel`).addClass('active');
+                var
+                    key = $(this).data('value'),
+                    $infoPanel = $('.info-panel');
 
-        if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
-            $infoPanel.addClass('fullscreen');
-        }
+                $(this).addClass('active');
+                $('#' + key + 'Panel').addClass('active');
+        
+                if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
+                    $infoPanel.addClass('fullscreen');
+                }
 
-        $infoPanel.addClass('open');
-        $('header').addClass('open');
+                $infoPanel.addClass('open');
 
-        $('.message span').hide();
-    });
+                $('header').addClass('open');
+
+                $('.message span').hide();
+
+            });
 
     $('div.jelly').click(function(){
         $(this).siblings('.send').click();
     });
-
-
-    $('header').click(function(){
-        closeNav();
     });
-});
-
+    
+function openNav(){
+    $('body').addClass('noscroll');
+    $('.info-panel').addClass('open');
+    $('#aboutPanel').addClass('active');
+    $('.option-item[data-value="about"]').addClass('active');
+}
 function closeNav() {
-    $('body').removeClass('noscroll');
-
+    $('body').removeClass('noscroll open');
+    $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
     $('.info-panel').removeClass('open fullscreen');
     $('.option-item.active').removeClass('active');
-
     $('header').removeClass('open');
 }
