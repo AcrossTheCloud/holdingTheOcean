@@ -553,7 +553,8 @@ END LIVE STREAM
     }
 
     body.livestream .mainContent {
-        height: calc(100% - 98px);
+    //    height: calc(100% - 98px);
+        height: calc(100% - 135px);
     }
     #livestream .watchnow {
         display: inline-block;
