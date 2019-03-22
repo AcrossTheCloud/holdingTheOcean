@@ -60,10 +60,12 @@ $(document).ready(function() {
         liveStreamButtonEvent(true);
       } else {
         liveStreamButtonEvent(false);
+        $('body').addClass('no_livestream');
       }
     })
     .fail(function () {
       liveStreamButtonEvent(false);
+      $('body').addClass('no_livestream');
     });
 });
 

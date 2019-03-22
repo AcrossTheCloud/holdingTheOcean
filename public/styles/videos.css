@@ -7,10 +7,18 @@
     max-height: 100%;
     width: 100%;
 }
-#videosSection .videoContainer, #livestreamVideoContainer .videoContainer {
+#videosSection .videoContainer {
+    position: relative;
+    height: 100%;
+}
+body.livestream #livestreamVideoContainer .videoContainer {
     overflow: hidden;
     padding-top: 56.25%;
     position: relative;
+}
+
+body.no_livestream #livestreamVideoContainer .videoContainer {
+    height: 100%;
 }
 
 #videosSection .top.left {
