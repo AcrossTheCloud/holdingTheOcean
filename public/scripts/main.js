@@ -6,7 +6,16 @@ var parseQueryStringParams = function() {
         var split = value.split('=');
         queryStringParams[split[0]] = split[1];
     });
-}
+};
+
+// Stop opening sections really quickly
+var buttonClickTimeout = false;
+var setButtonClickTimeout = function() {
+    buttonClickTimeout = setTimeout(function () {
+        clearTimeout(buttonClickTimeout);
+        buttonClickTimeout = false;
+    }, 500);
+};
 
 $(document).ready(function(){
     parseQueryStringParams();
@@ -32,12 +41,15 @@ $(document).ready(function(){
     $video[0].play();
 
     $('.leftStickyJoan, .joanjonas_text_button').click(function() {
+        if(!buttonClickTimeout) setButtonClickTimeout();
+        else return;
+
         $('.videoLinks div.active').removeClass('active');
         $('.videoLinks div.joanjonas_text_button').addClass('active');
 
         closeVideoSection(function() {
             closeLiveStream(function() {
-                $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
+                $('video#bgVideo').fadeTo(1000, 0).get(0).pause();
                 $('.joanjonas_text').fadeIn();
                 $('#oceanspace').fadeIn();
                 $('body').addClass('joanjonasTextOpen');
@@ -47,12 +59,15 @@ $(document).ready(function(){
 
 
     $('.leftStickyHeader').click(function () {
+        if(!buttonClickTimeout) setButtonClickTimeout();
+        else return;
+
         $('.videoLinks div.active').removeClass('active');
 
         closeJoanJonas(function() {
             closeVideoSection(function() {
                 closeLiveStream(function() {
-                    $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
+                    $('video#bgVideo').fadeTo(1000, 1).get(0).play();
                     var $videosSection = $('#videosSection');
 
                     $videosSection.fadeOut(1000, function () {
@@ -149,7 +164,7 @@ $(document).ready(function(){
 function closeJoanJonas(callback) {
     $('body').removeClass('joanjonasTextOpen');
     $('#oceanspace').fadeOut();
-    $('.joanjonas_text').stop().fadeOut("slow", function() {
+    $('.joanjonas_text').fadeOut("slow", function() {
         if (typeof callback === 'function') return callback();
     });
 }

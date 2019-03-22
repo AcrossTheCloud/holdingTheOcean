@@ -1,36 +1,38 @@
 $(document).ready(function(){
     $('.option-item').click(function(){
-        closeJoanJonas();
-        closeLiveStream();
-        closeVideoSection();
-                $('body').addClass('noscroll open');
+      closeJoanJonas(function () {
+        closeLiveStream(function () {
+          closeVideoSection(function () {
+              $('body').addClass('noscroll open');
 
-                $('.panel-content').removeClass('active');
-                $('.option-item').removeClass('active');
+              $('.panel-content').removeClass('active');
+              $('.option-item').removeClass('active');
 
-                var
-                    key = $(this).data('value'),
-                    $infoPanel = $('.info-panel');
+              var
+                key = $(this).data('value'),
+                $infoPanel = $('.info-panel');
 
-                $(this).addClass('active');
-                $('#' + key + 'Panel').addClass('active');
-        
-                if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
-                    $infoPanel.addClass('fullscreen');
-                }
+              $(this).addClass('active');
+              $('#' + key + 'Panel').addClass('active');
 
-                $infoPanel.addClass('open');
+              if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
+                $infoPanel.addClass('fullscreen');
+              }
 
-                $('header').addClass('open');
+              $infoPanel.addClass('open');
 
-                $('.message span').hide();
+              $('header').addClass('open');
 
-            });
-
-    $('div.jelly').click(function(){
-        $(this).siblings('.send').click();
+              $('.message span').hide();
+          });
+        });
+      });
     });
-    });
+
+  $('div.jelly').click(function(){
+      $(this).siblings('.send').click();
+  });
+});
     
 function openNav(){
     $('body').addClass('noscroll');
@@ -40,7 +42,7 @@ function openNav(){
 }
 function closeNav() {
     $('body').removeClass('noscroll open');
-    $('video#bgVideo').stop().fadeTo(1000, 1).get(0).play();
+    $('video#bgVideo').fadeTo(1000, 1).get(0).play();
     $('.info-panel').removeClass('open fullscreen');
     $('.option-item.active').removeClass('active');
     $('header').removeClass('open');
