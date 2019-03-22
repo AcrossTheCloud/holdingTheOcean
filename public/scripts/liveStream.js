@@ -4,7 +4,7 @@ var liveStream = function() {
     autoplay = true;
   }
   $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
-  $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=true&autoplay=' + autoplay).fadeIn();
+  $('#livestreamVideoContainer .videoContainer iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=false&autoplay=' + autoplay).fadeIn();
   $('#livestreamVideoContainer .overlay').stop().fadeOut();
   $('body').addClass('liveStreamOpen');
 };
