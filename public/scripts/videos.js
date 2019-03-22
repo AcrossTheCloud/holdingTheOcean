@@ -12,7 +12,6 @@ $(document).ready(function() {
 
         var _video = $(this);
         closeJoanJonas(function() {
-
             closeLiveStream( function () {
                 $('video#bgVideo').stop().fadeTo(1000, 0).get(0).pause();
                 if (!$(_video).hasClass('currentlyPlaying')) {

@@ -413,7 +413,7 @@ END LIVE STREAM
     color: #ffff00;
     font-size: 13px;
     line-height: 14px;
-    max-width: 181px;
+    max-width: 200px;
     margin-left: 20px;
     padding-top: 20px;
 }
@@ -430,15 +430,31 @@ END LIVE STREAM
     padding: 7.75px 6.75px;
 }
 
-.videoLinks .active {
+.videoLinks.active {
     border: .5px solid rgba(255, 240, 0, 1);
 }
-.videoLinks .div:hover {
+.videoLinks .video:hover {
     border: .5px solid rgba(255, 240, 0, 1);
 }
 
 .videoLinks .joanjonas_text_button:hover {
     border: .5px solid rgba(255, 240, 0, 1);
+}
+.playButton {
+    display: none;
+    height: 11px;
+}
+
+.playButton path {
+    stroke:#fff000;
+    stroke-width: 3px;
+}
+.videoLinks .video:hover .playButton {
+    display: inline-block;
+}
+
+.videoLinks .video.active .playButton {
+    display: inline-block;
 }
 
 /* Owl Carousel */
