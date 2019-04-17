@@ -26,7 +26,7 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        
+
         <link rel="shortcut icon" href="" type="image/x-icon"/>
         <title>ocean archive</title>
 
@@ -38,7 +38,7 @@
     </head>
     <body>
         <div class="bodyContainer">
-            <div id="livestream" style="display:none"> 
+            <div id="livestream" style="display:none">
                 <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
                 </svg>
@@ -79,6 +79,16 @@
                                 <source class="mp4" type="video/mp4">
                                 <source class="webm" type="video/webm">
                             </video>
+                            <div class="shareIcons">
+                                <img src="icons/share.svg">
+                                <div class="icons">
+                                    <a href="#" target="_blank" class="share" data-baseurl="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//ocean-archive.org/?share="><img src="icons/link.svg"></a>
+                                    <a href="#" target="_blank" class="share"><img src="icons/telegram.svg" data-baseurl="https://t.me/share/url?url=https%3A//ocean-archive.org/?share="></a>
+                                    <a href="#" target="_blank" class="share" data-baseurl="https://twitter.com/intent/tweet?url=https%3A//ocean-archive.org/?share="><img src="icons/twitter.svg"></a>
+                                    <a href="#" target="_blank" class="share" data-baseurl="https://www.facebook.com/sharer/sharer.php?u=https%3A//ocean-archive.org/?share="><img src="icons/facebook.svg"></a>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -87,7 +97,6 @@
                             <div class="overlay">
                                 <div class="loader"></div>
                             </div>
-
                             <div class="placeholder">
                                 <div class="text">
                                     <div class="titlewrap">
@@ -137,27 +146,17 @@
                                 <p>As a digital extension of Joan Jonas’s exhibition, Ocean Archive, a project initiated by TBA21–Academy and currently under construction, will publish a selection of complementary material, including an exclusive interview with Jonas, videos of related works, and additional materials that have influenced and informed the exhibition in Venice. Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform will host materials related to Academy expeditions, exhibitions, and public events and integrate these into a curated selection of additional ocean-related art, scholarship, and  information about policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is currently being developed by User Group for TBA21–Academy and will be launched at the Ocean Space in September 2019.</p>
                             </div>
                         </div>
-                    <div class="share" style="display:none">
-                        <img src="icons/share.svg">
-                        <div class="icons">
-                            <a href="#" target="_blank"><img src="icons/link.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/google-plus.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/telegram.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/twitter.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/facebook.svg"></a>
-                        </div>
-                    </div>
 
                 </div>
                 <div class="videoLinks">
-                    <div class="video" id="share_jjtrailer" data-videourl="https://streaming.ocean-archive.org/media/20190320_Ocean_Space_JJ_Venice_subtitles">
+                    <div class="video" id="share_jjtrailer" data-share="jjtrailer" data-videourl="https://streaming.ocean-archive.org/media/20190320_Ocean_Space_JJ_Venice_subtitles">
                         <img src="icons/font-awesome/playbutton.svg" class="playButton" />
-                           JOAN JONAS TRAILER 
+                           JOAN JONAS TRAILER
                     </div>
                     <div class="joanjonas_text_button">
                             JOAN JONAS TEXT
                     </div>
-                    <div class="video" id="share_oat" data-videourl="https://streaming.ocean-archive.org/media/20190320_Ocean_Archive_Trailer_Full">
+                    <div class="video" id="share_oat" data-share="oat" data-videourl="https://streaming.ocean-archive.org/media/20190320_Ocean_Archive_Trailer_Full">
                         <img src="icons/font-awesome/playbutton.svg" class="playButton" />
                             OCEAN ARCHIVE TRAILER
                     </div>

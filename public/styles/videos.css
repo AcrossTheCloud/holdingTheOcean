@@ -4,6 +4,7 @@
     text-align: center;
 }
 #videosSection video {
+    position: relative;
     max-height: 100%;
     width: 100%;
 }

@@ -73,9 +73,7 @@ $(document).ready(function() {
 });
 
 function closeLiveStream(callback) {
-  $('#livestreamVideoContainer')
-
-    .fadeOut(1000, function() {
+  $('#livestreamVideoContainer').fadeOut(1000, function() {
       $('body').removeClass('liveStreamOpen');
       $('video#bgVideo').fadeTo(1000, 1).get(0).play();
       $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();

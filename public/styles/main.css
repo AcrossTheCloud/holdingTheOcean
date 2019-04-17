@@ -410,7 +410,6 @@ END LIVE STREAM
 .mainContent .rightBox {
     display: inline-flex;
     position: relative;
-    height: 100%;
 }
  .videoLinks {
     font-family: 'GravurCondensed-Regular', sans-serif;
@@ -487,11 +486,27 @@ END LIVE STREAM
 /*
     START Social Media Icons
  */
-.share {
-    display: none; /*change back to inline-block */
+.shareIcons {
+    display: inline-block; /*change back to inline-block */
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding:5px;
 }
-.share img {
+
+.shareIcons img {
     height: 20px;
+}
+
+.icons {
+  display:none;
+  position: absolute;
+  width: 100px;
+  right: 0;
+}
+
+.shareIcons:active, .shareIcons:hover .icons {
+  display: inline-block;
 }
 /*
     END Social Media Icons

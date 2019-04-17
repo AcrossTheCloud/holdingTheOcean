@@ -2,6 +2,7 @@ var queryStringParams = {};
 var parseQueryStringParams = function() {
     var regex = new RegExp('([^?=&+]+)(=([^&]*))?', 'g');
     var results = location.search.match( regex );
+
     $.each(results, function (key, value) {
         var split = value.split('=');
         queryStringParams[split[0]] = split[1];

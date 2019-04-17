@@ -3,35 +3,35 @@ $(document).ready(function(){
         closeJoanJonas();
         closeLiveStream();
         closeVideoSection();
-                $('body').addClass('noscroll open');
+        $('body').addClass('noscroll open');
 
-                $('.panel-content').removeClass('active');
-                $('.option-item').removeClass('active');
+        $('.panel-content').removeClass('active');
+        $('.option-item').removeClass('active');
 
-                var
-                    key = $(this).data('value'),
-                    $infoPanel = $('.info-panel');
+        var
+            key = $(this).data('value'),
+            $infoPanel = $('.info-panel');
 
-                $(this).addClass('active');
-                $('#' + key + 'Panel').addClass('active');
+        $(this).addClass('active');
+        $('#' + key + 'Panel').addClass('active');
 
-                if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
-                    $infoPanel.addClass('fullscreen');
-                }
+        if($(this).data('fullscreen') === true) { // jQuery Data is smart about some types, so it'll return a boolean
+            $infoPanel.addClass('fullscreen');
+        }
 
-                $infoPanel.addClass('open');
+        $infoPanel.addClass('open');
 
-                $('header').addClass('open');
+        $('header').addClass('open');
 
-                $('.message span').hide();
+        $('.message span').hide();
 
-            });
+    });
 
     $('div.jelly').click(function(){
         $(this).siblings('.send').click();
     });
     });
-    
+
 function openNav(){
     $('body').addClass('noscroll');
     $('.info-panel').addClass('open');

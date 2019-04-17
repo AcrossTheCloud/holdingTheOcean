@@ -10,13 +10,19 @@ $(document).ready(function() {
         if(!buttonClickTimeout) setButtonClickTimeout();
         else return;
 
+        var shareID = $(this).data('share')
+        $('.share').each(function( ){
+          var baseUrl = $(this).data('baseurl') + shareID
+          $(this).attr('href', baseUrl)
+        });
+
         $('.videoLinks div.active').removeClass('active');
         $(this).addClass('active');
 
         var _video = $(this);
-        closeJoanJonas(function() {
+        closeJoanJonas( function() {
             closeLiveStream( function () {
-                $('video#bgVideo').fadeTo(1000, 0).get(0).pause();
+                $('video#bgVideo').fadeTo(1000, 0, function () { $(this).get(0).pause(); });
                 if (!$(_video).hasClass('currentlyPlaying')) {
                   openVideoSection($(this).data('videourl'), function () {
                     loadVideo($(_video).data('videourl'));
@@ -25,17 +31,25 @@ $(document).ready(function() {
                   });
                 } else {
                   if(!$('body').hasClass('videoSectionOpen')) {
-                    openVideoSection(null,function () {
+                    openVideoSection(null, function () {
                       $overlay.fadeOut(function () {
                         $player.get(0).play();
                       });
                     });
                   }
                 }
-          
+
               });
           });
     });
+
+    if(queryStringParams.share) {
+      setTimeout(function() {
+        console.log('#share_', queryStringParams)
+        $('#share_' + queryStringParams.share).click();
+      }, 300)
+    }
+
 
     $player.get(0).onloadeddata = function() {
         if ($(window).width() > 1200) {
