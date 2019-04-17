@@ -14,7 +14,6 @@ var liveStreamButtonEvent = function(streaming) {
     if(!buttonClickTimeout) setButtonClickTimeout();
     else return;
 
-    $('#shareIcons').delay(1000).show();
     var shareID = $(this).data('share')
     shareLinks(shareID);
     $('.videoLinks div.active').removeClass('active');

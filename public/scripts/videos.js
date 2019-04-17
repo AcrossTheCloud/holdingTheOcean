@@ -105,7 +105,6 @@ function openVideoSection(url, callback) {
 
 function closeVideoSection(callback) {
     $('body').removeClass('videoSectionOpen');
-    // $('#shareIcons').hide();
     $videosSection.fadeOut(function () {
         $player.get(0).pause();
 
