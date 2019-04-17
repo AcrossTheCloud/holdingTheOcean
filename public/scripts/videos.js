@@ -3,22 +3,22 @@ var
   $player = $('#videosSection video'),
   $overlay = $('#videosSection .overlay'),
   resizeTimeout = null;
-
+  function shareLinks(shareID) {
+      $('.share').each(function( ){
+        var $this = $(this);
+        var baseUrl = $this.data('baseurl') + shareID
+        $this.attr('href', baseUrl)
+      });
+  }
 $(document).ready(function() {
     // Livestream video buttons load the video section
     $('.videoLinks .video').click( function() {
         if(!buttonClickTimeout) setButtonClickTimeout();
         else return;
-
         var shareID = $(this).data('share')
-        $('.share').each(function( ){
-          var baseUrl = $(this).data('baseurl') + shareID
-          $(this).attr('href', baseUrl)
-        });
-
+        shareLinks(shareID);
         $('.videoLinks div.active').removeClass('active');
         $(this).addClass('active');
-
         var _video = $(this);
         closeJoanJonas( function() {
             closeLiveStream( function () {
@@ -28,6 +28,7 @@ $(document).ready(function() {
                     loadVideo($(_video).data('videourl'));
                     $('.videoLinks .video.currentlyPlaying').removeClass('currentlyPlaying');
                     $(_video).addClass('currentlyPlaying');
+                    $('#shareIcons').delay(1000).show();
                   });
                 } else {
                   if(!$('body').hasClass('videoSectionOpen')) {
@@ -104,6 +105,7 @@ function openVideoSection(url, callback) {
 
 function closeVideoSection(callback) {
     $('body').removeClass('videoSectionOpen');
+    // $('#shareIcons').hide();
     $videosSection.fadeOut(function () {
         $player.get(0).pause();
 

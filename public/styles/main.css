@@ -486,15 +486,15 @@ END LIVE STREAM
 /*
     START Social Media Icons
  */
-.shareIcons {
-    display: inline-block; /*change back to inline-block */
+#shareIcons {
+    display: none; /*change back to inline-block */
     position: absolute;
     right: 0;
     top: 0;
     padding:5px;
 }
 
-.shareIcons img {
+#shareIcons img {
     height: 20px;
 }
 
@@ -505,7 +505,7 @@ END LIVE STREAM
   right: 0;
 }
 
-.shareIcons:active, .shareIcons:hover .icons {
+#shareIcons:active, #shareIcons:hover .icons {
   display: inline-block;
 }
 /*

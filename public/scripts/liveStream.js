@@ -14,8 +14,12 @@ var liveStreamButtonEvent = function(streaming) {
     if(!buttonClickTimeout) setButtonClickTimeout();
     else return;
 
+    $('#shareIcons').delay(1000).show();
+    var shareID = $(this).data('share')
+    shareLinks(shareID);
     $('.videoLinks div.active').removeClass('active');
     $('.videoLinks div.livestreamButton').addClass('active');
+    $('#shareIcons').delay(1000).show()
 
     closeJoanJonas(function () {
       closeVideoSection(function () {
@@ -78,6 +82,7 @@ function closeLiveStream(callback) {
       $('video#bgVideo').fadeTo(1000, 1).get(0).play();
       $('#livestreamVideoContainer .videoContainer iframe').attr('src', '').hide();
       $(this).removeClass('open');
+      $('#shareIcons').hide();
 
       if (typeof callback === 'function') callback();
 
