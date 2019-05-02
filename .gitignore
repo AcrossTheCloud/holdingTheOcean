@@ -4,3 +4,4 @@ lib/.aws-config.json
 lib/mailer-config.json
 ._*
 .serverless/
+.idea
