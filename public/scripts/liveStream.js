@@ -118,13 +118,13 @@ function checkEventsSchedule() {
       var
         eventStartDate = event.date,
         startTime = hourMinute(event.start_time);
-      eventStartDate = new Date(eventStartDate);
+      eventStartDate = new Date(eventStartDate.replace(/-/g, '/'));
       eventStartDate.setHours(startTime[0], startTime[1] ? startTime[1] : '');
 
       var
         eventEndDate = event.date,
         endTime = hourMinute(event.end_time);
-      eventEndDate = new Date(eventEndDate);
+      eventEndDate = new Date(eventEndDate.replace(/-/g,'/'));
       // If the end time is lower we assume it's the next day (eg, start 11pm end 12:30)
       if (endTime[0] < startTime[0]) {
         eventEndDate.setDate(eventEndDate.getDate() + 1);
