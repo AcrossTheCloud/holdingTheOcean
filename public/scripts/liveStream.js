@@ -64,11 +64,13 @@ $(document).ready(function() {
       } else {
         liveStreamButtonEvent(false);
         $('body').addClass('no_livestream');
+        checkEventsSchedule();
       }
     })
     .fail(function () {
       liveStreamButtonEvent(false);
       $('body').addClass('no_livestream');
+      checkEventsSchedule();
     });
 });
 
@@ -84,4 +86,64 @@ function closeLiveStream(callback) {
       if (typeof callback === 'function') callback();
 
     });
+}
+
+function checkEventsSchedule() {
+  $.getJSON('../livestream.json?v=1.4.0', function (data) {
+    var
+      dateOffsetInUTC = function (utcOffset) {
+        var
+          currentDate = new Date(),
+          utc = currentDate.getTime() + (currentDate.getTimezoneOffset() * 60000);
+
+        return new Date(utc + (3600000 * utcOffset));
+      },
+      daySuffix = function (dateNumber) {
+        var suffix = "";
+        switch(dateNumber) {
+          case 1: case 21: case 31: suffix = 'st'; break;
+          case 2: case 22: suffix = 'nd'; break;
+          case 3: case 23: suffix = 'rd'; break;
+          default: suffix = 'th';
+        }
+        return dateNumber + suffix;
+      },
+      hourMinute = function(time) {
+        return time.split(':')
+      },
+      monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+      currentDateUTC = dateOffsetInUTC("+2");
+
+    $.each(data, function(index, event) {
+      var
+        eventStartDate = event.date,
+        startTime = hourMinute(event.start_time);
+      eventStartDate = new Date(eventStartDate.replace(/-/g, '/'));
+      eventStartDate.setHours(startTime[0], startTime[1] ? startTime[1] : '');
+
+      var
+        eventEndDate = event.date,
+        endTime = hourMinute(event.end_time);
+      eventEndDate = new Date(eventEndDate.replace(/-/g,'/'));
+      // If the end time is lower we assume it's the next day (eg, start 11pm end 12:30)
+      if (endTime[0] < startTime[0]) {
+        eventEndDate.setDate(eventEndDate.getDate() + 1);
+      }
+      eventEndDate.setHours(endTime[0], endTime[1] ? endTime[1] : '');
+      var eventTitle = event.title ? ' ' + event.title.toUpperCase() + ' ' : '';
+
+
+      if(eventEndDate >= currentDateUTC <= eventStartDate) {
+        if (eventEndDate >= currentDateUTC) {
+          $('#livestreamVideoContainer .r').text(
+            // $('body').text(
+            ' - '
+            + daySuffix(eventStartDate.getDate()) +
+            ' ' + monthNames[eventStartDate.getMonth()] + ' ' + eventStartDate.getFullYear() + eventTitle);
+          // Break on the first one that has a date higher than now.
+          return false;
+        }
+      }
+    });
+  });
 }
