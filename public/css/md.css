@@ -1,5 +1,47 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  /*
+
+  GENERAL
+
+   */
+  .border-md-right {
+    border-right: 1px solid #fff;
+  }
+  .border-md-left {
+    border-left: 1px solid #fff;
+  }
+
+  /*
+    BOOTSTRAP OVERRIDE
+   */
+  .container-md {
+    margin-left: 6%;
+    max-width: 94%;
+    padding: 0;
+  }
+
+  /*
+    FORM STYLING
+   */
+
+  .border-top-mobile{
+    border-top: none;
+  }
+
+  #collabform form {
+    border-left: 1px solid #fff;
+  }
+
+  #collabform .form-row {
+    margin: 0 0;
+  }
+
+  /*
+
+  LIVE HOSTS SCROLLER
+
+   */
 
   #liveHosts {
     overflow: hidden;
@@ -12,11 +54,8 @@
   }
 
   #liveHosts .hosts-wrapper {
-    height: 100% /* 100% of 6rem */
-  }
-
-  #liveHosts .hosts-wrapper {
-    height: 100% /* 100% of 6rem */
+    height: 100%; /* 100% of 6rem */
+    max-width: 90%;
   }
 
   #liveHosts .hosts {
@@ -25,6 +64,12 @@
   #liveHosts .hosts .marquee {
     animation: marquee 10s linear infinite;
   }
+
+  /*
+
+  VIDEO
+
+   */
 
   #video {
     position: relative;
@@ -49,25 +94,5 @@
     transform: translateX(-50%) translateY(-50%);
   }
 
-  /*
-    FORM STYLING
-   */
-
-  .border-top-mobile{
-    border-top: none;
-  }
-
-  #collabform form {
-    border-left: 1px solid #fff;
-  }
-
-  #collabform .form-row {
-    margin: 0 0;
-  }
-
-  #collabform .mobile_container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 
 }

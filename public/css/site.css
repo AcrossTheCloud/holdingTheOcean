@@ -1,6 +1,9 @@
 body {
+  position: relative;
   background: #202020;
   color: #fff;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 #logo {
@@ -111,3 +114,9 @@ label.form-control {
 .custom-checkbox .custom-control-input:checked~.custom-control-label:focus {
   background-color: #3fb39a;
 }
+
+.form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
