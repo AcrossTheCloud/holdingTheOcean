@@ -1,0 +1,113 @@
+body {
+  background: #202020;
+  color: #fff;
+}
+
+#logo {
+  position: relative;
+  width: 100%;
+  height: 4.35em;
+  overflow-x: hidden;
+  margin-bottom: .25em;
+}
+
+#logo .left, #logo .right {
+  width: 16em;
+  position: absolute;
+  top: .5em;
+  transition: right 1s cubic-bezier(0.22, 0.61, 0.36, 1) .1s, left 1s cubic-bezier(0.22, 0.61, 0.36, 1) .1s;
+}
+#logo .left {
+  left: -100%;
+}
+#logo .init.show.left {
+  left: -7.5em;
+}
+
+#logo .right {
+  right: 50%;
+  transform: translateX(50%);
+}
+#logo .init.show.right {
+  right: -0.5em;
+}
+
+
+/*
+
+BUTTONS
+
+ */
+.btn-oa {
+  color: #fff;
+  background: #3fb39a;
+  border-radius: 0;
+  border: none;
+  padding: 10px 30px;
+}
+.btn-oa:hover {
+  color: #fff;
+}
+.btn-oa:focus {
+  outline: 0;
+  box-shadow: 0;
+}
+
+
+/*
+
+COLLAB FORM
+
+ */
+
+#collabform {
+  border-top: 1px solid #fff;
+}
+
+#collabform .mobile_container {
+  padding: 0;
+}
+
+/*
+
+FORM STYLING
+
+ */
+.border-top-mobile {
+  border-top: 1px solid #fff;
+}
+
+input.form-control, textarea.form-control {
+  border: none;
+  color: #fff;
+  background: transparent;
+}
+input.form-control:focus, textarea.form-control:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+label.form-control {
+  padding: .375rem .75rem;
+  color: #5a6268;
+}
+
+.form-control:focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  background: transparent;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+  background-color: #3fb39a;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label:focus {
+  background-color: #3fb39a;
+}
