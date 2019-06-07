@@ -223,9 +223,9 @@ input.form-control:focus, textarea.form-control:focus {
 .form-control:focus {
   color: #fff;
   background-color: transparent;
-  border-color: #80bdff;
+  border-color: transparent;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  box-shadow: none;
 }
 
 /* Custom Checkbox */

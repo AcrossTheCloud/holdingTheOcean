@@ -29,5 +29,14 @@
     right: -10px;
   }
 
+  /*
+
+VIDEO
+
+ */
+
+  #video {
+    height: 90vh;
+  }
 
 }

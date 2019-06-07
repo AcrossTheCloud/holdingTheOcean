@@ -162,15 +162,23 @@ function OA_Logo_Lucid_Code() {
 }
 
 function loadVideos() {
-  if ( $(window).width() > 768 ) {
+  var
+    windowWidth = $(window).width(),
+    $video = $('#video video');
 
-    var $video = $('#video video');
+  if (windowWidth >= 768 && windowWidth < 992) {
+
+    $('#video .mp4').attr('src', 'https://streaming.ocean-archive.org/media/720_OA_trailer.mp4');
+    $('#video .webm').attr('src', 'https://streaming.ocean-archive.org/media/720_OA_trailer.webm');
+  } else if (windowWidth >= 992 ) {
+
     $('#video .mp4').attr('src', 'https://streaming.ocean-archive.org/media/OA_trailer.mp4');
     $('#video .webm').attr('src', 'https://streaming.ocean-archive.org/media/OA_trailer.webm');
 
-    $video[0].load();
-    $video[0].play();
   }
+
+  $video[0].load();
+  $video[0].play();
 }
 
 function isBlank(str) {
