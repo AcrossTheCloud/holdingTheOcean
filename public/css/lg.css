@@ -36,7 +36,8 @@ VIDEO
  */
 
   #video {
-    height: calc(80vh - 6rem);
+    /*height: calc(80vh - 6rem); -- with ticker*/
+    height: calc(80vh);
   }
 
 
