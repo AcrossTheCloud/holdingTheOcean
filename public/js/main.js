@@ -52,7 +52,7 @@ $(function() {
         "location": $collab_location_value,
         "institution": $collab_institution_value,
         "message": $collab_message_value,
-        "type": 'collaboration'
+        "type": "collaboration"
       };
 
       // Send form
@@ -97,18 +97,24 @@ $(function() {
 
       var
         $about_email = $('#about_email'),
-        $about_email_value = $about_email.val();
+        $about_email_value = $about_email.val(),
+        $about_name = $('#about_name'),
+        $about_name_value = $about_name.val();
+      
+      if (!$about_name_value) {
+        $('#about_email, label[for="about_email"]').addClass('shake');
+        return;
+      }
+      
       if (!isEmail($about_email.val())) {
         $('#about_email, label[for="about_email"]').addClass('shake');
         return;
       }
 
       var body = {
-        "name": "",
+        "name": $about_name_value,
         "email": $about_email_value,
-        "location": "",
-        "institution": "",
-        "message": "",
+        "type": "subscription"
       };
 
       // Send form
