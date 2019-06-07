@@ -7,5 +7,5 @@ phases:
   post_build:
     commands:
       - aws s3 cp --recursive public/ $S3_DEST
-      - npm install -g serverless
-      - serverless deploy
+#      - npm install -g serverless
+#      - serverless deploy
