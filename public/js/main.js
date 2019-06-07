@@ -64,7 +64,7 @@ $(function() {
       // Send form
       $.ajax({
         type:'POST',
-        url: 'https://api.ocean-archive.org/subscribe',
+        url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
         data: JSON.stringify(body),
         contentType: 'application/json',
         crossDomain: true,
@@ -101,7 +101,7 @@ $(function() {
   var $aboutForm = $('form#aboutForm');
   $aboutForm.submit(function (e) {
     e.preventDefault();
-    if($('#collab_agree').prop('checked')) {
+    if($('#about_agree').prop('checked')) {
 
       var
         $about_email = $('#about_email'),
@@ -118,7 +118,7 @@ $(function() {
       // Send form
       $.ajax({
         type: 'POST',
-        url: 'https://api.ocean-archive.org/subscribe',
+        url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
         data: JSON.stringify(body),
         contentType: 'application/json',
         crossDomain: true,
