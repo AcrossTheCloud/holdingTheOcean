@@ -5,6 +5,17 @@
   GENERAL
 
    */
+
+  h1 {
+    font-size: 51px;
+    line-height: 60px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 32px;
+  }
+
   .border-md-right {
     border-right: 1px solid #fff;
   }
@@ -19,6 +30,26 @@
     margin-left: 6%;
     max-width: 94%;
     padding: 0;
+  }
+
+  /*
+
+  LOGO
+
+   */
+  #logo {
+    padding: 70px 0;
+  }
+
+  /*
+
+  CONTENT
+
+   */
+
+  #content .date {
+    padding-top: 18px;
+    padding-bottom: 21px;
   }
 
   /*
@@ -93,6 +124,5 @@
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
   }
-
 
 }
