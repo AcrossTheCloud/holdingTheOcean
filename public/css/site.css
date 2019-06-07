@@ -13,10 +13,11 @@
   src:url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
-
+html, body {
+  background: #202020;
+}
 body {
   position: relative;
-  background: #202020;
   color: #fff;
   max-width: 2000px;
   margin: 0 auto;
