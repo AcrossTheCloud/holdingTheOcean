@@ -91,7 +91,7 @@ async function sendConfirmation(body, isContribution){
     }
 
     var mailOption = {
-      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+      from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
       to: body.email,
       subject: subject,
       text: message
@@ -108,7 +108,7 @@ async function collaboration(body) {
     // the amazon one
     var message = `${body.message} \n\n\nFrom: ${body.name}\nInstitution: ${body.institution}\nLocation: ${body.location}\nEmail: ${body.email}`
     var mailOption = {
-      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
+      from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`,
       to: process.env.MAIL_ADDRESS,
       subject: `Collaboration inquiry from ${body.name}`,
       text: message
@@ -128,7 +128,7 @@ async function updates(body) {
     // the amazon one
     var message = `Updates request \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
     var mailOption = {
-      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
+      from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`,
       to: process.env.MAIL_ADDRESS, 
       subject: `Updates request`,
       text: message
