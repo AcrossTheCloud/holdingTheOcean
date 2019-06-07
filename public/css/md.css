@@ -41,6 +41,16 @@
     padding: 70px 0;
   }
 
+  #logo .left, #logo .right {
+    width: 300px;
+  }
+  #logo .init.show.left {
+    left: -140px;
+  }
+  #logo .init.show.right {
+    right: -10px;
+  }
+
   /*
 
   CONTENT
