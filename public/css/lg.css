@@ -39,4 +39,9 @@ VIDEO
     height: calc(90vh - 6rem);
   }
 
+
+  #collab_message, label[for="collab_message"] {
+    padding: 0
+  }
+
 }
