@@ -96,6 +96,9 @@ BOOTSTRAP OVERRIDES
 LIVE HOSTS
 
  */
+#liveHosts {
+  display: none; /* hidden for now*/
+}
 #liveHosts .heading-mobile, #liveHosts .heading {
   font-family: "Roboto Mono", sans-serif;
   font-size: 14px;
