@@ -360,7 +360,8 @@ footer .text {
 }
 
 footer a {
-  text-decoration: none;
+  opacity: 1;
+  text-decoration: underline;
 }
 
 footer .tba-logo {
