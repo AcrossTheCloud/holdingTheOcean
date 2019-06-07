@@ -197,10 +197,6 @@ COLLAB FORM
   padding: 0;
 }
 
-#collabform .message label, #collabform .message textarea {
-  padding-left: 20px;
-}
-
 /*
 
 FORM STYLING
@@ -211,17 +207,18 @@ FORM STYLING
 }
 
 input.form-control, textarea.form-control {
-  padding: 0 0 0 25px;
+  padding: 0 0 0 10px;
   border: none;
   color: #fff;
   background: transparent;
   font-size: 17px;
-  line-height: 27px
+  line-height: 27px;
 }
 input.form-control:focus, textarea.form-control:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  border-color: transparent;
 }
 .form-control:focus {
   color: #fff;
@@ -293,12 +290,12 @@ input.form-control:focus, textarea.form-control:focus {
 
 /* LABELS */
 label {
-  padding: 15px 0 0 25px;
+  padding: 15px 0 0 10px;
   color: #ABABAB;
   font-family: "Roboto Mono", sans-serif;
   font-size: 13px;
   line-height: 20px;
-  opacity: 0.3;
+  opacity: 0.7;
   margin: 0;
 }
 
@@ -309,6 +306,22 @@ label {
 label.custom-control-label {
   color: #fff;
   opacity: 1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  font-size: 17px;
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #202020 inset;
+  transition: all 5000s ease-in-out 0s;
 }
 
 
@@ -327,6 +340,10 @@ footer .text {
   opacity: 0.5;
   font-size: 14px;
   line-height: 23px;
+}
+
+footer a {
+  text-decoration: none;
 }
 
 footer .tba-logo {

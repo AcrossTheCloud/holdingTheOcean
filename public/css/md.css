@@ -64,7 +64,11 @@
 
   input.form-control, textarea.form-control {
     font-size: 21px;
-    line-height: 27px
+    line-height: 27px;
+  }
+
+  label {
+    padding-top: 0;
   }
   /*
 
@@ -114,7 +118,7 @@
 
   #video {
     position: relative;
-    height: 75vh;
+    height: 90vh;
     min-height: 25rem;
     width: 100%;
     overflow: hidden;

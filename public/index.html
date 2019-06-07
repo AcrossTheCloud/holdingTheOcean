@@ -144,7 +144,14 @@
           </h3>
         </div>
         <div class="col-sm-6 col-md-7 pb-md-4 px-0 border-sm-left border-md-left">
-          <form>
+          <div class="container message pt-5" style="display: none;">
+            <div class="row">
+              <div class="col-12">
+                <p>Thanks for your submission.</p>
+              </div>
+            </div>
+          </div>
+          <form id="collab">
             <div class="form-row border-xs-top mx-0">
               <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-4">
                 <label for="collab_name">Name</label>
@@ -176,7 +183,7 @@
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-md-4">
               <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
             </div>
           </form>
@@ -245,14 +252,24 @@
                   </ul>
                 </p>
                 <br>
-                <p>
+                <p class="receive">
                   To receive updates on ocean-archive.org please sign-up here:
                 </p>
               </div>
             </div>
           </div>
 
-          <form>
+          <div class="container message" style="display: none;">
+            <div class="row">
+              <div class="col-12 px-4">
+                <p>
+                  Thanks for signing up!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form id="aboutForm">
             <div class="border-top">
               <div class="form-group">
                 <label for="about_email">Email</label>
@@ -266,7 +283,7 @@
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-md-4">
               <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
             </div>
           </form>
@@ -289,7 +306,7 @@
             <img src="img/tba21-logo.png" />
           </div>
 
-          <div class="col-6 col-md-8 offset-md-0 col-lg-9 text text-center text-md-left px-0">
+          <div class="col-6 offset-3 col-md-8 offset-md-0 col-lg-9 text text-center text-md-left px-0">
             Ocean Archive is being developed by User Group for the TBA21-Academy.
           </div>
         </div>
