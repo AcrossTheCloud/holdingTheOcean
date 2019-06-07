@@ -6,30 +6,21 @@
 
    */
 
-  h1 {
-    font-size: 51px;
-    line-height: 60px;
+  .border-sm-top {
+    border-top: none;
+  }
+  .border-sm-left {
+    border-left: none
   }
 
-  h2 {
-    font-size: 40px;
-    line-height: 32px;
+  .border-md-top {
+    border-top: 1px solid #787878;
   }
-
   .border-md-right {
-    border-right: 1px solid #fff;
+    border-right: 1px solid #787878;
   }
   .border-md-left {
-    border-left: 1px solid #fff;
-  }
-
-  /*
-    BOOTSTRAP OVERRIDE
-   */
-  .container-md {
-    margin-left: 6%;
-    max-width: 94%;
-    padding: 0;
+    border-left: 1px solid #787878;
   }
 
   /*
@@ -38,17 +29,8 @@
 
    */
   #logo {
-    padding: 70px 0;
-  }
-
-  #logo .left, #logo .right {
-    width: 300px;
-  }
-  #logo .init.show.left {
-    left: -140px;
-  }
-  #logo .init.show.right {
-    right: -10px;
+    padding: 0;
+    margin: 20px 0 0;
   }
 
   /*
@@ -65,19 +47,25 @@
   /*
     FORM STYLING
    */
-
-  .border-top-mobile{
-    border-top: none;
-  }
-
-  #collabform form {
-    border-left: 1px solid #fff;
+  .form-group {
+    margin-bottom: 0;
   }
 
   #collabform .form-row {
     margin: 0 0;
   }
 
+  .submit {
+    margin-bottom: 0;
+  }
+  .button-wrapper {
+    padding-bottom: 20px;
+  }
+
+  input.form-control, textarea.form-control {
+    font-size: 21px;
+    line-height: 27px
+  }
   /*
 
   LIVE HOSTS SCROLLER
@@ -98,12 +86,24 @@
     height: 100%; /* 100% of 6rem */
     max-width: 90%;
   }
+  #liveHosts .hosts-wrapper:after {
+    display: none;
+  }
 
   #liveHosts .hosts {
     height: 100%;
   }
   #liveHosts .hosts .marquee {
     animation: marquee 10s linear infinite;
+  }
+
+  #liveHosts .host .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #liveHosts .host .location {
+    font-size: 14px;
+    line-height: 20px;
   }
 
   /*

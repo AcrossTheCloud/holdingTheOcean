@@ -1,3 +1,33 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+  /*
+  BOOTSTRAP OVERRIDE
+ */
+  .container-lg {
+    margin-left: 6%;
+    max-width: 94%;
+    padding: 0;
+  }
+
+  /*
+
+  LOGO
+
+   */
+  #logo {
+    padding: 30px 0;
+  }
+
+  #logo .left, #logo .right {
+    width: 300px;
+  }
+  #logo .init.show.left {
+    left: -140px;
+  }
+  #logo .init.show.right {
+    right: -10px;
+  }
+
+
 }
