@@ -310,6 +310,7 @@ label {
 label.custom-control-label {
   color: #fff;
   opacity: 1;
+  cursor: pointer;
 }
 
 input:-webkit-autofill,

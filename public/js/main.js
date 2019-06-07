@@ -50,7 +50,7 @@ $(function() {
         "name": $collab_name_value,
         "email": $collab_email_value,
         "location": $collab_location_value,
-        "institution": $collab_message_value,
+        "institution": $collab_institution_value,
         "message": $collab_message_value,
         "type": 'collaboration'
       };
