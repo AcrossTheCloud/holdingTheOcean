@@ -76,23 +76,23 @@
 
    */
 
-  #liveHosts {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6rem;
-    z-index: 1;
-  }
+  /*#liveHosts {*/
+  /*  overflow: hidden;*/
+  /*  position: absolute;*/
+  /*  top: 0;*/
+  /*  left: 0;*/
+  /*  width: 100%;*/
+  /*  height: 6rem;*/
+  /*  z-index: 1;*/
+  /*}*/
 
-  #liveHosts .hosts-wrapper {
-    height: 100%; /* 100% of 6rem */
-    max-width: 90%;
-  }
-  #liveHosts .hosts-wrapper:after {
-    display: none;
-  }
+  /*#liveHosts .hosts-wrapper {*/
+  /*  height: 100%; !* 100% of 6rem *!*/
+  /*  max-width: 90%;*/
+  /*}*/
+  /*#liveHosts .hosts-wrapper:after {*/
+  /*  display: none;*/
+  /*}*/
 
   #liveHosts .hosts {
     height: 100%;

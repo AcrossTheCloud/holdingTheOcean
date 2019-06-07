@@ -23,6 +23,10 @@ body {
   font-family: "Recta W01 Regular", sans-serif;
   font-size: 17px;
   line-height: 23px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Force Scroll bar */
+  overflow-y: scroll;
 }
 
 h1 {
@@ -349,4 +353,17 @@ footer a {
 footer .tba-logo {
   padding-top: 60px;
   padding-bottom: 17px;
+}
+
+
+/* Overwrite the default to keep the scrollbar always visible */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: #3fb39a;
+  -webkit-box-shadow: none;
 }
