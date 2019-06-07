@@ -5,7 +5,7 @@ $(function() {
   var $collabForm = $('form#collab');
   $collabForm.submit(function (e) {
     e.preventDefault();
-    if($('#collab_agree').prop('checked')) {
+    // if($('#collab_agree').prop('checked')) {
 
       var
         $collab_name = $('#collab_name'),
@@ -80,10 +80,10 @@ $(function() {
         }
       );
 
-    } else {
-      var $agreeBoxContainer = $collabForm.find('.custom-checkbox .col-12');
-      $agreeBoxContainer.addClass('shake');
-    }
+    // } else {
+    //   var $agreeBoxContainer = $collabForm.find('.custom-checkbox .col-12');
+    //   $agreeBoxContainer.addClass('shake');
+    // }
 
     setTimeout(function () {
       $('.shake').removeClass('shake')
@@ -93,19 +93,19 @@ $(function() {
   var $aboutForm = $('form#aboutForm');
   $aboutForm.submit(function (e) {
     e.preventDefault();
-    if($('#about_agree').prop('checked')) {
+    // if($('#about_agree').prop('checked')) {
 
       var
         $about_email = $('#about_email'),
         $about_email_value = $about_email.val(),
         $about_name = $('#about_name'),
         $about_name_value = $about_name.val();
-      
+
       if (!$about_name_value) {
         $('#about_email, label[for="about_email"]').addClass('shake');
         return;
       }
-      
+
       if (!isEmail($about_email.val())) {
         $('#about_email, label[for="about_email"]').addClass('shake');
         return;
@@ -142,10 +142,10 @@ $(function() {
         }
       );
 
-    } else {
-      var $agreeBoxContainer = $collabForm.find('.custom-checkbox .col-12');
-      $agreeBoxContainer.addClass('shake');
-    }
+    // } else {
+    //   var $agreeBoxContainer = $collabForm.find('.custom-checkbox .col-12');
+    //   $agreeBoxContainer.addClass('shake');
+    // }
 
     setTimeout(function () {
       $('.shake').removeClass('shake')
