@@ -1,9 +1,3 @@
-var headers = {
-  'Access-Control-Allow-Origin' : '*', // Required for CORS support to work
-  'Access-Control-Allow-Credentials' : true // Required for cookies, authorization headers with HTTPS
-};
-
-
 $(function() {
   OA_Logo_Lucid_Code();
   loadVideos();
@@ -53,12 +47,12 @@ $(function() {
       }
 
       var body = {
-        $collab_name_value,
-        $collab_email_value,
-        $collab_institution_value,
-        $collab_location_value,
-        $collab_message_value,
-        type: 'collaboration'
+        "name": $collab_name_value,
+        "email": $collab_email_value,
+        "location": $collab_location_value,
+        "institution": $collab_message_value,
+        "message": $collab_message_value,
+        "type": 'collaboration'
       };
 
       // Send form
@@ -66,9 +60,7 @@ $(function() {
         type:'POST',
         url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
         data: JSON.stringify(body),
-        contentType: 'application/json',
-        crossDomain: true,
-        headers: headers
+        contentType: 'application/json'
       }).done(function(data){
         if(data.error){
           $('#collabform .message p').html('Oops, looks like we\'ve had an issue!');
@@ -112,7 +104,11 @@ $(function() {
       }
 
       var body = {
-        $about_email_value,
+        "name": "",
+        "email": $about_email_value,
+        "location": "",
+        "institution": "",
+        "message": "",
       };
 
       // Send form
@@ -121,8 +117,6 @@ $(function() {
         url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
         data: JSON.stringify(body),
         contentType: 'application/json',
-        crossDomain: true,
-        headers: headers
       }).done(function (data) {
         if (data.error) {
           $('#about .message p').html('Oops, looks like we\'ve had an issue!');
