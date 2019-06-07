@@ -91,7 +91,7 @@ async function sendConfirmation(body, isContribution){
     }
 
     var mailOption = {
-      from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
       to: body.email,
       subject: subject,
       text: message
