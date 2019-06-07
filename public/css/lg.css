@@ -36,7 +36,7 @@ VIDEO
  */
 
   #video {
-    height: 90vh;
+    height: calc(90vh - 6rem);
   }
 
 }
