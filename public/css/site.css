@@ -364,3 +364,35 @@ footer .tba-logo {
   padding-top: 60px;
   padding-bottom: 17px;
 }
+
+
+/*
+
+BOOTSTRAP OVERRIDES
+
+ */
+.modal-dialog {
+  max-width: calc(100vw - 3.5em);
+}
+.modal-content {
+  background: #202020;
+  height: calc(100vh - 3.5em);
+}
+.modal-body {
+  overflow-y: scroll;
+}
+.modal-body ul {
+  padding: 0 0 0 40px;
+}
+.close {
+  font-weight: 300;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: none;
+  opacity: 1;
+}
+.close:hover, .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
+  transition: color 1s ease;
+  opacity: 1;
+  color: #3fb39a;
+}
