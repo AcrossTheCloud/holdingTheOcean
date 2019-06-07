@@ -79,20 +79,20 @@ async function subscribeToMaillist(body) {
     }
 }
 
-async function sendConfirmation(body, isContribution){
+async function sendConfirmation(body, isCollaboration){
 
     var message, subject;
-    if (isContribution) {
+    if (isCollaboration) { // collaboration request
         message = `Dear ${body.name}, \n\n Thanks for your interest in collaborating with the Ocean Archive team. We will respond to you promptly. If you received this email in error please let us know by replying to this email.`
         subject = `ocean archive collaboration request received`
-    } else {
-        message = `Dear ${body.name}, \n\n Thanks for your interest in receiving updates from the Ocean Archive. If you received this email in error please let us know by replying to this email. `
-        subject = `ocean archive updates request received`
+    } else { // updates request
+        message = `Dear ${body.name}, \n\n Thanks for your interest in updates from Ocean Archive. If you have received this message in error, please let us know by replying to this email.`
+        subject = `Ocean-Archive.org updates request received`
     }
 
     var mailOption = {
       from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
-      to: body.email,
+      to: [{ name: body.name, address: body.email}],
       subject: subject,
       text: message
     }
@@ -113,10 +113,9 @@ async function collaboration(body) {
       subject: `Collaboration inquiry from ${body.name}`,
       text: message
     }
-    // 'error sending to archive@tba21.org'
     try {
-        let mailArchive = await transport.sendMail(mailOption);
-        let mailSubmitter = await sendConfirmation(body, true);
+        await transport.sendMail(mailOption);
+        await sendConfirmation(body, true);
         return true;
     } catch (err) {
         console.log(err);
