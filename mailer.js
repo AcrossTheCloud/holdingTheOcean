@@ -110,7 +110,7 @@ async function collaboration(body) {
     var mailOption = {
       from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
       to: process.env.MAIL_ADDRESS,
-      subject: `Collaboration inquiry: ${body.subject}`,
+      subject: `Collaboration inquiry from ${body.name}`,
       text: message
     }
     // 'error sending to archive@tba21.org'
