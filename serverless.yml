@@ -57,10 +57,10 @@ resources:
 
 functions:
   confirm:
-    handler: mailer.confirm
+    handler: mailer.email
     events:
       - http:
-          path: subscribe
+          path: email
           method: post
           cors: true
   

@@ -23,14 +23,14 @@ const CORSHeaders = {
 // DYNAMO DB
 const docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 
-module.exports.confirm  = async (event, context, callback) => {
+module.exports.email  = async (event, context, callback) => {
     let body = JSON.parse(event.body);
     let type = body.type;
     try {
-        if (type === "contribute") {
-            await sayHello(body);
+        if (type === "collaboration") {
+            await collaboration(body);
         } else {
-            await subscribeToMaillist(body);
+            await updates(body);
         }
         const response = {
             statusCode: 200,
@@ -79,13 +79,15 @@ async function subscribeToMaillist(body) {
     }
 }
 
-async function sendConfirmation(body, isContribute){
-    if(isContribute){
-        var message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
-        var subject = `recieved confirmation`
-    }else{
-        var message = `Dear ${body.name}, \n\n Thanks for your interest, stay tuned! \n\n\n — ocean archive team`
-        var subject = `ocean archive subscribed`
+async function sendConfirmation(body, isContribution){
+
+    var message, subject;
+    if (isContribution) {
+        message = `Dear ${body.name}, \n\n Thanks for your interest in collaborating with the Ocean Archive team. We will respond to you promptly. If you received this email in error please let us know by replying to this email.`
+        subject = `ocean archive collaboration request received`
+    } else {
+        message = `Dear ${body.name}, \n\n Thanks for your interest in receiving updates from the Ocean Archive. If you received this email in error please let us know by replying to this email. `
+        subject = `ocean archive updates request received`
     }
 
     var mailOption = {
@@ -95,23 +97,45 @@ async function sendConfirmation(body, isContribute){
       text: message
     }
 
-    let sendmail = await transport.sendMail(mailOption);
-    
+    try {
+        await transport.sendMail(mailOption);
+    } catch (err) {
+        console.log(err);
+    }    
 }
 
-async function sayHello(body) {
+async function collaboration(body) {
     // the amazon one
-    var message = `${body.message} \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
+    var message = `${body.message} \n\n\nFrom: ${body.name}\nInstitution: ${body.institution}\nLocation: ${body.location}\nEmail: ${body.email}`
     var mailOption = {
       from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
-      to: process.env.MAIL_ADDRESS, // change this later to config.MAIL.INFO
-      subject: `HOLDING inquiry: ${body.subject}`,
+      to: process.env.MAIL_ADDRESS,
+      subject: `Collaboration inquiry: ${body.subject}`,
       text: message
     }
     // 'error sending to archive@tba21.org'
     try {
-        let sendmail = await transport.sendMail(mailOption);
-        let confirmation = await sendConfirmation(body, true);
+        let mailArchive = await transport.sendMail(mailOption);
+        let mailSubmitter = await sendConfirmation(body, true);
+        return true;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
+
+async function updates(body) {
+    // the amazon one
+    var message = `Updates request \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
+    var mailOption = {
+      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
+      to: process.env.MAIL_ADDRESS, 
+      subject: `Updates request`,
+      text: message
+    }
+    try {
+        await transport.sendMail(mailOption);
+        await sendConfirmation(body, false); // false as not a collaboration request
         return true;
     } catch (err) {
         console.log(err);
