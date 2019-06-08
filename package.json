@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qclin/holdingTheOcean.git"
+    "url": "git+https://github.com/AcrossTheCloud/holdingTheOcean.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/qclin/holdingTheOcean/issues"
+    "url": "https://github.com/AcrossTheCloud/holdingTheOcean/issues"
   },
-  "homepage": "https://github.com/qclin/holdingTheOcean#readme",
+  "homepage": "https://github.com/AcrossTheCloud/holdingTheOcean#readme",
   "dependencies": {
-    "nodemailer": "^6.1.1"
+    "nodemailer": "^6.2.1"
   },
   "devDependencies": {
-    "serve": "^11.0.0"
+    "serve": "^11.0.1"
   }
 }

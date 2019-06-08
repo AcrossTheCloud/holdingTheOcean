@@ -1,240 +1,416 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-        <meta name="keywords" content=""/>
-        <meta name="og:url" content=""/>
-        <meta name="og:type" content=""/>
-        <meta name="og:title" content="ocean archive"/>
-        <meta name="og:image" content=""/>
-        <meta name="og:description" content=""/>
-        <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-        <link rel="manifest" href="/favicons/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+<!doctype html>
+<html class="no-js" lang="">
 
-        <link rel="shortcut icon" href="" type="image/x-icon"/>
-        <title>ocean archive</title>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+  <meta name="keywords" content=""/>
+  <meta name="og:url" content=""/>
+  <meta name="og:type" content=""/>
+  <meta name="og:title" content="ocean archive"/>
+  <meta name="og:image" content=""/>
+  <meta name="og:description" content=""/>
 
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="./styles/main.css?v=1.4.0"/>
-        <link rel="stylesheet" href="./styles/grid.css?v=1.4.0"/>
-        <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png?v=ng9EmB9dQn">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png?v=ng9EmB9dQn">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png?v=ng9EmB9dQn">
+  <link rel="manifest" href="favicons/site.webmanifest?v=ng9EmB9dQn">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg?v=ng9EmB9dQn" color="#3fb39a">
+  <link rel="shortcut icon" href="favicons/favicon.ico?v=ng9EmB9dQn">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml?v=ng9EmB9dQn">
+  <meta name="theme-color" content="#ffffff">
 
-    </head>
-    <body>
-        <div class="bodyContainer">
-            <div id="livestream" style="display:none">
-                <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
-                </svg>
-                <span class="titlewrap">
-                    <div class="wrapper">
-                        <span class="title">Livestreaming Now</span>
-                        <span class="streamTitle"></span>
-                    </div>
-                </span>
-                <span class="dot animate-flicker">&#183;</span>
-                <span class="watchnow">Watch Now</span>
-            </div>
+  <link rel="shortcut icon" href="" type="image/x-icon"/>
+  <title>ocean archive</title>
 
-            <section class="mainContent">
-                <div class="leftSticky">
-                    <div class="leftStickyHeader disable-select">
-                        Ocean Archive
-                        <br/>Under Construction
-                    </div>
-                    <div class="leftStickyJoan">
-                        <div>Joan Jonas</div>
-                        <div class="thin">Moving Off the Land II</div>
-                        <div class="thin">Mar 24 - Sep 29, 2019</div>
-                    <div id="oceanspace" style="display:none">
-                        <div class="thin">OCEAN SPACE</div>
-                        <div class="thin">Chiesa di San Lorenzo</div>
-                        <div class="thin">Venezia, Italy</div>
-                    </div>
-                </div>
-                </div>
-                <div class="rightBox">
-                    <div id="videosSection" style="display:none">
-                        <div class="videoContainer">
-                            <div class="overlay">
-                                <div class="loader"></div>
-                            </div>
-                            <video controls>
-                                <source class="mp4" type="video/mp4">
-                                <source class="webm" type="video/webm">
-                            </video>
-                        </div>
-                    </div>
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-                    <div id="livestreamVideoContainer" style="display:none">
-                        <div class="videoContainer">
-                            <div class="overlay">
-                                <div class="loader"></div>
-                            </div>
+<body>
 
-                            <div class="placeholder">
-                                <div class="text">
-                                    <div class="titlewrap">
-                                        <div class="wrapper marquee">
-                                            <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                                <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
-                                            </svg>
-                                            <span class="title">OCEAN SPACE</span>
-                                            <span class="streamTitle"></span>
-                                            <span class="dot animate-flicker">&#183;</span>
-                                            <span class="r">OCEAN SPACE LIVE STREAM</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <iframe
-                                src=""
-                                frameborder="0"
-                                scrolling="no"
-                                allowfullscreen="true"
-                                style="display: none"
-                            >
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="joanjonas_text" style="display:none">
-                            <div class="joanjonas_content">
-
-                                <p></p><span class="cursive">Moving Off the Land II</span></p>
-                                <p>For the inaugural public project at the Ocean Space, TBA21–Academy is proud to present an immersive multi-media installation by the acclaimed artist Joan Jonas, the culmination of three years of intensive research and explorations with the itinerant academy. Curated by Stefanie Hessler, and on view from 24 March until 29 September 2019, <span class="cursive">Moving Off the Land II</span> will occupy 500 square metres of what was once the nave of the church of San Lorenzo and will be activated by Jonas with a live performance on 7 May 2019, coinciding with the opening of the 58th Venice Biennale. </p>
-
-                                <p>Joan Jonas is one of the most renowned artists of her generation. She is celebrated as a pioneer of performance and video art since the 1960s, a time when art was leaving the confines of the gallery space, converged with dance, music, and theater and tackled complex questions surrounding our relationship with the environment. For her latest work, Jonas has devised a large-scale installation that deconstructs and translates her mesmerizing performance <span class="cursive">Moving Off the Land</span> (2016–ongoing). The exhibition includes video, sculpture, drawing, and sound, centring on the oceans as a totemic, spiritual, and ecological touchstone. The performance was commissioned by TBA21–Academy and first presented in parallel to the 2016 Kochi – Muziris Biennale, and again in collaboration with Tate Modern at the Turbine Hall in 2018. As is often the case in Jonas’s work, the performance has grown and morphed since its first iteration. </p>
-
-                                <p>Jonas’s new work dives deep into the oceans, swims with the fish that inhabit the world’s hydrosphere, and turns to literature and poetry by writers who have homed in on the liquid masses that cover two thirds of the planet. Following the methodology that has gained her lauded reputation, Jonas combines prose by writers like Emily Dickinson and Herman Melville with texts by Rachel Carson and Sy Montgomery, and with moving images filmed in aquariums around the world, as well as at the coast of Jamaica, where algae blooms and overfishing pose urgent threats to the environment. Employing her own voice, as well as music by the celebrated composer and drummer Ikue Mori and by the acclaimed musician María Huld Markan Sigfusdottir, Jonas creates an evocative, poetic, and spellbinding experience.</p>
-
-                                <p>Over many years, Jonas has visited and recorded footage in aquariums around the world. In the last year and a half, as part of a sustained dialogue about their respective work, the marine biologist and coral reef and photosynthesis expert David Gruber has shared with Jonas his captivating underwater recordings that focus on bioluminescence. In 2018, Gruber visited Jonas at her summer home in Cape Breton, Canada, where he shot footage of Jonas’s dog, Ozu, on the shoreline. </p>
-
-                                <p><span class="cursive emphasis">Moving Off the Land II</span> is commissioned by <span class="emphasis">TBA21–Academy</span> and co-produced with <span class="emphasis">Luma Foundation.</span></p>
-
-                                <p><span class="emphasis">OCEAN SPACE</span></p>
-
-                                <p>The exhibition at Ocean Space is the first in a series of shows, performances, symposia, concerts, screenings, and other events organized by TBA21–Academy that explore the oceans from different perspectives over the course of the coming years. For March 2019, Office for Political Innovation by Andrés Jaque collaborated with Joan Jonas to create an initial interior platform that forms the setting for <span class="cursive">Moving Off the Land II</span> a performance space in part of the church.</p>
-
-                                <p><span class="emphasis">OCEAN ARCHIVE</span></p>
-
-                                <p>As a digital extension of Joan Jonas’s exhibition, Ocean Archive, a project initiated by TBA21–Academy and currently under construction, will publish a selection of complementary material, including an exclusive interview with Jonas, videos of related works, and additional materials that have influenced and informed the exhibition in Venice. Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform will host materials related to Academy expeditions, exhibitions, and public events and integrate these into a curated selection of additional ocean-related art, scholarship, and  information about policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is currently being developed by User Group for TBA21–Academy and will be launched at the Ocean Space in September 2019.</p>
-                            </div>
-                        </div>
-                    <div class="share" style="display:none">
-                        <img src="icons/share.svg">
-                        <div class="icons">
-                            <a href="#" target="_blank"><img src="icons/link.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/google-plus.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/telegram.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/twitter.svg"></a>
-                            <a href="#" target="_blank"><img src="icons/facebook.svg"></a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="videoLinks">
-                    <div class="video" id="share_jjtrailer" data-videourl="https://streaming.ocean-archive.org/media/20190506_Ocean_Space_JJ_Venice_subtitles">
-                        <img src="icons/font-awesome/playbutton.svg" class="playButton" />
-                           JOAN JONAS TRAILER
-                    </div>
-                    <div class="joanjonas_text_button">
-                            JOAN JONAS TEXT
-                    </div>
-                    <div class="video" id="share_oat" data-videourl="https://streaming.ocean-archive.org/media/20190506_Ocean_Archive_Trailer_Full">
-                        <img src="icons/font-awesome/playbutton.svg" class="playButton" />
-                            OCEAN ARCHIVE TRAILER
-                    </div>
-                    <div id="share_livestream" class="livestreamButton">
-                            LIVESTREAM
-                    </div>
-
-                </div>
-            </section>
-
-            <div class="info-panel">
-                <nav id="options">
-                    <span class="option-item" data-value="about">About</span>
-                    <span class="option-item" data-value="openAPI"> Open Ocean API</span>
-                    <span class="option-item" data-value="contribute">Contribute</span>
-
-                    <svg class="closebtn" onclick="closeNav()"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36">
-                        <line class="lines" x2="36" y2="36"></line>
-                        <line class="lines" x1="36" y2="36"></line>
-                    </svg>
-                </nav>
-
-                <div id="aboutPanel" class="panel-content">
-                    <p class="callToAction one-column">Ocean Archive is a digital colaboratory operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy. Created by TBA21–Academy, the platform organizes Academy expeditions, exhibitions, and related public events and integrates these materials into a curated selection of additional ocean-related art, scholarship, and policy and conservation efforts. Designed to facilitate discovery, cooperation, and knowledge co-production, Ocean Archive is being developed by User Group Inc. for the TBA21–Academy and will be instantiated physically at TBA21’s <a class="text-hyperlink" href="https://www.nytimes.com/2018/12/13/arts/design/venice-ocean-preservation-joan-jonas.html" target="_blank">Ocean Space</a> in Venice, Italy. </p>
-                    <div class="credit">
-                        <img src="./icons/tba21-academy-logo.png"/>
-                    </div>
-                </div>
-                <div id="openAPIPanel" class="panel-content">
-                    <p class="callToAction left">
-                        Using an application program interface (API), developers can set up the protocols which determine how different pieces of software interact with one another.
-                        Today, as many ocean scientists and marine-environment scholars work across both disciplines and databases to conduct their research, the possibility for enhanced collaboration and co-discovery is more present than ever.
-                        To achieve this end, and to make the databases that drive contemporary research more open, accessible, and inter-operable for the next generation of ocean explorers,
-                    </p>
-                    <p class="callToAction right">
-                        the TBA21–Academy is stewarding the Open Ocean API, a data protocol initiative that calls upon key institutions, archives, and collections to formulate, confirm, and implement an open API policy to improve ocean data search-ability and discover-ability. As part of the wider development process of TBA21– Academy’s Ocean Archive, this initiative focuses on partnerships related to data policy and access protocols as a means to foster a more open, accessible, and collaborative environment for ocean research, scholarship, and advocacy.
-                    </p>
-                </div>
-                <div id="contributePanel" class="panel-content">
-                    <p class="callToAction one-column">To contribute your work to Ocean Archive or to link your archive to our network of research repositories, please contact us.</p>
-                    <form action="https://api.ocean-archive.org/subscribe" id="contributeForm">
-                        <input type="text" name="name" placeholder="Name">
-                        <input type="email" name="email" placeholder="Email">
-                        <input type="text" name="subject" placeholder="Subject">
-                        <textarea name="message" placeholder="Message"></textarea>
-                        <div class="message">
-                            <span class="error-message">Oh no! Something went wrong.</span>
-                            <span class="success-message">Your message has been sent!</span>
-                            <span class="error-network">Oops. Network error, email us please!</span>
-                        </div>
-                        <div class="jelly"></div>
-                        <input type="submit" class="send">
-                    </form>
-                </div>
-            </div>
-
-            <div class="mobile menu" onclick="openNav()">
-                <img src="icons/menu.svg" />
-            </div>
-
-            <video id="bgVideo" autoplay muted loop playsinline>
-              <source src="https://ocean-archive.org/media/Divers_01.mp4" type="video/mp4">
-              <source src="https://ocean-archive.org/media/Divers_01.webm" type="video/webm">
-            </video>
-
-
+  <section id="liveHosts">
+    <div class="container d-sm-none">
+      <div class="row">
+        <div class="col-12 heading-mobile">
+          Live Hosts
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <!-- jQuery local fallback -->
-        <script>window.jQuery || document.write('<script src="./scripts/vendor/jquery-3.1.0.min.js"><\/script>')</script>
+      </div>
+    </div>
 
-        <script src="./scripts/main.js?v=1.4.0"></script>
-        <script defer src="./scripts/videos.js?v=1.4.0"></script>
-        <script src="./scripts/panel.js?v=1.4.0"></script>
-        <script src="./scripts/subscribe.js?v=1.4.0"></script>
-        <script src="./scripts/liveStream.js?v=1.4.0"></script>
-        <script src="./scripts/share.js?v=1.4.0"></script>
+    <div class="container hosts-wrapper">
+      <div class="hosts row d-sm-flex-row flex-sm-nowrap align-items-sm-center">
 
-    </body>
+        <div class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-flex align-items-sm-center border-sm-right h-100 heading">
+          Confirmed Hosts
+        </div>
+
+        <div class="col-10 overflow-hidden">
+          <div class="marquee row flex-sm-nowrap">
+            <div class="col-6 col-sm-4 host">
+              <div class="title">MoMa</div>
+              <div class="location">
+                1 W 53rd St<br>
+                New York, 10019
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 host">
+              <div class="title">Ozean Stiftung</div>
+              <div class="location">
+                Mitte<br>
+                Berlin, Germany
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 host">
+              <div class="title">Ocean Space</div>
+              <div class="location">
+                San Lorenzo<br>
+                Venice, Italy
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 host">
+              <div class="title">Tate Modern</div>
+              <div class="location">
+                Bankside<br>
+                London, SE1 9TG
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 host">
+              <div class="title">Serpentine Gallery</div>
+              <div class="location">
+                Kensington Gardens<br>
+                London, W2 3XA
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section id="video">
+    <img src="img/BiolumClam.jpg" class="img-fluid d-md-none"/>
+    <video class="d-none d-md-block" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" poster="img/BiolumClam.jpg">
+      <source class="mp4" src="" type="video/mp4" />
+      <source class="webm" src="" type="video/webm" />
+    </video>​
+  </section>
+
+  <section id="logo">
+    <div class="left show">
+      <img src="img/oa_web_white.svg">
+    </div>
+    <div class="right show">
+      <img src="img/oa_web_white.svg">
+    </div>
+  </section>
+
+  <section id="content" class="py-30">
+    <div class="container-lg">
+      <div class="d-flex flex-wrap">
+        <div class="col-12 col-lg-11 offset-lg-1">
+          <h1><em>Climate Justice for a Living Ocean</em> — <br class="d-none d-md-block" />Open Call for Collaborators</h1>
+        </div>
+        <div class="col-12 date py-lg-5">
+          <h2>September 28, 2019</h2>
+        </div>
+        <div class="col-12 col-lg-11 offset-lg-1">
+          <p>Ocean Archive invites arts and culture organizations worldwide to participate in <em>Climate Justice for a Living Ocean</em>— a network of autonomous events to be held on September 28, 2019. These events are prompted by the release of the forthcoming <em>Special Report on the Oceans and Cryosphere in a Changing Climate</em>, to be issued by the United Nations Intergovernmental Panel on Climate Change (IPCC).</p>
+          <p>Prior to <em>Climate Justice for a Living Ocean</em>, Ocean Archive will distribute a video compilation to all collaborating organizations; these event partners are welcome to use the video as a point of departure for curating their own localized responses, events, and conversations. By supporting local initiatives for ocean conservation and protection, these partner events will create spaces to gather community around shared concerns and collective actions.</p>
+          <p>
+            <a href="https://www.e-flux.com/announcements/270554/ocean-archive-org/" target="_blank" rel="nofollow">
+              e-flux announcement
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collabform" class="border-bottom">
+    <div class="container-sm container-lg">
+      <div class="d-flex flex-wrap flex-md-nowrap">
+        <div class="col-sm-6 col-md-5 py-3 py-md-5">
+          <h3>
+            To collaborate by hosting an event or to contribute content, please contact us through this form.
+          </h3>
+        </div>
+        <div class="col-sm-6 col-md-7 pb-md-4 px-0 border-sm-left border-md-left">
+          <div class="container message pt-5" style="display: none;">
+            <div class="row">
+              <div class="col-12">
+                <p>Thanks for your submission.</p>
+              </div>
+            </div>
+          </div>
+          <form id="collab">
+            <div class="form-row border-xs-top mx-0">
+              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-4">
+                <label for="collab_name">Name</label>
+                <input type="text" class="form-control" id="collab_name" placeholder="Full Name" required>
+              </div>
+              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-4 border-xs-top border-sm-top border-md-left">
+                <label for="collab_email">Email</label>
+                <input type="email" class="form-control" id="collab_email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-3 border-top">
+                <label for="collab_institution">Institution</label>
+                <input type="text" class="form-control" id="collab_institution" placeholder="Institution name" required>
+              </div>
+              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-3 border-top border-md-left">
+                <label for="collab_location">Location</label>
+                <input type="text" class="form-control" id="collab_location" placeholder="City, country" required>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-12 px-4 px-sm-2 px-md-0 px-lg-4 border-top message">
+              <label for="collab_message">Message</label>
+              <textarea class="form-control" id="collab_message" rows="6" placeholder="Message"></textarea>
+            </div>
+
+            <div class="border-top">
+              <div class="col-12 px-4 px-sm-2 px-md-3 px-lg-3 py-3">
+                By clicking Submit, you agree to our <a href="#" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="livestream" class="float-sm-left float-md-none col-sm-6 col-md-12 px-0">
+    <div class="container-lg">
+      <div class="d-flex flex-wrap flex-md-nowrap">
+        <div class="col-md-5 py-3 py-md-5">
+          <h3>
+            Ocean Space Livestream
+          </h3>
+        </div>
+        <div class="col-md-7 border-md-left pb-3 py-md-5 px-4">
+          <p>The Ocean Space in Venice, Italy, will host the flagship <em>Climate Justice for a Living Ocean</em> event, livestreamed on the Ocean-Archive.org on September 28, 2019 from 15h00 – 19h00 CEST.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="border-xs-top border-md-top border-sm-left float-sm-left float-md-none col-sm-6 col-md-12 px-0">
+    <div class="container-lg">
+      <div class="d-flex flex-wrap flex-md-nowrap">
+        <div class="col-md-5 py-3 py-md-5">
+          <h3>About Ocean Archive</h3>
+        </div>
+        <div class="col-md-7 border-md-left pb-3 py-md-4 px-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 px-4">
+                <p>
+                  The Ocean Archive is a platform operating at the intersection of scientific inquiry, artistic intelligence, and environmental advocacy; it will launch on September 28, 2019.
+                </p>
+                <p>
+                  The Ocean Archive is committed to the following objectives:
+                  <ul>
+                    <li>
+                      Host and produce material by a
+                      multiplicity of voices to share
+                      human and non-human stories of
+                      the ocean across various media;
+                    </li>
+                    <li>
+                      Render visible and discoverable a
+                      range of disciplinary perspectives
+                      and connect individuals, groups, and
+                      institutions committed to a living
+                      ocean;
+                    </li>
+                    <li>
+                      Create novel webs of knowledge by
+                      facilitating ocean explorations
+                      through archive material and
+                      supporting synergies among the
+                      arts, sciences, and policy
+                    </li>
+                  </ul>
+                </p>
+                <br>
+
+                <p class="receive">
+                  To receive updates on Ocean-Archive.org please sign-up here:
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container message" style="display: none;">
+            <div class="row">
+              <div class="col-12 px-4">
+                <p>
+                  Thanks for signing up!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form id="aboutForm">
+            <div class="border-top">
+              <div class="form-group col-md-12 px-4 px-sm-2 px-md-0 px-lg-3">
+                <label for="about_name">Name</label>
+                <input type="text" class="form-control" id="about_name" placeholder="Full Name" required>
+              </div>
+              <div class="form-group col-md-12 px-4 px-sm-2 px-md-0 px-lg-3 border-top">
+                <label for="about_email">Email</label>
+                <input type="email" class="form-control" id="about_email" placeholder="Email Address" required>
+              </div>
+              <div class="border-top">
+                <div class="col-12 px-4 px-sm-2 px-md-3 px-lg-3 py-3">
+                  By clicking Submit, you agree to our <a href="#" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="clearfix border-top">
+    <div class="container-fluid px-md-5">
+      <div class="row align-items-lg-center">
+        <div class="col-12 col-md-5 d-md-block flex-md-wrap col-lg-6 d-lg-flex flex-lg-nowrap pl-md-0">
+          <div class="col-12 col-lg-3 text-center text-md-left"><a href="#" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a></div>
+          <div class="col-12 col-lg-3 text-center text-md-left"><a href="https://www.ocean-space.org">Ocean Space</a></div>
+          <div class="col-12 col-lg-4 text-center text-md-left"><a href="https://tba21.org">TBA21-Academy</a></div>
+        </div>
+
+        <div class="col-12 col-md-7 d-md-flex align-items-md-center col-lg-6 pr-md-0">
+          <div class="col-12 col-md-4 col-lg-3 order-md-2 p-md-0 text-center text-md-right tba-logo">
+            <img style="-webkit-filter: invert(100%); filter: invert(100%);" src="img/tba21-logo.svg" />
+          </div>
+
+          <div class="col-6 offset-3 col-md-8 offset-md-0 col-lg-9 text text-center text-md-left px-0">
+            Ocean-Archive.org is a <a href="https://tba21.org/" target="_blank" rel="nofollow">TBA21–Academy</a> initiative developed by <a href="https://usergroupcoop.com" target="_blank" rel="nofollow">User Group</a> in collaboration with <a href="https://acrossthecloud.net" target="_blank" rel="nofollow">Across the Cloud</a> and <a href="https://lucid.berlin/en" target="_blank" rel="nofollow">Lucid</a>.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <div id="privacyPolicy" aria-labelledby="privacyPolicyLabel" aria-hidden="true" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content d-flex">
+        <div class="modal-header">
+          <h5 class="modal-title">PRIVACY POLICY</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p></p>
+          <ol start="1">
+            <li> DATA SECURITY</li>
+          </ol>
+          <p>TBA21-Academy has taken appropriate technical and organisational measures to protect your data against loss, manipulation or unauthorised access. The measures taken are subject to regular review and are continuously adapted to the state of the art. Should there be a violation of the protection of your personal data, which will probably result in a high risk for your rights and freedoms, we will notify you immediately and, if possible, within 72 hours.</p>
+          <ol start="2">
+            <li> COLLECTION AND PROCESSING OF PERSONAL DATA</li>
+          </ol>
+          <p>2.1 Data provided by you</p>
+          <p>If you correspond with us or fill out a form on our website with data, you acknowledge that the data you enter onto the form will be processed for the purposes described below.</p>
+          <p>2.2. Cookies and Google Adsense</p>
+          <p>Information about cookies. We automatically collect data through the use of cookies. A cookie is a small text file which stores internet settings. Almost all websites use this technology. It is downloaded by your internet browser when you first visit a website. When this website is next visited with the same terminal, the cookie and the information stored therein is either sent back to the website that created it (first-party cookie) or to another website to which it belongs (third-party cookie). This allows the website to detect that it has already been visited with this browser and in some cases it changes the content displayed.</p>
+          <p>The legal ground for this processing is Art. 6 (1) f) GDPR. Our legitimate interest is in ensuring the functionality of our website. The user data collected by technically required cookies are not used to create user profiles. This safeguards your interest in data protection. The cookies, which are a technically necessity, are generally deleted when the browser is closed. Persistent cookies have a lifespan which varies between a few minutes and several years. </p>
+          <p>Should you not wish this cookies to be stored, please deactivate the acceptance of these cookies in your internet browser. However, this may limit the functionality of our website. You can also delete persistent cookies via your browser at any time.</p>
+          <p ) is used to operate advertising (text advertisements, banners etc.) on these pages. Your browser stores cookies (small text files) on your hard drive for this purpose. These cookies are used by Google to personalise content and adverts, to offer functions for social media and to analyse access to our website. Device identification is used in relation to apps. Moreover, information about your use of our website is shared with partners for social media, advertising and analysis. These partners combine this information with other data that you have provided them with or that they have collected in the context of your use of the services.</p>
+          <p>The legal ground for this processing is Art. 6 (1) a) GDPR. Google LLC, which has its registered office in the USA, is certified for the US-European data protection agreement &ldquo;Privacy Shield&rdquo;, which guarantees compliance with the level data protection applicable in the EU.</p>
+          <p>Your personal data are only stored for as long as you consent to them being processed. You can revoke your consent to the controller at any time.</p>
+          <ol start="3">
+            <li> DATA PROCESSING WHERE NO CONSENT REQUIRED</li>
+          </ol>
+          <p>General contact form</p>
+          <ul>
+            <li>Contact form ([Information on academic title, title, first name, surname, company name, home address, email, telephone number]): when you submit the relevant contact form, the personal data you input are processed.</li>
+            <li>Purpose: answering your query.</li>
+            <li>Justification: legitimate interest in being able to process and reliably answer your individual queries.</li>
+            <li>Storage duration: 12 months.</li>
+          </ul>
+          <ol start="4">
+            <li> DATA PROCESSING WHERE CONSENT REQUIRED</li>
+          </ol>
+          <p>Newsletter registration</p>
+          <ul>
+            <li>Newsletter registration (first name, surname, email): when you submit a newsletter registration, the personal data you enter are processed for the following purpose if you actively want to be sent the newsletter.</li>
+            <li>Purpose: information sent quickly and regularly, invitations to future events.</li>
+            <li>Justification: consent.</li>
+            <li>Storage duration: until withdrawn.</li>
+          </ul>
+          <ol start="5">
+            <li> RIGHTS OF DATA SUBJECT</li>
+          </ol>
+          <p>You may assert the following rights regarding the data processing described:</p>
+          <p>5.1 Right to information</p>
+          <p>You may request confirmation of whether and to what extent your personal data are being processed.</p>
+          <p>5.2 Right to correction</p>
+          <p>If we are processing incomplete or incorrect personal data about you, then you may request that they be corrected or supplemented.</p>
+          <p>5.3 Right to deletion</p>
+          <p>You may request the deletion of your personal data as long as the purpose for which they were collected has ceased to apply, the processing is unlawful, the processing disproportionately interferes with your legitimate interests in protection or the data processing is based on your consent and you have withdrawn this. In this regard, it is necessary to consider that there may be other reasons that may prevent immediate deletion of your data e.g. legally regulated retention requirements, pending proceedings, asserting, exercising or defending legal claims etc. </p>
+          <p>5.4 Right to restricted processing </p>
+          <p>You have the right to request that processing of your data be restricted if</p>
+          <ul>
+            <li>you dispute the accuracy of your data, namely for a period which enables us to review the accuracy of the data,</li>
+            <li>the processing of your data is unlawful, but you reject deletion and instead request that use of the data be restricted,</li>
+            <li>we no longer need the data for the envisaged purpose, but you still require this data to assert, exercise or defend legal claims, or</li>
+            <li>you have objected to the processing of the data.</li>
+          </ul>
+          <p>5.5 Right to data portability </p>
+          <p>You may ask us to provide your data, which you have made available to us, in a structured, common and machine-readable format, provided we are processing the data on the basis of your consent or in order to satisfy a contract between us and processing occurs with the help of an automatic process.</p>
+          <p>5.6 Right to object </p>
+          <p>If we process your data in order to perform tasks that are in the public interest, to exercise official authority or, when processing the data, we invoke the necessity of safeguarding our legitimate interest, you can object to this data processing provided there is a predominant interest in the protection of your data. At any time, you may object without providing grounds to the sending of advertising.</p>
+          <p>5.7 Right to complain</p>
+          <p>If you think we have breached Austrian or European data protection law when processing your data and have violated your rights as a result, we ask that you contact us in order to be able to clarify any questions. Of course, you also have the right to complain to the Austrian data protection authority or a European supervisory authority. </p>
+          <p>5.8 Right to withdraw</p>
+          <p>All the declarations of consent you have given may be withdrawn independently from one another at any time. The result of withdrawal is that, from this date, we will no longer process the data for the purposes specified in the declaration of consent and, consequently, that the corresponding rights, benefits etc. can no longer to used.</p>
+          <p>These rights can be asserted with TBA21-Academy directly by sending notification to the email address <a href="mailto:privacy@tba21-academy.org">privacy@TBA21-Academy.org</a>.</p>
+          <ol start="6">
+            <li> CONTACT DETAILS</li>
+          </ol>
+          <p>
+          Controller<br>
+          Thyssen-Bornemisza Art Contemporary Privatstiftung<br>
+          Köstlergasse 1<br>
+          1060 Vienna, Austria<br>
+          T +43 1 513 98 56-0<br>
+          <a href="mailto:privacy@tba21-academy.org">privacy@TBA21-Academy.org</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/vendor/bootstrap.min.js" ></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
 </html>

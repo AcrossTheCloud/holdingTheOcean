@@ -1,0 +1,107 @@
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /*
+
+  GENERAL
+
+   */
+  body {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  h1 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  h3 {
+    font-size: 27px;
+    line-height: 32px;
+  }
+
+
+  .border-sm-right {
+    border-right: 1px solid #787878;
+  }
+  .border-sm-left {
+    border-left: 1px solid #787878;
+  }
+
+  footer {
+    clear: both;
+  }
+
+  /*
+    BOOTSTRAP OVERRIDE
+   */
+  .container-sm {
+    padding: 0;
+  }
+
+  /*
+
+  LIVE HOSTS SCROLLER
+
+   */
+
+  #liveHosts {
+    overflow: hidden;
+    width: 100%;
+    height: 6rem;
+    z-index: 1;
+    position: relative;
+  }
+
+  #liveHosts .hosts-wrapper {
+    height: 100%; /* 100% of 6rem */
+    max-width: 100%;
+  }
+
+  #liveHosts .hosts-wrapper:after {
+    height: 100%;
+    content: "";
+    display: block;
+    width: 117px;
+    background: linear-gradient(270deg, rgba(16,16,16,0.7) 0%, rgba(16,16,16,0) 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #liveHosts .hosts {
+    height: 100%;
+  }
+  #liveHosts .hosts .marquee {
+    animation: marquee 10s linear infinite;
+  }
+
+  #liveHosts .host {
+    padding-bottom: 0;
+  }
+
+  /*
+  FORM STYLING
+ */
+
+  .border-xs-top {
+    border-top: none;
+  }
+
+  .border-sm-top {
+    border-top: 1px solid #787878;
+  }
+  .border-sm-left {
+     border-left: 1px solid #787878;
+   }
+
+  input.form-control, textarea.form-control {
+    font-size: 20px;
+    line-height: 27px
+  }
+
+}

@@ -7,4 +7,3 @@ phases:
   post_build:
     commands:
       - aws s3 cp --recursive public/ $S3_DEST
-

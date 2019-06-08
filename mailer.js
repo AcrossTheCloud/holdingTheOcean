@@ -23,14 +23,14 @@ const CORSHeaders = {
 // DYNAMO DB
 const docClient = new AWS.DynamoDB.DocumentClient({ apiVersion: '2012-08-10' });
 
-module.exports.confirm  = async (event, context, callback) => {
+module.exports.email  = async (event, context, callback) => {
     let body = JSON.parse(event.body);
     let type = body.type;
     try {
-        if (type === "contribute") {
-            await sayHello(body);
+        if (type === "collaboration") {
+            await collaboration(body);
         } else {
-            await subscribeToMaillist(body);
+            await updates(body);
         }
         const response = {
             statusCode: 200,
@@ -79,39 +79,62 @@ async function subscribeToMaillist(body) {
     }
 }
 
-async function sendConfirmation(body, isContribute){
-    if(isContribute){
-        var message = `Dear ${body.name}, \n\n Thanks for your email, our acquisition team will get in touch soon. \n\n\n — ocean archive \n\n\n ${body.subject} \n\n ${body.message}`
-        var subject = `recieved confirmation`
-    }else{
-        var message = `Dear ${body.name}, \n\n Thanks for your interest, stay tuned! \n\n\n — ocean archive team`
-        var subject = `ocean archive subscribed`
+async function sendConfirmation(body, isCollaboration){
+
+    var message, subject;
+    if (isCollaboration) { // collaboration request
+        message = `Dear ${body.name}, \n\n Thanks for your interest in collaborating with the Ocean Archive team. We will respond to you promptly. If you received this email in error please let us know by replying to this email.`
+        subject = `Ocean-Archive.org collaboration request received`
+    } else { // updates request
+        message = `Dear ${body.name}, \n\n Thanks for your interest in updates from Ocean Archive. If you have received this message in error, please let us know by replying to this email.`
+        subject = `Ocean-Archive.org updates request received`
     }
 
     var mailOption = {
-      from: `"ocean archive" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
-      to: body.email,
+      from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`, // replace this email with @oceanarchive.org
+      to: [{ name: body.name, address: body.email}],
       subject: subject,
       text: message
     }
 
-    let sendmail = await transport.sendMail(mailOption);
-    
+    try {
+        await transport.sendMail(mailOption);
+    } catch (err) {
+        console.log(err);
+    }    
 }
 
-async function sayHello(body) {
+async function collaboration(body) {
     // the amazon one
-    var message = `${body.message} \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
+    var message = `${body.message} \n\n\nFrom: ${body.name}\nInstitution: ${body.institution}\nLocation: ${body.location}\nEmail: ${body.email}`
     var mailOption = {
-      from: `"ocean-archive.org" <${process.env.MAIL_INFO}>`,
-      to: process.env.MAIL_ADDRESS, // change this later to config.MAIL.INFO
-      subject: `HOLDING inquiry: ${body.subject}`,
+      from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`,
+      to: process.env.MAIL_ADDRESS,
+      subject: `Collaboration inquiry from ${body.name}`,
       text: message
     }
-    // 'error sending to archive@tba21.org'
     try {
-        let sendmail = await transport.sendMail(mailOption);
-        let confirmation = await sendConfirmation(body, true);
+        await transport.sendMail(mailOption);
+        await sendConfirmation(body, true);
+        return true;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
+
+async function updates(body) {
+    // the amazon one
+    var message = `Updates request \n\n\nFrom: ${body.name}\nEmail: ${body.email}`
+    var mailOption = {
+      from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`,
+      to: process.env.MAIL_ADDRESS, 
+      subject: `Updates request from ${body.name}`,
+      text: message
+    }
+    try {
+        await transport.sendMail(mailOption);
+        await sendConfirmation(body, false); // false as not a collaboration request
         return true;
     } catch (err) {
         console.log(err);

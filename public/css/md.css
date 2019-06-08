@@ -1,0 +1,142 @@
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /*
+
+  GENERAL
+
+   */
+
+  .border-sm-top {
+    border-top: none;
+  }
+  .border-sm-left {
+    border-left: none
+  }
+
+  .border-md-top {
+    border-top: 1px solid #787878;
+  }
+  .border-md-right {
+    border-right: 1px solid #787878;
+  }
+  .border-md-left {
+    border-left: 1px solid #787878;
+  }
+
+  /*
+
+  LOGO
+
+   */
+  #logo {
+    padding: 0;
+    margin: 20px 0 0;
+  }
+
+  /*
+
+  CONTENT
+
+   */
+
+  #content .date {
+    padding-top: 18px;
+    padding-bottom: 21px;
+  }
+
+  /*
+    FORM STYLING
+   */
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  #collabform .form-row {
+    margin: 0 0;
+  }
+
+  .submit {
+    margin-bottom: 0;
+  }
+  .button-wrapper {
+    padding-bottom: 20px;
+  }
+
+  input.form-control, textarea.form-control {
+    font-size: 21px;
+    line-height: 27px;
+  }
+
+  label {
+    padding-top: 0;
+  }
+  /*
+
+  LIVE HOSTS SCROLLER
+
+   */
+
+  /*#liveHosts {*/
+  /*  overflow: hidden;*/
+  /*  position: absolute;*/
+  /*  top: 0;*/
+  /*  left: 0;*/
+  /*  width: 100%;*/
+  /*  height: 6rem;*/
+  /*  z-index: 1;*/
+  /*}*/
+
+  /*#liveHosts .hosts-wrapper {*/
+  /*  height: 100%; !* 100% of 6rem *!*/
+  /*  max-width: 90%;*/
+  /*}*/
+  /*#liveHosts .hosts-wrapper:after {*/
+  /*  display: none;*/
+  /*}*/
+
+  #liveHosts .hosts {
+    height: 100%;
+  }
+  #liveHosts .hosts .marquee {
+    animation: marquee 10s linear infinite;
+  }
+
+  #liveHosts .host .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #liveHosts .host .location {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /*
+
+  VIDEO
+
+   */
+
+  #video {
+    position: relative;
+    height: 558px;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+}

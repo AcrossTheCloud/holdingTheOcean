@@ -1,0 +1,49 @@
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+  /*
+  BOOTSTRAP OVERRIDE
+ */
+  .container-lg {
+    margin-left: 6%;
+    max-width: 94%;
+    padding: 0;
+  }
+
+  /*
+
+  LOGO
+
+   */
+  #logo {
+    padding: 30px 0;
+  }
+
+  #logo .left, #logo .right {
+    width: 300px;
+  }
+  #logo .init.show.left {
+    left: -80px;
+  }
+  #logo .init.show.right {
+    right: -67px;
+  }
+
+  /*
+
+VIDEO
+
+ */
+
+  #video {
+    /*height: calc(80vh - 6rem); -- with ticker*/
+    height: calc(80vh);
+    min-height: 500px;
+  }
+
+
+  #collab_message, label[for="collab_message"] {
+    padding: 0
+  }
+
+}
