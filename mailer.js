@@ -84,7 +84,7 @@ async function sendConfirmation(body, isCollaboration){
     var message, subject;
     if (isCollaboration) { // collaboration request
         message = `Dear ${body.name}, \n\n Thanks for your interest in collaborating with the Ocean Archive team. We will respond to you promptly. If you received this email in error please let us know by replying to this email.`
-        subject = `ocean archive collaboration request received`
+        subject = `Ocean-Archive.org collaboration request received`
     } else { // updates request
         message = `Dear ${body.name}, \n\n Thanks for your interest in updates from Ocean Archive. If you have received this message in error, please let us know by replying to this email.`
         subject = `Ocean-Archive.org updates request received`
