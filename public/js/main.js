@@ -42,7 +42,7 @@ $(function() {
         // Send form
         $.ajax({
           type:'POST',
-          url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
+          url: 'https://api.ocean-archive.org/email',
           data: JSON.stringify(body),
           contentType: 'application/json'
         }).done(function(data){
@@ -99,7 +99,7 @@ $(function() {
       // Send form
       $.ajax({
         type: 'POST',
-        url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
+        url: 'https://api.ocean-archive.org/email',
         data: JSON.stringify(body),
         contentType: 'application/json',
       }).done(function (data) {
@@ -157,7 +157,7 @@ $(function() {
       // Send form
       $.ajax({
         type: 'POST',
-        url: 'https://zey5d25xk6.execute-api.eu-central-1.amazonaws.com/dev/email',
+        url: 'https://api.ocean-archive.org/email',
         data: JSON.stringify(body),
         contentType: 'application/json',
       }).done(function (data) {
