@@ -129,7 +129,7 @@ async function updates(body) {
     var mailOption = {
       from: `"Ocean-Archive.org" <${process.env.MAIL_INFO}>`,
       to: process.env.MAIL_ADDRESS, 
-      subject: `Updates request`,
+      subject: `Updates request from ${body.name}`,
       text: message
     }
     try {
