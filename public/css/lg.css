@@ -42,8 +42,28 @@ VIDEO
   }
 
 
-  #collab_message, label[for="collab_message"] {
-    padding: 0
+/*
+
+COLLAB FORM
+
+ */
+
+#collab_message, label[for="collab_message"] {
+  padding: 0
+}
+
+/*
+
+ABOUT SECTION
+
+ */
+  #about h3, #about .receive {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #about .leftform {
+    margin-left: -16%;
   }
 
 }
