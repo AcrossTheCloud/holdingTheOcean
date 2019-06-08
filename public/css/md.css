@@ -70,6 +70,18 @@
   label {
     padding-top: 0;
   }
+
+
+  /*
+
+  ABOUT SECTION
+
+   */
+  #about h3, #about .receive {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   /*
 
   LIVE HOSTS SCROLLER

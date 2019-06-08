@@ -206,8 +206,41 @@
   <section id="about" class="border-xs-top border-md-top border-sm-left float-sm-left float-md-none col-sm-6 col-md-12 px-0">
     <div class="container-lg">
       <div class="d-flex flex-wrap flex-md-nowrap">
-        <div class="col-md-5 py-3 py-md-5">
+        <div class="col-md-5 py-3 py-md-5 px-md-0">
           <h3>About Ocean Archive</h3>
+          <p class="receive d-none d-md-block">
+            <br>
+            To receive updates on Ocean-Archive.org please sign-up here:
+          </p>
+          <div class="container message" style="display: none;">
+            <p>
+              Thanks for signing up!
+            </p>
+          </div>
+          <div class="leftform d-none d-md-block">
+            <form id="aboutForm">
+              <div class="border-top">
+                <div class="form-group col-md-12 px-4 px-sm-2 px-md-0 px-lg-3">
+                  <label for="about_name">Name</label>
+                  <input type="text" class="form-control" id="about_name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group col-md-12 px-4 px-sm-2 px-md-0 px-lg-3 border-top">
+                  <label for="about_email">Email</label>
+                  <input type="email" class="form-control" id="about_email" placeholder="Email Address" required>
+                </div>
+                <div class="border-top">
+                  <div class="col-12 px-4 px-sm-2 px-md-3 px-lg-3 py-3">
+                    By clicking Submit, you agree to our <a href="#" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+                <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
         </div>
         <div class="col-md-7 border-md-left pb-3 py-md-4 px-0">
           <div class="container">
@@ -241,16 +274,14 @@
                     </li>
                   </ul>
                 </p>
-                <br>
-
-                <p class="receive">
+                <p class="receive d-md-none">
+                  <br>
                   To receive updates on Ocean-Archive.org please sign-up here:
                 </p>
               </div>
             </div>
           </div>
-
-          <div class="container message" style="display: none;">
+          <div class="container message d-md-none" style="display: none;">
             <div class="row">
               <div class="col-12 px-4">
                 <p>
@@ -259,16 +290,15 @@
               </div>
             </div>
           </div>
-
-          <form id="aboutForm">
+          <form id="aboutForm_1" class="d-md-none">
             <div class="border-top">
               <div class="form-group col-md-12 px-4 px-sm-2 px-md-0 px-lg-3">
-                <label for="about_name">Name</label>
-                <input type="text" class="form-control" id="about_name" placeholder="Full Name" required>
+                <label for="about_name_1">Name</label>
+                <input type="text" class="form-control" id="about_name_1" placeholder="Full Name" required>
               </div>
               <div class="form-group col-md-12 px-4 px-sm-2 px-md-0 px-lg-3 border-top">
-                <label for="about_email">Email</label>
-                <input type="email" class="form-control" id="about_email" placeholder="Email Address" required>
+                <label for="about_email_1">Email</label>
+                <input type="email" class="form-control" id="about_email_1" placeholder="Email Address" required>
               </div>
               <div class="border-top">
                 <div class="col-12 px-4 px-sm-2 px-md-3 px-lg-3 py-3">
@@ -277,7 +307,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
               <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
             </div>
           </form>
