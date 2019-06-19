@@ -37,8 +37,16 @@
   }
 
   /*
-    BOOTSTRAP OVERRIDE
+  BOOTSTRAP OVERRIDES
    */
+  .modal-dialog {
+    max-width: calc(100vw - 3.5em);
+  }
+  .modal-content {
+    background: #202020;
+    height: calc(100vh - 3.5em);
+  }
+
   .container-sm {
     padding: 0;
   }
