@@ -341,6 +341,12 @@ select:-webkit-autofill:focus {
   transition: all 5000s ease-in-out 0s;
 }
 
+/* sticky on scroll */
+section.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
 
 /*
 
