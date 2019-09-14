@@ -1,6 +1,6 @@
 $(function() {
   OA_Logo_Lucid_Code();
-  loadVideos();
+  loadBanners();
 
   var $collabForm = $('form#collab');
   $collabForm.submit(function (e) {
@@ -199,24 +199,11 @@ function OA_Logo_Lucid_Code() {
   }, 2750);  //2750
 }
 
-function loadVideos() {
-  var
-    windowWidth = $(window).width(),
-    $video = $('#video video');
+function loadBanners() {
+  var bannerSrcs = ['img/Livestream_OAintro_LandPage.jpg','img/Livestream_PO_LandPage.jpg','img/Livestream_STM_V1_LandPage.jpg'];
 
-  if (windowWidth >= 768 && windowWidth < 992) {
+  $('#banner').attr('src', bannerSrcs[Math.floor(Math.random()*3)]);
 
-    $('#video .mp4').attr('src', 'https://streaming.ocean-archive.org/media/720_OA_trailer.mp4');
-    $('#video .webm').attr('src', 'https://streaming.ocean-archive.org/media/720_OA_trailer.webm');
-  } else if (windowWidth >= 992 ) {
-
-    $('#video .mp4').attr('src', 'https://streaming.ocean-archive.org/media/OA_trailer.mp4');
-    $('#video .webm').attr('src', 'https://streaming.ocean-archive.org/media/OA_trailer.webm');
-
-  }
-
-  $video[0].load();
-  $video[0].play();
 }
 
 function isBlank(str) {
