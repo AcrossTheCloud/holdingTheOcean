@@ -200,9 +200,10 @@ function OA_Logo_Lucid_Code() {
 }
 
 function loadBanners() {
-  var bannerSrcs = ['img/Livestream_OAintro_LandPage.jpg','img/Livestream_PO_LandPage.jpg','img/Livestream_STM_V1_LandPage.jpg'];
+  var bannerSrcs = ['img/Livestream_OAIntro_LandPage1920.png','img/Livestream_PO_LandPage1920.png','img/Livestream_STMv1_LandPage1920.png',
+'img/Livestream_STMv2_LandPage1920.png'];
 
-  $('#banner').attr('src', bannerSrcs[Math.floor(Math.random()*3)]);
+  $('#banner').attr('src', bannerSrcs[Math.floor(Math.random()*bannerSrcs.length)]);
 
 }
 
