@@ -200,8 +200,7 @@ function OA_Logo_Lucid_Code() {
 }
 
 var bannerIdx;
-var bannerSrcs = ['img/Livestream_STM_1920_Tunein_fx.png','img/Livestream_PO_1920_Tunein.png','img/Livestream_OAintro_1920_tunein.png',
-'img/Livestream_STMv2_LandPage1920.png'];
+var bannerSrcs = ['img/Livestream_STM_1920_Tunein_fx.png','img/Livestream_PO_1920_Tunein.png','img/Livestream_OAintro_1920_tunein.png'];
 
 function loadBanners() {
   bannerIdx = Math.floor(Math.random()*bannerSrcs.length);
