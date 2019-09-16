@@ -202,8 +202,10 @@ function OA_Logo_Lucid_Code() {
 function loadBanners() {
   var bannerSrcs = ['img/Livestream_OAIntro_LandPage1920.png','img/Livestream_PO_LandPage1920.png','img/Livestream_STMv1_LandPage1920.png',
 'img/Livestream_STMv2_LandPage1920.png'];
+  var banner = bannerSrcs[Math.floor(Math.random()*bannerSrcs.length)];
 
-  $('#banner').attr('src', bannerSrcs[Math.floor(Math.random()*bannerSrcs.length)]);
+  $('#bannerContainer img').attr('src', banner);
+  $('#bannerContainer .background').attr('style', 'background-image: url(' + banner + ')');
 
 }
 

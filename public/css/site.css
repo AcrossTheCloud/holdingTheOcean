@@ -122,6 +122,36 @@ LIVE HOSTS
   line-height: 16px;
 }
 
+/*Banners*/
+#bannerContainer {
+  position: relative;
+  overflow: hidden;
+}
+#bannerContainer .banner {
+  position: relative;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+#bannerContainer .banner {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-height: 80vh;
+  display: block;
+}
+
+#bannerContainer .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(3px);
+  background-repeat: repeat;
+  z-index: 0;
+}
+
+
 /*
 LOGO
  */
