@@ -34,23 +34,4 @@
     top: 0;
     z-index: 999;
   }
-
-  #livestream p {
-    transition: font-size 0.5s ease-in-out;
-  }
-  #livestream h3 {
-    transition: font-size 0.5s ease-in-out;
-  }
-
-  #livestream.stuck .watchnow svg {
-    height: 0.9rem;
-  }
-
-  #livestream.stuck {
-    font-size: 80%;
-  }
-
-  #livestream.stuck h3 {
-    font-size: 140%;
-  }
 }
