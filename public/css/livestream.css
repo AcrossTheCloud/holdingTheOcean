@@ -1,0 +1,56 @@
+@import 'animation.css';
+
+#liveStreamModal .modal-header {
+  border: 0;
+}
+#liveStreamModal .modal-header .close {
+  padding: 0 15px;
+}
+#liveStreamModal .modal-body {
+  padding: 0;
+}
+#liveStreamModal .modal-content {
+  height: auto !important;
+}
+#liveStreamModal .modal-content .embed-responsive:before {
+  padding-top: 75vh;
+}
+
+#livestream .watchnow {
+  cursor: pointer;
+  font-size: 90%;
+
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}#livestream .watchnow svg {
+  height: 1rem;
+  margin-right: 15px;
+}
+
+@media (min-width: 992px) {
+  #livestream {
+    background: #202020;
+    top: 0;
+    z-index: 999;
+  }
+
+  #livestream p {
+    transition: font-size 0.5s ease-in-out;
+  }
+  #livestream h3 {
+    transition: font-size 0.5s ease-in-out;
+  }
+
+  #livestream.stuck .watchnow svg {
+    height: 0.9rem;
+  }
+
+  #livestream.stuck {
+    font-size: 80%;
+  }
+
+  #livestream.stuck h3 {
+    font-size: 140%;
+  }
+}

@@ -36,11 +36,11 @@
   <title>ocean archive</title>
 
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/livestream.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-
   <section id="liveHosts">
     <div class="container d-sm-none">
       <div class="row">
@@ -117,26 +117,31 @@
 
   <section id="livestream" class="float-sm-left float-md-none col-sm-6 col-md-12 px-0">
     <div class="container-lg">
+      <div class="col-12 col-md-5 watchnow pt-3 pt-md-0" style="display: none" onclick="liveStream()">
+        <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+        </svg> Watch Live Now!
+      </div>
       <div class="d-flex flex-wrap flex-md-nowrap">
-        <div class="col-md-5 py-3 py-md-5">
+        <div class="col-md-5 py-3">
           <h3>
             September 27 at 19.30-20.00 CET: Sounds Too Many, Lecture-performance by Francesca Thyssen-Bornemisza
           </h3>
         </div>
-        <div class="col-md-7 border-md-left pb-3 py-md-5 px-4">
+        <div class="col-md-7 border-md-left py-3 px-4">
           <p>An immersive experience calling into question the unlimited, unregulated and exploitative sound pollution and the disruption it causes to all Ocean species.</p>
-          <p><a href="https://www.eventbrite.com/e/sounds-too-many-by-francesca-thyssen-bornemisza-tickets-71287507855">See it live!</a></p>
+          <p class="mb-0"><a href="https://www.eventbrite.com/e/sounds-too-many-by-francesca-thyssen-bornemisza-tickets-71287507855">See it live!</a></p>
         </div>
       </div>
       <div class="d-flex flex-wrap flex-md-nowrap">
-        <div class="col-md-5 py-3 py-md-5">
+        <div class="col-md-5 py-3">
           <h3>
             September 28 at 11.00-18.00 CET: Phenomenal Ocean Livestream
           </h3>
         </div>
-        <div class="col-md-7 border-md-left pb-3 py-md-5 px-4">
+        <div class="col-md-7 border-md-left py-3 px-4">
           <p>With Julieta Aranda, Khadija Carroll, DIS collective, Elena Mazzi, Skye Moret, Francesca Mussi, Katrin Niedermeier, Ingo Niermann, Tabita Rezaire, Marzia Rover, Lena Maria Thüring, and with a special contribution by Niño de Elche.</p>
-          <p><a href="https://www.eventbrite.com/e/phenomenal-ocean-convening-2-led-by-chus-martinez-tickets-71288161811">See it live!</a></p>
+          <p class="mb-0"><a href="https://www.eventbrite.com/e/phenomenal-ocean-convening-2-led-by-chus-martinez-tickets-71288161811">See it live!</a></p>
         </div>
       </div>
     </div>
@@ -441,11 +446,38 @@
     </div>
   </div>
 
+  <!-- Livestream Modal -->
+  <div class="modal fade" id="liveStreamModal" tabindex="-1" role="dialog" aria-labelledby="Livestream" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="embed-responsive">
+            <iframe
+              class="embed-responsive-item"
+              src=""
+              frameborder="0"
+              scrolling="no"
+              allowfullscreen="true"
+              style="display: none"
+            >
+          </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/vendor/bootstrap.min.js" ></script>
   <script src="js/plugins.js"></script>
+  <script src="js/liveStream.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
