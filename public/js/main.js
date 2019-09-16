@@ -199,14 +199,24 @@ function OA_Logo_Lucid_Code() {
   }, 2750);  //2750
 }
 
-function loadBanners() {
-  var bannerSrcs = ['img/Livestream_OAIntro_LandPage1920.png','img/Livestream_PO_LandPage1920.png','img/Livestream_STMv1_LandPage1920.png',
+var bannerIdx;
+var bannerSrcs = ['img/Livestream_OAIntro_LandPage1920.png','img/Livestream_PO_LandPage1920.png','img/Livestream_STMv1_LandPage1920.png',
 'img/Livestream_STMv2_LandPage1920.png'];
-  var banner = bannerSrcs[Math.floor(Math.random()*bannerSrcs.length)];
+
+function loadBanners() {
+  bannerIdx = Math.floor(Math.random()*bannerSrcs.length);
+
+  var banner = bannerSrcs[bannerIdx];
 
   $('#bannerContainer img').attr('src', banner);
   $('#bannerContainer .background').attr('style', 'background-image: url(' + banner + ')');
 
+  setInterval(() => {
+    bannerIdx = (bannerIdx + 1) % bannerSrcs.length;
+    banner = bannerSrcs[bannerIdx];
+    $('#bannerContainer img').attr('src', banner);
+    $('#bannerContainer .background').attr('style', 'background-image: url(' + banner + ')');
+  },30000);
 }
 
 function isBlank(str) {
