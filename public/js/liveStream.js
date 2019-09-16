@@ -29,19 +29,15 @@ $(document).ready(function() {
 
 
   var $livestream = $('#livestream');
-  var distance = $livestream.offset().top - 20;
 
   // Add sticky on ready so we have the correct distance from the top of page.
   $livestream.css({
-    position: "-webkit-sticky",
-    position: "-moz-sticky",
-    position: "-ms-sticky",
-    position: "-o-sticky",
-    position: "sticky",
+    position: "sticky"
   });
 
   var checkDistance = function () {
-    if ($(this).scrollTop() >= distance) {
+    var distance = $livestream.offset().top - 20;
+    if ($(window).scrollTop() >= distance) {
       $livestream.addClass('stuck');
     } else {
       var timeout;
