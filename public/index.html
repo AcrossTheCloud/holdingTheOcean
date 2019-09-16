@@ -36,11 +36,11 @@
   <title>ocean archive</title>
 
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/livestream.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-
   <section id="liveHosts">
     <div class="container d-sm-none">
       <div class="row">
@@ -102,12 +102,9 @@
 
   </section>
 
-  <section id="video">
-    <img src="img/BiolumClam.jpg" class="img-fluid d-md-none"/>
-    <video class="d-none d-md-block" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" poster="img/BiolumClam.jpg">
-      <source class="mp4" src="" type="video/mp4" />
-      <source class="webm" src="" type="video/webm" />
-    </video>​
+  <section id="bannerContainer">
+    <img class="banner img-fluid"/>
+    <div class="background"></div>
   </section>
 
   <section id="logo">
@@ -119,94 +116,56 @@
     </div>
   </section>
 
+  <section id="livestream" class="float-sm-left float-md-none col-sm-6 col-md-12 px-0">
+    <div class="col-12 col-lg-11 offset-lg-2">
+      <h1>Livestream Schedule</h1>
+    </div>
+    <div class="container-lg">
+      <div class="col-12 col-md-5 watchnow pt-3 pt-md-0" style="display: none" onclick="liveStream()">
+        <svg class="play animate-flicker" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+        </svg> Watch Live Now!
+      </div>
+      <div class="d-flex flex-wrap flex-md-nowrap">
+        <div class="col-md-5 py-3">
+          <h3>
+            September 27 at 19.30-20.00 CET: <em>Sounds Too Many</em>, Lecture-performance by Francesca Thyssen-Bornemisza
+          </h3>
+        </div>
+        <div class="col-md-7 border-md-left py-3 px-4">
+          <p>An immersive experience calling into question the unlimited, unregulated and exploitative sound pollution and the disruption it causes to all Ocean species.</p>
+          <p class="mb-0"><a href="https://www.eventbrite.com/e/sounds-too-many-by-francesca-thyssen-bornemisza-tickets-71287507855">See it live!</a></p>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap flex-md-nowrap">
+        <div class="col-md-5 py-3">
+          <h3>
+            September 28 at 11.00-18.00 CET: <em>Phenomenal Ocean</em> Livestream
+          </h3>
+        </div>
+        <div class="col-md-7 border-md-left py-3 px-4">
+          <p>With Julieta Aranda, Khadija Carroll, DIS collective, Elena Mazzi, Skye Moret, Francesca Mussi, Katrin Niedermeier, Ingo Niermann, Tabita Rezaire, Marzia Rover, Lena Maria Thüring, and with a special contribution by Niño de Elche.</p>
+          <p class="mb-0"><a href="https://www.eventbrite.com/e/phenomenal-ocean-convening-2-led-by-chus-martinez-tickets-71288161811">See it live!</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="content" class="py-30">
     <div class="container-lg">
       <div class="d-flex flex-wrap">
         <div class="col-12 col-lg-11 offset-lg-1">
-          <h1><em>Climate Justice for a Living Ocean</em> — <br class="d-none d-md-block" />Open Call for Collaborators</h1>
+          <h1>The Introduction of Ocean Archive: <em>Phenomenal Ocean</em></h1>
         </div>
         <div class="col-12 date py-lg-5">
           <h2>September 28, 2019</h2>
         </div>
         <div class="col-12 col-lg-11 offset-lg-1">
-          <p>Ocean Archive invites arts and culture organizations worldwide to participate in <em>Climate Justice for a Living Ocean</em>— a network of autonomous events to be held on September 28, 2019. These events are prompted by the release of the forthcoming <em>Special Report on the Oceans and Cryosphere in a Changing Climate</em>, to be issued by the United Nations Intergovernmental Panel on Climate Change (IPCC).</p>
-          <p>Prior to <em>Climate Justice for a Living Ocean</em>, Ocean Archive will distribute a video compilation to all collaborating organizations; these event partners are welcome to use the video as a point of departure for curating their own localized responses, events, and conversations. By supporting local initiatives for ocean conservation and protection, these partner events will create spaces to gather community around shared concerns and collective actions.</p>
-          <p>
-            <a href="https://www.e-flux.com/announcements/270554/ocean-archive-org/" target="_blank" rel="nofollow">
-              e-flux announcement
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="collabform" class="border-bottom">
-    <div class="container-sm container-lg">
-      <div class="d-flex flex-wrap flex-md-nowrap">
-        <div class="col-sm-6 col-md-5 py-3 py-md-5">
-          <h3>
-            To collaborate by hosting an event or to contribute content, please contact us through this form.
-          </h3>
-        </div>
-        <div class="col-sm-6 col-md-7 pb-md-4 px-0 border-sm-left border-md-left">
-          <div class="container message pt-5" style="display: none;">
-            <div class="row">
-              <div class="col-12">
-                <p>Thanks for your submission.</p>
-              </div>
-            </div>
-          </div>
-          <form id="collab">
-            <div class="form-row border-xs-top mx-0">
-              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-3">
-                <label for="collab_name">Name</label>
-                <input type="text" class="form-control" id="collab_name" placeholder="Full Name" required>
-              </div>
-              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-3 border-xs-top border-sm-top border-md-left">
-                <label for="collab_email">Email</label>
-                <input type="email" class="form-control" id="collab_email" placeholder="Email Address" required>
-              </div>
-              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-3 border-top">
-                <label for="collab_institution">Institution</label>
-                <input type="text" class="form-control" id="collab_institution" placeholder="Institution name" required>
-              </div>
-              <div class="form-group col-md-6 px-4 px-sm-2 px-md-0 px-lg-3 border-top border-md-left">
-                <label for="collab_location">Location</label>
-                <input type="text" class="form-control" id="collab_location" placeholder="City, country" required>
-              </div>
-            </div>
-
-            <div class="form-group col-sm-12 px-4 px-sm-2 px-md-0 px-lg-4 border-top message">
-              <label for="collab_message">Message</label>
-              <textarea class="form-control" id="collab_message" rows="6" placeholder="Message"></textarea>
-            </div>
-
-            <div class="border-top">
-              <div class="col-12 px-4 px-sm-2 px-md-3 px-lg-3 py-3">
-                By clicking Submit, you agree to our <a href="#" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-              <button type="submit" class="btn btn-oa btn-block submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="livestream" class="float-sm-left float-md-none col-sm-6 col-md-12 px-0">
-    <div class="container-lg">
-      <div class="d-flex flex-wrap flex-md-nowrap">
-        <div class="col-md-5 py-3 py-md-5">
-          <h3>
-            Ocean Space Livestream
-          </h3>
-        </div>
-        <div class="col-md-7 border-md-left pb-3 py-md-5 px-4">
-          <p>The Ocean Space in Venice, Italy, will host the flagship <em>Climate Justice for a Living Ocean</em> event, livestreamed on the Ocean-Archive.org on September 28, 2019 from 15h00 – 19h00 CEST.</p>
+          <p>To jumpstart the first developmental stage of the Ocean Archive, TBA21–Academy presents <strong><em>Phenomenal Ocean</em>, a day of ideas for a new ocean language, curated by Chus Martínez,</strong> Expedition Leader of the second cycle of TBA21–Academy's fellowship programme the Current. The public gathering, taking place at Ocean Space - a collective embassy for the Oceans in Venice, will be structured as a series of interviews with experts, scientists, artists, musicians, and activists discussing the tools we need to perform better for a living ocean.</p>
+          <p><em>Phenomenal Ocean</em> is prompted by the release of the forthcoming Special Report on the Oceans and Cryosphere in a Changing Climate, to be issued by the United Nations Intergovernmental Panel on Climate Change (IPCC).  As part of the response to the upcoming report, Ocean Archive invited arts and culture organizations worldwide to participate in a network of autonomous events to be held on the same day. By supporting local initiatives for ocean conservation and protection, these partner events will create spaces to gather a community around shared concerns and collective actions, advocating for <strong>climate justice for a living ocean.</strong> </p>
+          <p><em>&#8220;To this process belongs not only action and a sense of urgency, but also philosophy, art, and defining culture, so that it encompasses scientific thinking and analysis, political thought, community concerns, and justice in all its complex forms.</em></p>
+          <p><em>Performing is a better word that doing. Performing includes the body, and it includes the Ocean itself as a performer.&#8221;</em></p>
+          <p style="text-align: right;"><em>Chus Martínez</em></p>
         </div>
       </div>
     </div>
@@ -330,9 +289,8 @@
       <div class="row align-items-lg-center">
         <div class="col-12 col-md-5 d-md-block flex-md-wrap col-lg-6 d-lg-flex flex-lg-nowrap pl-md-0">
           <div class="col-12 col-lg-3 text-center text-md-left px-0"><a href="#" data-toggle="modal" data-target="#privacyPolicy">Privacy Policy</a></div>
-          <div class="col-12 col-lg-3 text-center text-md-left px-0"><a href="#" data-toggle="modal" data-target="#credits">Video Credits</a></div>
           <div class="col-12 col-lg-3 text-center text-md-left px-0"><a href="https://www.ocean-space.org">Ocean Space</a></div>
-          <div class="col-12 col-lg-4 text-center text-md-left px-0"><a href="https://tba21.org">TBA21-Academy</a></div>
+          <div class="col-12 col-lg-4 text-center text-md-left px-0"><a href="https://www.tba21.org/#item--tba21_academy--1819">TBA21–Academy</a></div>
         </div>
 
         <div class="col-12 col-md-7 d-md-flex align-items-md-center col-lg-6 pr-md-0">
@@ -434,57 +392,26 @@
     </div>
   </div>
 
-  <div id="credits" aria-labelledby="creditsLabel" aria-hidden="true" class="modal fade" tabindex="-1" role="dialog">
+  <!-- Livestream Modal -->
+  <div class="modal fade" id="liveStreamModal" tabindex="-1" role="dialog" aria-labelledby="Livestream" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content d-flex">
+      <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Video Credits</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="row">
-            <div class="col-12 pb-5 text-center">
-              <h4>An Ocean Archive Original with contributions by:</h4>
-              <p>
-                David Gruber<br/>
-                Joan Jonas<br/>
-                Laura Anderson Barbata<br/>
-                Sonia Levy<br/>
-                Dark Morph<br/>
-              </p>
-            </div>
-            <div class="col-md-5">
-              <p>
-                <b>Produced by:</b><br/>
-                User Group GmbH<br/>
-                <br/>
-                <b>Crew:</b><br/>
-                Henning Brümmer<br/>
-                Markus Aha<br/>
-                <br/>
-                <b>Music by:</b><br/>
-                Dark Morph<br/>
-                <br/>
-                <b>Additional footage by:</b><br/>
-                Pete Brown<br/>
-                Nina Faure Beaulieu<br/>
-              </p>
-            </div>
-            <div class="col-md-7">
-              <p>
-                <b>National Oceanography Centre, Southampton:</b><br/>
-              <ul>
-                <li>Brian King, Member of the International Steering Team, The Argo Programme.</li>
-                <li>Jane Stephenson, Head of library and information services Special Collections, National Oceanographic Library Digital Archives.</li>
-                <li>Tammy Horton, Collections manager, Discovery Collection, National Oceanographic Library Digital Archives.</li>
-                <li>Charlotte Miskin-Hymas, Marine data manager, MEDIN.</li>
-                <li>Millie Watts, Postgraduate research student, British Ocean Sediment Core Research Facility (BOSCORF).</li>
-                <li>Helen Snaith, Senior scientific data manager, British Oceanographic Data Centre (BODC).</li>
-              </ul>
-              </p>
-            </div>
+          <div class="embed-responsive">
+            <iframe
+              class="embed-responsive-item"
+              src=""
+              frameborder="0"
+              scrolling="no"
+              allowfullscreen="true"
+              style="display: none"
+            >
+          </iframe>
           </div>
         </div>
       </div>
@@ -492,10 +419,11 @@
   </div>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/vendor/bootstrap.min.js" ></script>
   <script src="js/plugins.js"></script>
+  <script src="js/liveStream.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
