@@ -215,7 +215,7 @@ function loadBanners() {
     banner = bannerSrcs[bannerIdx];
     $('#bannerContainer img').attr('src', banner);
     $('#bannerContainer .background').attr('style', 'background-image: url(' + banner + ')');
-  },30000);
+  },8000);
 }
 
 function isBlank(str) {
