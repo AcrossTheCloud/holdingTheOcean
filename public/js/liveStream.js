@@ -6,7 +6,7 @@ var liveStream = function() {
 
   $('#livestream .watchnow').fadeIn();
   $('#liveStreamModal').modal(true);
-  $('#liveStreamModal iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=acrossthecloud&muted=false&autoplay=' + autoplay).fadeIn();
+  $('#liveStreamModal iframe').attr('src', 'https://player.twitch.tv/?client-id=brdrlyou2po431ot4owmi1zzjn6n0x&channel=oceanspaceorg&muted=false&autoplay=' + autoplay).fadeIn();
 };
 
 $(document).ready(function() {
